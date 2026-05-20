@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import type { Readable } from "node:stream";
 
+import { CTIO_USER_AGENT } from "./client";
 import { CtioError, ExitCode, IoError } from "./errors";
 import { debug } from "./logger";
 
@@ -38,6 +39,7 @@ export async function streamUpload(opts: UploadOptions): Promise<string> {
       headers: {
         Authorization: `Bearer ${opts.token}`,
         "Content-Type": `multipart/form-data; boundary=${boundary}`,
+        "User-Agent": CTIO_USER_AGENT,
       },
       body,
       duplex: "half",

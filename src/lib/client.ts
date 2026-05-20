@@ -1,7 +1,11 @@
 import { ConversionToolsClient } from "conversiontools";
 
+import packageJson from "../../package.json" with { type: "json" };
+
 import { warn } from "./logger";
 import { regionToBaseUrl, type Region } from "./region";
+
+export const CTIO_USER_AGENT = `ctio/${packageJson.version}`;
 
 export interface ClientOptions {
   token: string;
@@ -25,5 +29,6 @@ export function createClient(opts: ClientOptions): ConversionToolsClient {
   return new ConversionToolsClient({
     apiToken: opts.token,
     baseURL,
+    userAgent: CTIO_USER_AGENT,
   });
 }
