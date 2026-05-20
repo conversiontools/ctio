@@ -1,0 +1,4471 @@
+{
+  "generatedAt": "2026-05-20T20:29:09.467Z",
+  "source": "Conversion Tools converter registry",
+  "count": 205,
+  "converters": [
+    {
+      "type": "convert.ai_docx_to_mp3",
+      "url": "ai-docx-to-speech",
+      "from": "ai_docx",
+      "to": "mp3",
+      "title": "AI: DOCX to Speech",
+      "description": "AI: DOCX to Speech Converter. Convert Word documents to natural-sounding audio with AI. Supports multiple languages and voices.",
+      "options": [
+        "language_tts",
+        "output_tts",
+        "voice_tts"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "tts",
+        "office",
+        "from-docx",
+        "to-mp3"
+      ]
+    },
+    {
+      "type": "convert.ai_flac_to_text",
+      "url": "ai-flac-to-text",
+      "from": "ai_flac",
+      "to": "text",
+      "title": "AI: FLAC to Text",
+      "description": "AI: FLAC to Text Transcription. Transcribe FLAC audio files to text using AI. Fast and accurate speech-to-text. API available.",
+      "options": [],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "stt",
+        "flac",
+        "text",
+        "from-flac",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.ai_jpg_to_json",
+      "url": "ai-jpg-to-json",
+      "from": "ai_jpg",
+      "to": "json",
+      "title": "AI: JPG to JSON",
+      "description": "AI: JPG to JSON Converter. Extract structured data from JPG to JSON Online with Free to Try AI Converter. API available.",
+      "options": [],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "image",
+        "json",
+        "from-jpg",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.ai_md_to_mp3",
+      "url": "ai-markdown-to-speech",
+      "from": "ai_md",
+      "to": "mp3",
+      "title": "AI: Markdown to Speech",
+      "description": "AI: Markdown to Speech Converter. Convert Markdown files to natural-sounding audio with AI. Supports multiple languages and voices.",
+      "options": [
+        "language_tts",
+        "output_tts",
+        "voice_tts"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "tts",
+        "markdown",
+        "from-markdown",
+        "to-mp3"
+      ]
+    },
+    {
+      "type": "convert.ai_mp3_to_text",
+      "url": "ai-mp3-to-text",
+      "from": "ai_mp3",
+      "to": "text",
+      "title": "AI: MP3 to Text",
+      "description": "AI: MP3 to Text Transcription. Transcribe MP3 audio files to text using AI. Fast and accurate speech-to-text. API available.",
+      "options": [],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "stt",
+        "mp3",
+        "text",
+        "from-mp3",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.ai_pdf_to_csv",
+      "url": "ai-pdf-to-csv",
+      "from": "ai_pdf",
+      "to": "csv",
+      "title": "AI: PDF to CSV",
+      "description": "AI: PDF to CSV Converter. Extract structured data from PDF to CSV Online with Free to Try AI Converter. OCR support for scanned PDFs. API available.",
+      "options": [
+        "images",
+        "delimiter",
+        "quote"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "pdf",
+        "csv",
+        "office",
+        "from-pdf",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.ai_pdf_to_excel",
+      "url": "ai-pdf-to-excel",
+      "from": "ai_pdf",
+      "to": "excel",
+      "title": "AI: PDF to Excel",
+      "description": "AI: PDF to Excel Converter. Extract structured data from PDF to Excel Online with Free to Try AI Converter. OCR support for scanned PDFs. API available.",
+      "options": [
+        "images"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "pdf",
+        "office",
+        "excel",
+        "from-pdf",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.ai_pdf_to_json",
+      "url": "ai-pdf-to-json",
+      "from": "ai_pdf",
+      "to": "json",
+      "title": "AI: PDF to JSON",
+      "description": "AI: PDF to JSON Converter. Extract structured data from PDF to JSON Online with Free to Try AI Converter. API available.",
+      "options": [
+        "images"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "pdf",
+        "json",
+        "from-pdf",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.ai_pdf_to_markdown",
+      "url": "ai-pdf-to-markdown",
+      "from": "ai_pdf",
+      "to": "markdown",
+      "title": "AI: PDF to Markdown",
+      "description": "AI: PDF to Markdown Converter. Extract text with formatting from PDF to Markdown Online with Free to Try AI Converter. API available.",
+      "options": [
+        "images"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "pdf",
+        "markdown",
+        "from-pdf",
+        "to-markdown"
+      ]
+    },
+    {
+      "type": "convert.ai_pdf_to_mp3",
+      "url": "ai-pdf-to-speech",
+      "from": "ai_pdf",
+      "to": "mp3",
+      "title": "AI: PDF to Speech",
+      "description": "AI: PDF to Speech Converter. Convert PDF documents to natural-sounding audio with AI. Supports multiple languages and voices.",
+      "options": [
+        "language_tts",
+        "output_tts",
+        "voice_tts"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "tts",
+        "pdf",
+        "from-pdf",
+        "to-mp3"
+      ]
+    },
+    {
+      "type": "convert.ai_png_to_json",
+      "url": "ai-png-to-json",
+      "from": "ai_png",
+      "to": "json",
+      "title": "AI: PNG to JSON",
+      "description": "AI: PNG to JSON Converter. Extract structured data from PNG to JSON Online with Free to Try AI Converter. API available.",
+      "options": [],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "image",
+        "json",
+        "from-png",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.ai_text_to_mp3",
+      "url": "ai-text-to-speech",
+      "from": "ai_text",
+      "to": "mp3",
+      "title": "AI: Text to Speech",
+      "description": "AI: Text to Speech Converter. Convert text to natural-sounding audio with AI. Supports multiple languages and voices. API available.",
+      "options": [
+        "tts_text",
+        "language_tts",
+        "output_tts",
+        "voice_tts"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "tts",
+        "text",
+        "mp3",
+        "from-text",
+        "to-mp3"
+      ]
+    },
+    {
+      "type": "convert.ai_to_svg",
+      "url": "ai-to-svg",
+      "from": "ai",
+      "to": "svg",
+      "title": "AI to SVG",
+      "description": "AI to SVG Converter. Convert AI to SVG Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "svg",
+        "from-ai",
+        "to-svg"
+      ]
+    },
+    {
+      "type": "convert.ai_translate_srt",
+      "url": "ai-translate-srt",
+      "from": null,
+      "to": null,
+      "title": "AI: Translate SRT",
+      "description": "Translate SRT with AI. Translate SRT files into another language. API available.",
+      "options": [
+        "language",
+        "ai_instruction"
+      ],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "subtitles",
+        "translate",
+        "from-srt",
+        "to-srt"
+      ]
+    },
+    {
+      "type": "convert.ai_wav_to_text",
+      "url": "ai-wav-to-text",
+      "from": "ai_wav",
+      "to": "text",
+      "title": "AI: WAV to Text",
+      "description": "AI: WAV to Text Transcription. Transcribe WAV audio files to text using AI. Fast and accurate speech-to-text. API available.",
+      "options": [],
+      "ai": true,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": true,
+      "groups": [
+        "ai",
+        "audio",
+        "stt",
+        "wav",
+        "text",
+        "from-wav",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.ass_to_excel",
+      "url": "ass-to-excel",
+      "from": "ass",
+      "to": "excel",
+      "title": "ASS to Excel",
+      "description": "Convert ASS to Excel with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "to-excel",
+        "from-ass",
+        "to-xlsx"
+      ]
+    },
+    {
+      "type": "convert.ass_to_srt",
+      "url": "ass-to-srt",
+      "from": "ass",
+      "to": "srt",
+      "title": "ASS to SRT",
+      "description": "ASS to SRT Converter. Convert ASS Subtitles to SRT Online. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "srt",
+        "to-srt",
+        "from-ass"
+      ]
+    },
+    {
+      "type": "convert.ass_to_text",
+      "url": "ass-to-text",
+      "from": "ass",
+      "to": "text",
+      "title": "ASS to Text",
+      "description": "ASS to Text Converter. Extract plain text from ASS Subtitles Online. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "text",
+        "to-text",
+        "from-ass"
+      ]
+    },
+    {
+      "type": "convert.ass_to_vtt",
+      "url": "ass-to-vtt",
+      "from": "ass",
+      "to": "vtt",
+      "title": "ASS to VTT",
+      "description": "ASS to VTT Converter. Convert ASS Subtitles to WebVTT Online. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "to-vtt",
+        "from-ass"
+      ]
+    },
+    {
+      "type": "convert.avi_to_mp4",
+      "url": "avi-to-mp4",
+      "from": "avi",
+      "to": "mp4",
+      "title": "AVI to MP4",
+      "description": "AVI to MP4 Converter. Convert AVI to MP4 Online with Free Video Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "video",
+        "avi",
+        "mp4",
+        "to-mp4",
+        "from-avi"
+      ]
+    },
+    {
+      "type": "convert.avif_to_heic",
+      "url": "avif-to-heic",
+      "from": "avif",
+      "to": "heic",
+      "title": "AVIF to HEIC",
+      "description": "Free AVIF to HEIC converter. Convert AVIF images to HEIC format for Apple device compatibility. Transform next-gen images to iOS format online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "avif",
+        "heic",
+        "from-avif",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.avif_to_jpg",
+      "url": "avif-to-jpg",
+      "from": "avif",
+      "to": "jpg",
+      "title": "AVIF to JPEG",
+      "description": "AVIF to JPEG Converter. Convert AVIF to JPEG Online with Free Image Converter. API available.",
+      "options": [
+        "alpha_background",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "avif",
+        "jpg",
+        "from-avif",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.avif_to_jxl",
+      "url": "avif-to-jxl",
+      "from": "avif",
+      "to": "jxl",
+      "title": "AVIF to JXL",
+      "description": "Free AVIF to JPEG XL converter. Convert AVIF to JXL format online. Transform between next-generation image formats. No software installation required.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "avif",
+        "jxl",
+        "from-avif",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.avif_to_png",
+      "url": "avif-to-png",
+      "from": "avif",
+      "to": "png",
+      "title": "AVIF to PNG",
+      "description": "AVIF to PNG Converter. Convert AVIF to PNG Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "avif",
+        "png",
+        "from-avif",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.avif_to_webp",
+      "url": "avif-to-webp",
+      "from": "avif",
+      "to": "webp",
+      "title": "AVIF to WebP",
+      "description": "AVIF to WebP Converter. Convert AVIF to WebP Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "avif",
+        "webp",
+        "from-avif",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.azw_to_epub",
+      "url": "azw-to-epub",
+      "from": "azw",
+      "to": "epub",
+      "title": "AZW to ePUB",
+      "description": "AZW to ePUB Converter. Convert AZW to ePUB Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-azw",
+        "to-epub"
+      ]
+    },
+    {
+      "type": "convert.azw_to_mobi",
+      "url": "azw-to-mobi",
+      "from": "azw",
+      "to": "mobi",
+      "title": "AZW to MOBI",
+      "description": "AZW to MOBI Converter. Convert AZW to MOBI Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-azw",
+        "to-mobi"
+      ]
+    },
+    {
+      "type": "convert.azw_to_pdf",
+      "url": "azw-to-pdf",
+      "from": "azw",
+      "to": "pdf",
+      "title": "AZW to PDF",
+      "description": "AZW to PDF Converter. Convert AZW to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-azw",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.azw3_to_pdf",
+      "url": "azw3-to-pdf",
+      "from": "azw3",
+      "to": "pdf",
+      "title": "AZW3 to PDF",
+      "description": "AZW3 to PDF Converter. Convert AZW3 to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-azw3",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.bmp_to_heic",
+      "url": "bmp-to-heic",
+      "from": "bmp",
+      "to": "heic",
+      "title": "BMP to HEIC",
+      "description": "Free BMP to HEIC converter. Convert bitmap images to compact HEIC format for Apple devices. Reduce file size dramatically while maintaining quality.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "bmp",
+        "heic",
+        "from-bmp",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.bmp_to_jxl",
+      "url": "bmp-to-jxl",
+      "from": "bmp",
+      "to": "jxl",
+      "title": "BMP to JXL",
+      "description": "Free BMP to JPEG XL converter. Convert uncompressed BMP files to modern JXL format. Reduce file sizes by 90%+ while maintaining quality. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "bmp",
+        "jxl",
+        "from-bmp",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.bson_to_csv",
+      "url": "bson-to-csv",
+      "from": "bson",
+      "to": "csv",
+      "title": "BSON to CSV",
+      "description": "BSON (MongoDB Dump) to CSV Converter. Convert BSON to CSV Online with Free BSON Converter. Import BSON, Save CSV (TSV). API Available.",
+      "options": [
+        "bson_raw",
+        "delimiter",
+        "quote"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "bson",
+        "csv",
+        "to-csv",
+        "from-bson"
+      ]
+    },
+    {
+      "type": "convert.bson_to_excel",
+      "url": "bson-to-excel",
+      "from": "bson",
+      "to": "excel",
+      "title": "BSON to Excel",
+      "description": "BSON to Excel Converter. Convert BSON to Excel Online with Free BSON Converter. Import BSON, Save Excel (XLSX, XLS). BSON conversion to Excel. API Available.",
+      "options": [
+        "bson_raw",
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "bson",
+        "excel",
+        "office",
+        "to-excel",
+        "from-bson"
+      ]
+    },
+    {
+      "type": "convert.csv_to_excel",
+      "url": "csv-to-excel",
+      "from": "csv",
+      "to": "excel",
+      "title": "CSV to Excel",
+      "description": "Convert CSV into Excel Online with our Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. API available",
+      "options": [
+        "delimiter",
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "csv",
+        "from-csv",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.csv_to_json",
+      "url": "csv-to-json",
+      "from": "csv",
+      "to": "json",
+      "title": "CSV to JSON",
+      "description": "Looking to convert a CSV file into a JSON format? Use our easy and fast tool! Confidential. Upload Large Files. API Available. Simple Interface.",
+      "options": [
+        "header",
+        "space",
+        "index_records",
+        "prefix_attr",
+        "ignore_errors"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "csv",
+        "json",
+        "from-csv",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.csv_to_jsonl",
+      "url": "csv-to-jsonl",
+      "from": "csv",
+      "to": "jsonl",
+      "title": "CSV to JSONL",
+      "description": "CSV to JSONL Converter. Convert CSV to JSON Lines Online. One JSON object per line. API available.",
+      "options": [
+        "delimiter",
+        "header"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "jsonl",
+        "csv",
+        "from-csv",
+        "to-jsonl"
+      ]
+    },
+    {
+      "type": "convert.csv_to_parquet",
+      "url": "csv-to-parquet",
+      "from": "csv",
+      "to": "parquet",
+      "title": "CSV to Parquet",
+      "description": "CSV to Parquet Converter. Convert CSV to Parquet Online. Columnar format for big data analytics. API available.",
+      "options": [
+        "delimiter"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "csv",
+        "from-csv",
+        "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.csv_to_srt",
+      "url": "csv-to-srt",
+      "from": "csv",
+      "to": "srt",
+      "title": "CSV to SRT",
+      "description": "Subtitles CSV to SRT Converter. Convert CSV file to SRT Subtitles Online with Free SRT Converter. API Available.",
+      "options": [
+        "delimiter"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "csv",
+        "from-csv",
+        "to-srt"
+      ]
+    },
+    {
+      "type": "convert.csv_to_xml",
+      "url": "csv-to-xml",
+      "from": "csv",
+      "to": "xml",
+      "title": "CSV to XML",
+      "description": "CSV to XML Converter. Convert CSV to XML Online with Free Converter. Large files supported. API available.",
+      "options": [
+        "delimiter",
+        "header",
+        "show_columns",
+        "index_records",
+        "ignore_errors",
+        "add_empty_nodes",
+        "short_tag_empty_node",
+        "xml_encoding"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "csv",
+        "xml",
+        "from-csv",
+        "to-xml"
+      ]
+    },
+    {
+      "type": "convert.epub_to_azw",
+      "url": "epub-to-azw",
+      "from": "epub",
+      "to": "azw",
+      "title": "ePUB to AZW",
+      "description": "ePUB to AZW Converter. Convert ePUB to AZW Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-epub",
+        "to-azw"
+      ]
+    },
+    {
+      "type": "convert.epub_to_mobi",
+      "url": "epub-to-mobi",
+      "from": "epub",
+      "to": "mobi",
+      "title": "ePUB to MOBI",
+      "description": "ePUB to MOBI Converter. Convert ePUB to MOBI Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-epub",
+        "to-mobi"
+      ]
+    },
+    {
+      "type": "convert.epub_to_pdf",
+      "url": "epub-to-pdf",
+      "from": "epub",
+      "to": "pdf",
+      "title": "ePUB to PDF",
+      "description": "ePUB to PDF Converter. Convert ePUB to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-epub",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.excel_to_ass",
+      "url": "excel-to-ass",
+      "from": "excel",
+      "to": "ass",
+      "title": "Excel to ASS",
+      "description": "Convert Excel to ASS Subtitles with our Conversion Tool. Quick and easy. 100% Confidential.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "from-excel",
+        "to-ass",
+        "from-xlsx"
+      ]
+    },
+    {
+      "type": "convert.excel_to_csv",
+      "url": "excel-to-csv",
+      "from": "excel",
+      "to": "csv",
+      "title": "Excel to CSV",
+      "description": "Change Excel to CSV Online via our Converter Tool. Quick and easy. All Files are Encrypted. Available Pricing. Reliable Operation of Services. Try Now",
+      "options": [
+        "delimiter",
+        "quote",
+        "utf8_bom"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "csv",
+        "from-excel",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.excel_to_html",
+      "url": "excel-to-html",
+      "from": "excel",
+      "to": "html",
+      "title": "Excel to HTML",
+      "description": "Turn Excel to HTML with our Tool. 100% Easy and Confidential Data Converter. Custom Converter development. Automation with Zapier. All Files are Encrypted.",
+      "options": [
+        "recalculate",
+        "make_sortable",
+        "title_overview",
+        "title_sheet"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "html",
+        "from-excel",
+        "to-html"
+      ]
+    },
+    {
+      "type": "convert.excel_to_json",
+      "url": "excel-to-json",
+      "from": "excel",
+      "to": "json",
+      "title": "Excel to JSON",
+      "description": "Excel to JSON File Converter. Quick and easy. 100% Confidential. Simple Interface. Available Pricing. Custom Converter development. API available",
+      "options": [
+        "header",
+        "space",
+        "index_records",
+        "prefix_attr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "excel",
+        "json",
+        "from-excel",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.excel_to_jsonl",
+      "url": "excel-to-jsonl",
+      "from": "excel",
+      "to": "jsonl",
+      "title": "Excel to JSONL",
+      "description": "Excel to JSONL Converter. Convert Excel to JSON Lines Online. One JSON object per line. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "jsonl",
+        "excel",
+        "office",
+        "from-excel",
+        "to-jsonl"
+      ]
+    },
+    {
+      "type": "convert.excel_to_ods",
+      "url": "excel-to-ods",
+      "from": "excel",
+      "to": "ods",
+      "title": "Excel to ODS",
+      "description": "Excel to ODS Converter. Convert Excel to OpenOffice Calc ODS Online with Free Converter. Import XLSX, download ODS. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "from-excel",
+        "to-ods"
+      ]
+    },
+    {
+      "type": "convert.excel_to_parquet",
+      "url": "excel-to-parquet",
+      "from": "excel",
+      "to": "parquet",
+      "title": "Excel to Parquet",
+      "description": "Excel to Parquet Converter. Convert Excel to Parquet Online. Export spreadsheet to columnar format. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "excel",
+        "office",
+        "from-excel",
+        "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.excel_to_pdf",
+      "url": "excel-to-pdf",
+      "from": "excel",
+      "to": "pdf",
+      "title": "Excel to PDF",
+      "description": "Change Excel Table to PDF with our Conversion Tool. Quick file transformation from XLS to PDF. 100% Confidential. API available. Customer support",
+      "options": [
+        "orientation"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "office",
+        "from-excel",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.excel_to_srt",
+      "url": "excel-to-srt",
+      "from": "excel",
+      "to": "srt",
+      "title": "Excel to SRT",
+      "description": "Change Excel Spreadsheet to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "from-excel",
+        "to-srt",
+        "from-xlsx"
+      ]
+    },
+    {
+      "type": "convert.excel_to_xml",
+      "url": "excel-to-xml",
+      "from": "excel",
+      "to": "xml",
+      "title": "Excel to XML",
+      "description": "Export Excel File to XML Online with our Converter. Quick and easy. Confidential. Custom Conversion. Zapier automation available. Try it Now",
+      "options": [
+        "header",
+        "show_columns",
+        "index_records",
+        "add_empty_nodes",
+        "short_tag_empty_node",
+        "xml_encoding"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "excel",
+        "xml",
+        "from-excel",
+        "to-xml"
+      ]
+    },
+    {
+      "type": "convert.excel_to_xps",
+      "url": "excel-to-xps",
+      "from": "excel",
+      "to": "xps",
+      "title": "Excel to XPS",
+      "description": "Excel to XPS Converter. Convert Excel to XPS Online with Free Converter. Import XLSX, download XPS. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "office",
+        "from-excel",
+        "to-xps"
+      ]
+    },
+    {
+      "type": "convert.excel_xml_to_excel_xlsx",
+      "url": "excel-xml-to-excel-xlsx",
+      "from": "excel_xml",
+      "to": "excel_xlsx",
+      "title": "Excel XML to XLSX",
+      "description": "Free Excel XML to Excel XLSX Online Converter. Import Excel XML, download Excel XLSX. Large files up to 1 GB supported. API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "xml",
+        "excel",
+        "from-xml",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.fb2_to_pdf",
+      "url": "fb2-to-pdf",
+      "from": "fb2",
+      "to": "pdf",
+      "title": "FB2 to PDF",
+      "description": "FB2 to PDF Converter. Convert FB2 to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-fb2",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.fbz_to_pdf",
+      "url": "fbz-to-pdf",
+      "from": "fbz",
+      "to": "pdf",
+      "title": "FBZ to PDF",
+      "description": "FBZ to PDF Converter. Convert FBZ to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-fbz",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.fix_xml_escaping",
+      "url": "fix-xml-escaping",
+      "from": null,
+      "to": null,
+      "title": "Fix XML Escaping",
+      "description": "Free Converter that fixes XML Escaping of special characters. Import XML, download fixed XML. Large files up to 100 GB supported. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "xml"
+      ]
+    },
+    {
+      "type": "convert.flac_to_mp3",
+      "url": "flac-to-mp3",
+      "from": "flac",
+      "to": "mp3",
+      "title": "FLAC to MP3",
+      "description": "FLAC to MP3 Converter. Convert FLAC to MP3 Online with Free Audio Converter. API Available.",
+      "options": [
+        "bitrate"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "audio",
+        "flac",
+        "mp3",
+        "to-mp3",
+        "from-flac"
+      ]
+    },
+    {
+      "type": "convert.flac_to_wav",
+      "url": "flac-to-wav",
+      "from": "flac",
+      "to": "wav",
+      "title": "FLAC to WAV",
+      "description": "FLAC to WAV Converter. Convert FLAC to WAV Online with Free Audio Converter. API Available.",
+      "options": [
+        "sampling_rate",
+        "bit_depth",
+        "audio_channels"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "audio",
+        "flac",
+        "wav",
+        "from-flac",
+        "to-wav"
+      ]
+    },
+    {
+      "type": "convert.format_json",
+      "url": "format-json",
+      "from": null,
+      "to": null,
+      "title": "JSON Formatter",
+      "description": "JSON Formatter Online for Free. Format JSON files. Batch processing and API are available.",
+      "options": [
+        "space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "format",
+        "json"
+      ]
+    },
+    {
+      "type": "convert.gif_to_jxl",
+      "url": "gif-to-jxl",
+      "from": "gif",
+      "to": "jxl",
+      "title": "GIF to JXL",
+      "description": "Free GIF to JPEG XL converter. Convert GIF images to JXL format. JPEG XL supports animation with better compression than GIF. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "gif",
+        "jxl",
+        "from-gif",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.gif_to_webp",
+      "url": "gif-to-webp",
+      "from": "gif",
+      "to": "webp",
+      "title": "GIF to WebP",
+      "description": "GIF to WebP Converter. Convert GIF to WebP Online with Free Image Converter. API available.",
+      "options": [
+        "webp_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "gif",
+        "webp",
+        "from-gif",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.heic_to_avif",
+      "url": "heic-to-avif",
+      "from": "heic",
+      "to": "avif",
+      "title": "HEIC to AVIF",
+      "description": "Free HEIC to AVIF converter. Transform iPhone photos to AVIF format for superior compression and quality. Convert online instantly without software installation.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "heic",
+        "avif",
+        "from-heic",
+        "to-avif"
+      ]
+    },
+    {
+      "type": "convert.heic_to_bmp",
+      "url": "heic-to-bmp",
+      "from": "heic",
+      "to": "bmp",
+      "title": "HEIC to BMP",
+      "description": "Free HEIC to BMP converter. Convert iPhone photos to Windows bitmap format online. Perfect for legacy software compatibility. No installation required.",
+      "options": [
+        "alpha_background"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "heic",
+        "bmp",
+        "from-heic",
+        "to-bmp"
+      ]
+    },
+    {
+      "type": "convert.heic_to_jpg",
+      "url": "heic-to-jpg",
+      "from": "heic",
+      "to": "jpg",
+      "title": "HEIC to JPG",
+      "description": "HEIC to JPG Converter. Convert HEIC to JPG Online with Free Image Converter. API available.",
+      "options": [
+        "alpha_background",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-heic",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.heic_to_jxl",
+      "url": "heic-to-jxl",
+      "from": "heic",
+      "to": "jxl",
+      "title": "HEIC to JXL",
+      "description": "Free HEIC to JPEG XL converter. Convert iPhone photos to JXL format for superior compression and quality. Support for lossless and lossy conversion online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "heic",
+        "jxl",
+        "from-heic",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.heic_to_png",
+      "url": "heic-to-png",
+      "from": "heic",
+      "to": "png",
+      "title": "HEIC to PNG",
+      "description": "HEIC to PNG Converter. Convert HEIC to PNG Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-heic",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.heic_to_tiff",
+      "url": "heic-to-tiff",
+      "from": "heic",
+      "to": "tiff",
+      "title": "HEIC to TIFF",
+      "description": "Free HEIC to TIFF converter. Convert iPhone photos to lossless TIFF format for professional editing and printing. Preserve full image quality online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "heic",
+        "tiff",
+        "from-heic",
+        "to-tiff"
+      ]
+    },
+    {
+      "type": "convert.heic_to_webp",
+      "url": "heic-to-webp",
+      "from": "heic",
+      "to": "webp",
+      "title": "HEIC to WebP",
+      "description": "Free HEIC to WebP converter. Convert iPhone and iOS photos to WebP format online. Reduce file size while maintaining quality. No software installation required.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "heic",
+        "webp",
+        "from-heic",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.html_meta_to_json",
+      "url": "html-meta-to-json",
+      "from": "html_meta",
+      "to": "json",
+      "title": "HTML Meta to JSON",
+      "description": "HTML Meta Tags to JSON Converter. Extract SEO metadata — title, description, canonical, hreflang, Open Graph, Twitter Card and JSON-LD — from any HTML page. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "json",
+        "from-html",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.html_table_to_csv",
+      "url": "html-to-csv",
+      "from": "html_table",
+      "to": "csv",
+      "title": "HTML Table to CSV",
+      "description": "Extract HTML Table to CSV (comma seperated values). Quick and easy. Confidential. Custom Conversion. Zapier automation available. Try it Now",
+      "options": [
+        "delimiter"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "csv",
+        "from-html",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.html_to_jpg",
+      "url": "html-to-jpg",
+      "from": "html",
+      "to": "jpg",
+      "title": "HTML to JPG",
+      "description": "HTML to JPG Converter. Save Website to JPG Online. Create Website Thumbnail. API available.",
+      "options": [
+        "background",
+        "images",
+        "javascript",
+        "viewport_width",
+        "viewport_height",
+        "emulate_device"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "image",
+        "from-html",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.html_to_json",
+      "url": "html-to-json",
+      "from": "html",
+      "to": "json",
+      "title": "HTML to JSON",
+      "description": "HTML to JSON Converter. Extract structured content from any HTML page — headings, paragraphs, links, images, tables and lists — into a clean JSON document. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "json",
+        "from-html",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.html_to_markdown",
+      "url": "html-to-markdown",
+      "from": "html",
+      "to": "markdown",
+      "title": "HTML to Markdown",
+      "description": "HTML to Markdown Converter. Convert HTML to Markdown Online with Free Converter. Import HTML, download MD file. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "html",
+        "from-html",
+        "to-markdown"
+      ]
+    },
+    {
+      "type": "convert.html_to_png",
+      "url": "html-to-png",
+      "from": "html",
+      "to": "png",
+      "title": "HTML to PNG",
+      "description": "HTML to PNG Converter. Save Website to PNG Online. Create Website Thumbnail. API available.",
+      "options": [
+        "background",
+        "images",
+        "javascript",
+        "viewport_width",
+        "viewport_height",
+        "emulate_device"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "image",
+        "from-html",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.html_to_word",
+      "url": "html-to-word",
+      "from": "html",
+      "to": "word",
+      "title": "HTML to Word",
+      "description": "HTML to Word Converter. Convert HTML to DOCX or DOC Online. API Available.",
+      "options": [
+        "word_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "word",
+        "html",
+        "office",
+        "from-html",
+        "to-word",
+        "to-docx"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_avif",
+      "url": "jpg-to-avif",
+      "from": "jpg",
+      "to": "avif",
+      "title": "JPG to AVIF",
+      "description": "JPEG to AVIF Converter. Convert JPG to AVIF Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jpg",
+        "avif",
+        "from-jpg",
+        "to-avif"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_heic",
+      "url": "jpg-to-heic",
+      "from": "jpg",
+      "to": "heic",
+      "title": "JPG to HEIC",
+      "description": "Free JPG to HEIC converter. Convert JPEG images to HEIC format for iPhone, iPad, and Mac. Reduce file size with better compression. Convert online instantly.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jpg",
+        "heic",
+        "from-jpg",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_jxl",
+      "url": "jpg-to-jxl",
+      "from": "jpg",
+      "to": "jxl",
+      "title": "JPG to JXL",
+      "description": "Free JPG to JPEG XL converter. Convert JPEG images to JXL for better compression and quality. Lossless transcoding preserves original JPEG data. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jpg",
+        "jxl",
+        "from-jpg",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_pdf",
+      "url": "jpg-to-pdf",
+      "from": "jpg",
+      "to": "pdf",
+      "title": "JPG to PDF",
+      "description": "JPG to PDF Converter. Convert JPG to PDF Online with Free Image Converter. Import JPG, download PDF. API available.",
+      "options": [
+        "orientation"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-jpg",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_pgm",
+      "url": "jpg-to-pgm",
+      "from": "jpg",
+      "to": "pgm",
+      "title": "JPEG to PGM",
+      "description": "JPEG to PGM Converter. Convert JPEG to PGM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-jpg",
+        "to-pgm"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_png",
+      "url": "jpg-to-png",
+      "from": "jpg",
+      "to": "png",
+      "title": "JPG to PNG",
+      "description": "JPG to PNG Converter. Convert JPG to PNG Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-jpg",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_ppm",
+      "url": "jpg-to-ppm",
+      "from": "jpg",
+      "to": "ppm",
+      "title": "JPEG to PPM",
+      "description": "JPEG to PPM Converter. Convert JPEG to PPM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-jpg",
+        "to-ppm"
+      ]
+    },
+    {
+      "type": "convert.jpg_to_webp",
+      "url": "jpg-to-webp",
+      "from": "jpg",
+      "to": "webp",
+      "title": "JPG to WebP",
+      "description": "JPEG to WebP Converter. Convert JPG to WebP Online with Free Image Converter. API available.",
+      "options": [
+        "webp_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jpg",
+        "webp",
+        "from-jpg",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.json_objects_to_csv",
+      "url": "json-objects-to-csv",
+      "from": "json_objects",
+      "to": "csv",
+      "title": "JSON objects to CSV",
+      "description": "JSON Objects (one per line) to CSV Converter. Convert JSON objects to CSV Online with Free JSON Converter. Import JSON, Save CSV (TSV). API Available.",
+      "options": [
+        "delimiter",
+        "quote"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "jsonl",
+        "csv",
+        "to-csv",
+        "from-jsonl"
+      ]
+    },
+    {
+      "type": "convert.json_objects_to_excel",
+      "url": "json-objects-to-excel",
+      "from": "json_objects",
+      "to": "excel",
+      "title": "JSON objects to Excel",
+      "description": "JSON objects to Excel Converter. Convert JSON objects to Excel Online with Free JSON Converter. Import JSON, Save Excel (XLSX, XLS). JSON conversion to Excel. API Available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "jsonl",
+        "excel",
+        "office",
+        "to-excel",
+        "from-jsonl"
+      ]
+    },
+    {
+      "type": "convert.json_to_csv",
+      "url": "json-to-csv",
+      "from": "json",
+      "to": "csv",
+      "title": "JSON to CSV",
+      "description": "Transform JSON to CSV with Conversion Tools. Quick and Easy Tool. Privacy and Security. Possibility to Convert Large JSON Files. API Available.",
+      "options": [
+        "delimiter",
+        "quote"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "csv",
+        "to-csv",
+        "from-json"
+      ]
+    },
+    {
+      "type": "convert.json_to_excel",
+      "url": "json-to-excel",
+      "from": "json",
+      "to": "excel",
+      "title": "JSON to Excel",
+      "description": "Convert JSON to Excel with our Free Online Tool. Quick & Easy Data Conversion. Secure & Confidential. No Installation Required. Download Excel File Instantly.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "excel",
+        "office",
+        "to-excel",
+        "from-json"
+      ]
+    },
+    {
+      "type": "convert.json_to_parquet",
+      "url": "json-to-parquet",
+      "from": "json",
+      "to": "parquet",
+      "title": "JSON to Parquet",
+      "description": "JSON to Parquet Converter. Convert JSON to Parquet Online. Columnar format for big data analytics. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "json",
+        "from-json",
+        "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.json_to_xml",
+      "url": "json-to-xml",
+      "from": "json",
+      "to": "xml",
+      "title": "JSON to XML",
+      "description": "Change JSON to XML with our tool. Upload Large Files. Zapier automation available. All Files are Encrypted. Available Pricing. 24/7 support. Try it Now",
+      "options": [
+        "space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "xml",
+        "to-xml",
+        "from-json"
+      ]
+    },
+    {
+      "type": "convert.json_to_yaml",
+      "url": "json-to-yaml",
+      "from": "json",
+      "to": "yaml",
+      "title": "JSON to YAML",
+      "description": "JSON to YAML Converter. Convert JSON to YAML Online with Free JSON Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "yaml",
+        "to-yaml",
+        "from-json"
+      ]
+    },
+    {
+      "type": "convert.jsonl_to_csv",
+      "url": "jsonl-to-csv",
+      "from": "jsonl",
+      "to": "csv",
+      "title": "JSONL to CSV",
+      "description": "JSONL to CSV Converter. Convert JSON Lines to CSV Online. Export NDJSON to spreadsheet format. API available.",
+      "options": [
+        "delimiter",
+        "quote"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "jsonl",
+        "csv",
+        "from-jsonl",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.jsonl_to_excel",
+      "url": "jsonl-to-excel",
+      "from": "jsonl",
+      "to": "excel",
+      "title": "JSONL to Excel",
+      "description": "JSONL to Excel Converter. Convert JSON Lines to Excel Online. Export NDJSON to spreadsheet format. API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "jsonl",
+        "excel",
+        "office",
+        "from-jsonl",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.jsonl_to_parquet",
+      "url": "jsonl-to-parquet",
+      "from": "jsonl",
+      "to": "parquet",
+      "title": "JSONL to Parquet",
+      "description": "JSONL to Parquet Converter. Convert JSON Lines to Parquet Online. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "jsonl",
+        "from-jsonl",
+        "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_avif",
+      "url": "jxl-to-avif",
+      "from": "jxl",
+      "to": "avif",
+      "title": "JXL to AVIF",
+      "description": "Free JXL to AVIF converter. Convert JPEG XL to AVIF format. Transform between modern image formats for optimal compatibility. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "avif",
+        "from-jxl",
+        "to-avif"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_bmp",
+      "url": "jxl-to-bmp",
+      "from": "jxl",
+      "to": "bmp",
+      "title": "JXL to BMP",
+      "description": "Free JXL to BMP converter. Convert JPEG XL to Windows bitmap format for maximum compatibility with legacy applications. Convert online free.",
+      "options": [
+        "alpha_background"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "bmp",
+        "from-jxl",
+        "to-bmp"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_gif",
+      "url": "jxl-to-gif",
+      "from": "jxl",
+      "to": "gif",
+      "title": "JXL to GIF",
+      "description": "Free JXL to GIF converter. Convert JPEG XL images to GIF format for universal compatibility. Create shareable images from JXL files. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "gif",
+        "from-jxl",
+        "to-gif"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_heic",
+      "url": "jxl-to-heic",
+      "from": "jxl",
+      "to": "heic",
+      "title": "JXL to HEIC",
+      "description": "Free JXL to HEIC converter. Convert JPEG XL to HEIC format for Apple devices. Optimize images for iPhone, iPad, and Mac. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "heic",
+        "from-jxl",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_jpg",
+      "url": "jxl-to-jpg",
+      "from": "jxl",
+      "to": "jpg",
+      "title": "JXL to JPG",
+      "description": "Free JXL to JPG converter. Open and convert JPEG XL files to standard JPEG format. View JXL images on any device. Adjustable quality settings. Convert online free.",
+      "options": [
+        "alpha_background",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "jpg",
+        "from-jxl",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_png",
+      "url": "jxl-to-png",
+      "from": "jxl",
+      "to": "png",
+      "title": "JXL to PNG",
+      "description": "Free JXL to PNG converter. Convert JPEG XL files to PNG format with full transparency support. Open JXL files and export to universally compatible PNG online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "png",
+        "from-jxl",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_tiff",
+      "url": "jxl-to-tiff",
+      "from": "jxl",
+      "to": "tiff",
+      "title": "JXL to TIFF",
+      "description": "Free JXL to TIFF converter. Convert JPEG XL to TIFF for professional photo editing and printing. Export to industry-standard format. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "tiff",
+        "from-jxl",
+        "to-tiff"
+      ]
+    },
+    {
+      "type": "convert.jxl_to_webp",
+      "url": "jxl-to-webp",
+      "from": "jxl",
+      "to": "webp",
+      "title": "JXL to WebP",
+      "description": "Free JXL to WebP converter. Convert JPEG XL to WebP for broad browser support. Make your images web-ready with excellent compression. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "jxl",
+        "webp",
+        "from-jxl",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_docx",
+      "url": "markdown-to-docx",
+      "from": "markdown",
+      "to": "docx",
+      "title": "Markdown to Word",
+      "description": "Markdown to Word Converter. Convert Markdown to DOCX Online with Free Converter. Import MD, download Word document. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "office",
+        "from-markdown",
+        "to-word",
+        "to-docx"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_epub",
+      "url": "markdown-to-epub",
+      "from": "markdown",
+      "to": "epub",
+      "title": "Markdown to ePUB",
+      "description": "Markdown to ePUB Converter. Convert Markdown to ePUB Online with Free Converter. Import MD, download ePUB. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "ebook",
+        "from-markdown",
+        "to-epub"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_html",
+      "url": "markdown-to-html",
+      "from": "markdown",
+      "to": "html",
+      "title": "Markdown to HTML",
+      "description": "Markdown to HTML Converter. Convert Markdown to HTML Online with Free Converter. Import MD, download HTML. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "html",
+        "from-markdown",
+        "to-html"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_latex",
+      "url": "markdown-to-latex",
+      "from": "markdown",
+      "to": "latex",
+      "title": "Markdown to LaTeX",
+      "description": "Markdown to LaTeX Converter. Convert Markdown to LaTeX Online with Free Converter. Import MD, download LaTeX .tex file. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "from-markdown",
+        "to-latex"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_pdf",
+      "url": "markdown-to-pdf",
+      "from": "markdown",
+      "to": "pdf",
+      "title": "Markdown to PDF",
+      "description": "Markdown to PDF Converter. Convert Markdown to PDF Online with Free Converter. Import MD, download PDF. API available.",
+      "options": [
+        "margin_top",
+        "margin_right",
+        "margin_bottom",
+        "margin_left"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "pdf",
+        "from-markdown",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.markdown_to_text",
+      "url": "markdown-to-text",
+      "from": "markdown",
+      "to": "text",
+      "title": "Markdown to Text",
+      "description": "Markdown to Text Converter. Convert Markdown to Plain Text Online with Free Converter. Import MD, download TXT. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "text",
+        "from-markdown",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.mkv_to_mp4",
+      "url": "mkv-to-mp4",
+      "from": "mkv",
+      "to": "mp4",
+      "title": "MKV to MP4",
+      "description": "MKV to MP4 Converter. Convert MKV to MP4 Online with Free Video Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "video",
+        "mkv",
+        "mp4",
+        "to-mp4",
+        "from-mkv"
+      ]
+    },
+    {
+      "type": "convert.mobi_to_azw",
+      "url": "mobi-to-azw",
+      "from": "mobi",
+      "to": "azw",
+      "title": "MOBI to AZW",
+      "description": "MOBI to AZW Converter. Convert MOBI to AZW Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-mobi",
+        "to-azw"
+      ]
+    },
+    {
+      "type": "convert.mobi_to_epub",
+      "url": "mobi-to-epub",
+      "from": "mobi",
+      "to": "epub",
+      "title": "MOBI to ePUB",
+      "description": "MOBI to ePUB Converter. Convert MOBI to ePUB Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-mobi",
+        "to-epub"
+      ]
+    },
+    {
+      "type": "convert.mobi_to_pdf",
+      "url": "mobi-to-pdf",
+      "from": "mobi",
+      "to": "pdf",
+      "title": "MOBI to PDF",
+      "description": "MOBI to PDF Converter. Convert MOBI to PDF Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-mobi",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.mov_to_mp4",
+      "url": "mov-to-mp4",
+      "from": "mov",
+      "to": "mp4",
+      "title": "MOV to MP4",
+      "description": "MOV to MP4 Converter. Convert MOV to MP4 Online with Free Video Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "video",
+        "mov",
+        "mp4",
+        "to-mp4",
+        "from-mov"
+      ]
+    },
+    {
+      "type": "convert.mp3_to_wav",
+      "url": "mp3-to-wav",
+      "from": "mp3",
+      "to": "wav",
+      "title": "MP3 to WAV",
+      "description": "MP3 to WAV Converter. Convert MP3 to WAV Online with Free Audio Converter. API Available.",
+      "options": [
+        "sampling_rate",
+        "bit_depth",
+        "audio_channels"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "audio",
+        "mp3",
+        "wav",
+        "from-mp3",
+        "to-wav"
+      ]
+    },
+    {
+      "type": "convert.mp4_to_mp3",
+      "url": "mp4-to-mp3",
+      "from": "mp4",
+      "to": "mp3",
+      "title": "MP4 to MP3",
+      "description": "MP4 to MP3 Converter. Extract audio from MP4 to MP3 Online with Free MP4 Converter. API Available.",
+      "options": [
+        "bitrate"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "video",
+        "audio",
+        "to-mp3",
+        "from-mp4"
+      ]
+    },
+    {
+      "type": "convert.ocr_jpg_to_pdf",
+      "url": "ocr-jpg-to-pdf",
+      "from": "ocr_jpg",
+      "to": "pdf",
+      "title": "OCR: JPG to PDF",
+      "description": "OCR: JPG to PDF Converter. Extract text from JPG to PDF Online with Free OCR Converter. API Available.",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-pdf",
+        "from-jpg"
+      ]
+    },
+    {
+      "type": "convert.ocr_jpg_to_text",
+      "url": "ocr-jpg-to-text",
+      "from": "ocr_jpg",
+      "to": "text",
+      "title": "OCR: JPG to Text",
+      "description": "OCR: JPG to Text Converter. Extract text from JPG to Text Online with Free OCR Converter. API Available.",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-text",
+        "from-jpg"
+      ]
+    },
+    {
+      "type": "convert.ocr_pdf_to_pdf",
+      "url": "ocr-pdf-to-pdf",
+      "from": "ocr_pdf",
+      "to": "pdf",
+      "title": "OCR: PDF Image to PDF Text",
+      "description": "OCR: PDF Image to PDF Text Converter. Extract text from PDF (as image) to PDF Text format Online with Free OCR Converter. API Available.",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-pdf",
+        "from-pdf"
+      ]
+    },
+    {
+      "type": "convert.ocr_pdf_to_text",
+      "url": "ocr-pdf-to-text",
+      "from": "ocr_pdf",
+      "to": "text",
+      "title": "OCR: PDF (Image) to Text",
+      "description": "OCR: PDF to Text Converter. Extract text from PDF (as image) to Text Online with Free OCR Converter. API Available.",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-text",
+        "from-pdf"
+      ]
+    },
+    {
+      "type": "convert.ocr_png_to_pdf",
+      "url": "ocr-png-to-pdf",
+      "from": "ocr_png",
+      "to": "pdf",
+      "title": "OCR: PNG to PDF",
+      "description": "OCR: PNG to PDF Converter. Extract text from PNG to PDF Online with Free OCR Converter. API Available.",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-pdf",
+        "from-png"
+      ]
+    },
+    {
+      "type": "convert.ocr_png_to_text",
+      "url": "ocr-png-to-text",
+      "from": "ocr_png",
+      "to": "text",
+      "title": "OCR: PNG to Text",
+      "description": "Transform PNG Image to Text Online with our Converter. Quick and easy. Confidential. Available Pricing. Zapier automation is available. Try it Now",
+      "options": [
+        "language_ocr"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ocr",
+        "to-text",
+        "from-png"
+      ]
+    },
+    {
+      "type": "convert.ods_to_csv",
+      "url": "ods-to-csv",
+      "from": "ods",
+      "to": "csv",
+      "title": "ODS to CSV",
+      "description": "ODS to CSV Converter. Convert ODS to CSV Online with Free Converter. Import OpenOffice Calc ODS, download CSV (TSV). API available.",
+      "options": [
+        "delimiter"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "csv",
+        "from-ods",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.ods_to_excel",
+      "url": "ods-to-excel",
+      "from": "ods",
+      "to": "excel",
+      "title": "ODS to Excel",
+      "description": "ODS to Excel Converter. Convert ODS to Excel Online with Free Converter. Import OpenOffice Calc ODS, download Excel. API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "from-ods",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.ods_to_pdf",
+      "url": "ods-to-pdf",
+      "from": "ods",
+      "to": "pdf",
+      "title": "ODS to PDF",
+      "description": "ODS to PDF Converter. Convert ODS to PDF Online with Free Converter. Import OpenOffice Calc ODS, download PDF. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "pdf",
+        "from-ods",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.oxps_to_pdf",
+      "url": "oxps-to-pdf",
+      "from": "oxps",
+      "to": "pdf",
+      "title": "OXPS to PDF",
+      "description": "OXPS to PDF Converter. Convert OXPS to PDF Online. Import OXPS, download PDF. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "office",
+        "from-oxps",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.parquet_to_csv",
+      "url": "parquet-to-csv",
+      "from": "parquet",
+      "to": "csv",
+      "title": "Parquet to CSV",
+      "description": "Parquet to CSV Converter. Convert Parquet to CSV Online. Export columnar data to spreadsheet format. API available.",
+      "options": [
+        "delimiter",
+        "quote",
+        "utf8_bom"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "csv",
+        "from-parquet",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.parquet_to_excel",
+      "url": "parquet-to-excel",
+      "from": "parquet",
+      "to": "excel",
+      "title": "Parquet to Excel",
+      "description": "Parquet to Excel Converter. Convert Parquet to Excel Online. Export columnar data to spreadsheet format. API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "excel",
+        "office",
+        "from-parquet",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.parquet_to_json",
+      "url": "parquet-to-json",
+      "from": "parquet",
+      "to": "json",
+      "title": "Parquet to JSON",
+      "description": "Parquet to JSON Converter. Convert Parquet to JSON Online. Export columnar data to JSON format. API available.",
+      "options": [
+        "space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "json",
+        "from-parquet",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.parquet_to_jsonl",
+      "url": "parquet-to-jsonl",
+      "from": "parquet",
+      "to": "jsonl",
+      "title": "Parquet to JSONL",
+      "description": "Parquet to JSONL Converter. Convert Parquet to JSON Lines Online. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "jsonl",
+        "from-parquet",
+        "to-jsonl"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_azw",
+      "url": "pdf-to-azw",
+      "from": "pdf",
+      "to": "azw",
+      "title": "PDF to AZW",
+      "description": "PDF to AZW Converter. Convert PDF to AZW Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-azw"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_azw3",
+      "url": "pdf-to-azw3",
+      "from": "pdf",
+      "to": "azw3",
+      "title": "PDF to AZW3",
+      "description": "PDF to AZW3 Converter. Convert PDF to AZW3 Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-azw3"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_csv",
+      "url": "pdf-to-csv",
+      "from": "pdf",
+      "to": "csv",
+      "title": "PDF to CSV",
+      "description": "Free PDF to CSV Online Converter. Import PDF, download CSV. API available.",
+      "options": [
+        "delimiter",
+        "quote"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "csv",
+        "office",
+        "from-pdf",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_epub",
+      "url": "pdf-to-epub",
+      "from": "pdf",
+      "to": "epub",
+      "title": "PDF to ePUB",
+      "description": "PDF to ePUB Converter. Convert PDF to ePUB Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-epub"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_excel",
+      "url": "pdf-to-excel",
+      "from": "pdf",
+      "to": "excel",
+      "title": "PDF to Excel",
+      "description": "Export PDF to Excel Table with our Tool. Quick Transformation. 100% Confidential. All Excel formats available: XLS, XLSX. 24/7 Customer Support",
+      "options": [
+        "version"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "office",
+        "excel",
+        "from-pdf",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_fb2",
+      "url": "pdf-to-fb2",
+      "from": "pdf",
+      "to": "fb2",
+      "title": "PDF to FB2",
+      "description": "PDF to FB2 Converter. Convert PDF to FB2 Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-fb2"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_fbz",
+      "url": "pdf-to-fbz",
+      "from": "pdf",
+      "to": "fbz",
+      "title": "PDF to FBZ",
+      "description": "PDF to FBZ Converter. Convert PDF to FBZ Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-fbz"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_html",
+      "url": "pdf-to-html",
+      "from": "pdf",
+      "to": "html",
+      "title": "PDF to HTML",
+      "description": "PDF to HTML Converter. Convert PDF to HTML Online with Free PDF Converter. API Available.",
+      "options": [
+        "images"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "html",
+        "from-pdf",
+        "to-html"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_jpg",
+      "url": "pdf-to-jpg",
+      "from": "pdf",
+      "to": "jpg",
+      "title": "PDF to JPG",
+      "description": "PDF to JPEG Converter. Convert PDF to JPG Online with Free PDF Converter. API available.",
+      "options": [
+        "image_resolution",
+        "jpeg_quality",
+        "colormode",
+        "progressive_jpeg"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-pdf",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_mobi",
+      "url": "pdf-to-mobi",
+      "from": "pdf",
+      "to": "mobi",
+      "title": "PDF to MOBI",
+      "description": "PDF to MOBI Converter. Convert PDF to MOBI Online with Free eBook Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "ebook",
+        "from-pdf",
+        "to-mobi"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_png",
+      "url": "pdf-to-png",
+      "from": "pdf",
+      "to": "png",
+      "title": "PDF to PNG",
+      "description": "Change PDF to PNG via our Converter Tool. 72, 150, 300, 600 PPI. High quality. 100% Confidential. Quick and easy. Transform PDF to PNG in seconds",
+      "options": [
+        "image_resolution",
+        "colormode3",
+        "background_color"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-pdf",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_svg",
+      "url": "pdf-to-svg",
+      "from": "pdf",
+      "to": "svg",
+      "title": "PDF to SVG",
+      "description": "PDF to SVG Converter. Convert PDF to SVG Online with Free PDF Converter. API Available.",
+      "options": [
+        "image_resolution",
+        "pagesize"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-pdf",
+        "to-svg"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_text",
+      "url": "pdf-to-text",
+      "from": "pdf",
+      "to": "text",
+      "title": "PDF to Text",
+      "description": "Transform PDF to Plain Text File via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "text",
+        "from-pdf",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_tiff",
+      "url": "pdf-to-tiff",
+      "from": "pdf",
+      "to": "tiff",
+      "title": "PDF to TIFF",
+      "description": "Change PDF to TIFF with out tool. 72, 150, 300, 600 PPI. Easy and Fast Data Transformation. Available Pricing. Automation with Zapier is available",
+      "options": [
+        "image_resolution",
+        "colormode3",
+        "background_color"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-pdf",
+        "to-tiff"
+      ]
+    },
+    {
+      "type": "convert.pdf_to_word",
+      "url": "pdf-to-word",
+      "from": "pdf",
+      "to": "word",
+      "title": "PDF to Word",
+      "description": "Turn PDF into Word with our tool within seconds. Privacy and Security. Simple interface. API available. Custom Converter development. Try it Now",
+      "options": [
+        "word_format",
+        "margin_top",
+        "margin_right",
+        "margin_bottom",
+        "margin_left"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "office",
+        "from-pdf",
+        "to-word"
+      ]
+    },
+    {
+      "type": "convert.png_to_avif",
+      "url": "png-to-avif",
+      "from": "png",
+      "to": "avif",
+      "title": "PNG to AVIF",
+      "description": "PNG to AVIF Converter. Convert PNG to AVIF Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "png",
+        "avif",
+        "from-png",
+        "to-avif"
+      ]
+    },
+    {
+      "type": "convert.png_to_heic",
+      "url": "png-to-heic",
+      "from": "png",
+      "to": "heic",
+      "title": "PNG to HEIC",
+      "description": "Free PNG to HEIC converter. Convert PNG images to HEIC format for better compression on Apple devices. Maintain quality while reducing file size. Convert online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "png",
+        "heic",
+        "from-png",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.png_to_jpg",
+      "url": "png-to-jpg",
+      "from": "png",
+      "to": "jpg",
+      "title": "PNG to JPG",
+      "description": "PNG to JPG Converter. Convert PNG to JPG Online with Free Image Converter. API available.",
+      "options": [
+        "alpha_background",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-png",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.png_to_jxl",
+      "url": "png-to-jxl",
+      "from": "png",
+      "to": "jxl",
+      "title": "PNG to JXL",
+      "description": "Free PNG to JPEG XL converter. Convert PNG to JXL for superior lossless compression. Reduce file sizes while maintaining perfect image quality. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "png",
+        "jxl",
+        "from-png",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.png_to_pdf",
+      "url": "png-to-pdf",
+      "from": "png",
+      "to": "pdf",
+      "title": "PNG to PDF",
+      "description": "Transform PNG to PDF in High Quality with our Converter. Quick and easy. Confidential. Available Pricing. Customer support. Try it Now",
+      "options": [
+        "orientation"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "image",
+        "from-png",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.png_to_pgm",
+      "url": "png-to-pgm",
+      "from": "png",
+      "to": "pgm",
+      "title": "PNG to PGM",
+      "description": "PNG to PGM Converter. Convert PNG to PGM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-png",
+        "to-pgm"
+      ]
+    },
+    {
+      "type": "convert.png_to_ppm",
+      "url": "png-to-ppm",
+      "from": "png",
+      "to": "ppm",
+      "title": "PNG to PPM",
+      "description": "PNG to PPM Converter. Convert PNG to PPM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-png",
+        "to-ppm"
+      ]
+    },
+    {
+      "type": "convert.png_to_svg",
+      "url": "png-to-svg",
+      "from": "png",
+      "to": "svg",
+      "title": "PNG to SVG",
+      "description": "PNG to SVG Converter. Convert PNG to SVG Online with Free Image Converter. API available.",
+      "options": [
+        "image_resolution"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "png",
+        "svg",
+        "from-png",
+        "to-svg"
+      ]
+    },
+    {
+      "type": "convert.png_to_webp",
+      "url": "png-to-webp",
+      "from": "png",
+      "to": "webp",
+      "title": "PNG to WebP",
+      "description": "PNG to WebP Converter. Convert PNG to WebP Online with Free Image Converter. API available.",
+      "options": [
+        "webp_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "png",
+        "webp",
+        "from-png",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.powerpoint_to_html",
+      "url": "powerpoint-to-html",
+      "from": "powerpoint",
+      "to": "html",
+      "title": "PowerPoint to HTML",
+      "description": "PowerPoint to HTML Converter. Convert PPT to HTML Online. Import PPT, download HTML. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "html",
+        "from-powerpoint",
+        "to-html"
+      ]
+    },
+    {
+      "type": "convert.powerpoint_to_pdf",
+      "url": "powerpoint-to-pdf",
+      "from": "powerpoint",
+      "to": "pdf",
+      "title": "PowerPoint to PDF",
+      "description": "PowerPoint to PDF Converter. Convert PPT to PDF Online. Import PPT, download PDF. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "pdf",
+        "from-powerpoint",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.powerpoint_to_text",
+      "url": "powerpoint-to-text",
+      "from": "powerpoint",
+      "to": "text",
+      "title": "PowerPoint to Text",
+      "description": "PowerPoint to Text Converter. Convert PPT to Text Online. Import PPT, download TXT. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "text",
+        "office",
+        "from-powerpoint",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.remove_exif",
+      "url": "remove-exif-data",
+      "from": null,
+      "to": null,
+      "title": "Remove EXIF Data",
+      "description": "Remove EXIF Data from Photos Online for Free. Batch processing and API are available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image"
+      ]
+    },
+    {
+      "type": "convert.rss_to_csv",
+      "url": "rss-to-csv",
+      "from": "rss",
+      "to": "csv",
+      "title": "RSS to CSV",
+      "description": "RSS to CSV Converter. Export RSS and Atom feed items (title, link, date, author, categories) to CSV. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "csv",
+        "xml",
+        "from-xml",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.rss_to_excel",
+      "url": "rss-to-excel",
+      "from": "rss",
+      "to": "excel",
+      "title": "RSS to Excel",
+      "description": "RSS to Excel Converter. Export RSS and Atom feed items to a spreadsheet (title, link, date, author, categories, description). API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "excel",
+        "xml",
+        "from-xml",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.sitemap_to_csv",
+      "url": "sitemap-to-csv",
+      "from": "sitemap",
+      "to": "csv",
+      "title": "Sitemap to CSV",
+      "description": "Sitemap to CSV Converter. Export all URLs from a sitemap.xml file to CSV. Supports gzipped sitemaps and sitemap index files. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "csv",
+        "xml",
+        "from-xml",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.sitemap_to_excel",
+      "url": "sitemap-to-excel",
+      "from": "sitemap",
+      "to": "excel",
+      "title": "Sitemap to Excel",
+      "description": "Sitemap to Excel Converter. Export all URLs from a sitemap.xml file to a spreadsheet. Supports gzipped sitemaps and sitemap index files. API available.",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "excel",
+        "xml",
+        "from-xml",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.srt_to_ass",
+      "url": "srt-to-ass",
+      "from": "srt",
+      "to": "ass",
+      "title": "SRT to ASS",
+      "description": "SRT to ASS Converter. Convert SRT Subtitles to ASS Online. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "to-ass",
+        "from-srt"
+      ]
+    },
+    {
+      "type": "convert.srt_to_csv",
+      "url": "srt-to-csv",
+      "from": "srt",
+      "to": "csv",
+      "title": "SRT to CSV",
+      "description": "Subtitles SRT to CSV Converter. Convert SRT Subtitles to CSV Online with Free SRT Converter. API Available.",
+      "options": [
+        "delimiter",
+        "quote",
+        "join_multiline_with_space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "csv",
+        "to-csv",
+        "from-srt"
+      ]
+    },
+    {
+      "type": "convert.srt_to_excel",
+      "url": "srt-to-excel",
+      "from": "srt",
+      "to": "excel",
+      "title": "SRT to Excel",
+      "description": "Convert SRT to Excel with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "options": [
+        "excel_format",
+        "join_multiline_with_space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "to-excel",
+        "from-srt",
+        "to-xlsx"
+      ]
+    },
+    {
+      "type": "convert.srt_to_text",
+      "url": "srt-to-text",
+      "from": "srt",
+      "to": "text",
+      "title": "SRT to Text",
+      "description": "Subtitles SRT to Text Converter. Convert SRT Subtitles to Text Online with Free SRT Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "text",
+        "to-text",
+        "from-srt",
+        "from-vtt"
+      ]
+    },
+    {
+      "type": "convert.srt_to_vtt",
+      "url": "srt-to-vtt",
+      "from": "srt",
+      "to": "vtt",
+      "title": "SRT to VTT",
+      "description": "Subtitles SRT to VTT Converter. Convert SRT Subtitles to VTT Online with Free SRT Converter. API Available.",
+      "options": [
+        "clear_markup"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "srt",
+        "to-vtt",
+        "from-srt"
+      ]
+    },
+    {
+      "type": "convert.srt_to_xls",
+      "url": "srt-to-xls",
+      "from": "srt",
+      "to": "xls",
+      "title": "SRT to XLS",
+      "description": "Convert SRT to XLS with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "to-excel",
+        "from-srt"
+      ]
+    },
+    {
+      "type": "convert.srt_to_xlsx",
+      "url": "srt-to-xlsx",
+      "from": "srt",
+      "to": "xlsx",
+      "title": "SRT to XLSX",
+      "description": "Convert SRT to XLSX with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "to-excel",
+        "from-srt",
+        "to-xls"
+      ]
+    },
+    {
+      "type": "convert.svg_to_jpg",
+      "url": "svg-to-jpg",
+      "from": "svg",
+      "to": "jpg",
+      "title": "SVG to JPG",
+      "description": "SVG to JPG Converter. Convert SVG to JPG Online with Free Image Converter. API available.",
+      "options": [
+        "alpha_background",
+        "image_resolution",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-svg",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.svg_to_png",
+      "url": "svg-to-png",
+      "from": "svg",
+      "to": "png",
+      "title": "SVG to PNG",
+      "description": "SVG to PNG Converter. Convert SVG to PNG Online with Free Image Converter. API available.",
+      "options": [
+        "image_resolution"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "from-svg",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.tiff_to_heic",
+      "url": "tiff-to-heic",
+      "from": "tiff",
+      "to": "heic",
+      "title": "TIFF to HEIC",
+      "description": "Free TIFF to HEIC converter. Convert large TIFF files to compact HEIC format for Apple devices. Dramatically reduce file size while preserving quality.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "tiff",
+        "heic",
+        "from-tiff",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.tiff_to_jxl",
+      "url": "tiff-to-jxl",
+      "from": "tiff",
+      "to": "jxl",
+      "title": "TIFF to JXL",
+      "description": "Free TIFF to JPEG XL converter. Convert large TIFF files to compact JXL format. Dramatically reduce file sizes with lossless or lossy compression online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "tiff",
+        "jxl",
+        "from-tiff",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.tiff_to_webp",
+      "url": "tiff-to-webp",
+      "from": "tiff",
+      "to": "webp",
+      "title": "TIFF to WebP",
+      "description": "TIFF to WebP Converter. Convert TIFF to WebP Online with Free Image Converter. API available.",
+      "options": [
+        "webp_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "tiff",
+        "webp",
+        "from-tiff",
+        "to-webp"
+      ]
+    },
+    {
+      "type": "convert.validate_json",
+      "url": "validate-json",
+      "from": null,
+      "to": null,
+      "title": "JSON Validator",
+      "description": "JSON Validator Online for Free. Validate JSON files. Batch processing and API are available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "format",
+        "json"
+      ]
+    },
+    {
+      "type": "convert.validate_xml_xsd",
+      "url": "validate-xml-xsd",
+      "from": null,
+      "to": null,
+      "title": "XML/XSD Validator",
+      "description": "XML/XSD Validator Online for Free. Validate XML files. Batch processing. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "format",
+        "xml"
+      ]
+    },
+    {
+      "type": "convert.vtt_to_ass",
+      "url": "vtt-to-ass",
+      "from": "vtt",
+      "to": "ass",
+      "title": "VTT to ASS",
+      "description": "VTT to ASS Converter. Convert WebVTT Subtitles to ASS Online. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "to-ass",
+        "from-vtt"
+      ]
+    },
+    {
+      "type": "convert.vtt_to_srt",
+      "url": "vtt-to-srt",
+      "from": "vtt",
+      "to": "srt",
+      "title": "VTT to SRT",
+      "description": "Subtitles VTT to SRT Converter. Convert VTT Subtitles to SRT Online with Free VTT Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "srt",
+        "to-srt",
+        "from-srt",
+        "from-vtt"
+      ]
+    },
+    {
+      "type": "convert.vtt_to_text",
+      "url": "vtt-to-text",
+      "from": "vtt",
+      "to": "text",
+      "title": "VTT to Text",
+      "description": "Subtitles VTT to Text Converter. Convert VTT Subtitles to Text Online with Free VTT Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "text",
+        "to-text",
+        "from-srt"
+      ]
+    },
+    {
+      "type": "convert.wav_to_flac",
+      "url": "wav-to-flac",
+      "from": "wav",
+      "to": "flac",
+      "title": "WAV to FLAC",
+      "description": "WAV to FLAC Converter. Convert WAV to FLAC Online with Free Audio Converter. API Available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "audio",
+        "wav",
+        "flac",
+        "from-wav",
+        "to-flac"
+      ]
+    },
+    {
+      "type": "convert.wav_to_mp3",
+      "url": "wav-to-mp3",
+      "from": "wav",
+      "to": "mp3",
+      "title": "WAV to MP3",
+      "description": "WAV to MP3 Converter. Convert WAV to MP3 Online with Free Audio Converter. API Available.",
+      "options": [
+        "bitrate"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "audio",
+        "wav",
+        "mp3",
+        "to-mp3",
+        "from-wav"
+      ]
+    },
+    {
+      "type": "convert.webp_to_avif",
+      "url": "webp-to-avif",
+      "from": "webp",
+      "to": "avif",
+      "title": "WebP to AVIF",
+      "description": "JPEG to AVIF Converter. Convert WebP to AVIF Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "avif",
+        "from-webp",
+        "to-avif"
+      ]
+    },
+    {
+      "type": "convert.webp_to_bmp",
+      "url": "webp-to-bmp",
+      "from": "webp",
+      "to": "bmp",
+      "title": "WebP to BMP",
+      "description": "WebP to BMP Converter. Convert WebP to BMP Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "bmp",
+        "from-webp",
+        "to-bmp"
+      ]
+    },
+    {
+      "type": "convert.webp_to_heic",
+      "url": "webp-to-heic",
+      "from": "webp",
+      "to": "heic",
+      "title": "WebP to HEIC",
+      "description": "Free WebP to HEIC converter. Convert WebP images to HEIC format for native Apple device support. Transform web images to iOS-compatible format online.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "heic",
+        "from-webp",
+        "to-heic"
+      ]
+    },
+    {
+      "type": "convert.webp_to_jpg",
+      "url": "webp-to-jpg",
+      "from": "webp",
+      "to": "jpg",
+      "title": "WebP to JPEG",
+      "description": "WebP to JPEG Converter. Convert WebP to JPEG Online with Free Image Converter. API available.",
+      "options": [
+        "alpha_background",
+        "jpeg_quality"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "jpg",
+        "from-webp",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.webp_to_jxl",
+      "url": "webp-to-jxl",
+      "from": "webp",
+      "to": "jxl",
+      "title": "WebP to JXL",
+      "description": "Free WebP to JPEG XL converter. Convert WebP to JXL for better compression and quality. Upgrade to the newest image format standard. Convert online free.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "jxl",
+        "from-webp",
+        "to-jxl"
+      ]
+    },
+    {
+      "type": "convert.webp_to_pam",
+      "url": "webp-to-pam",
+      "from": "webp",
+      "to": "pam",
+      "title": "WebP to PAM",
+      "description": "WebP to PAM Converter. Convert WebP to PAM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "pam",
+        "from-webp",
+        "to-pam"
+      ]
+    },
+    {
+      "type": "convert.webp_to_pgm",
+      "url": "webp-to-pgm",
+      "from": "webp",
+      "to": "pgm",
+      "title": "WebP to PGM",
+      "description": "WebP to PGM Converter. Convert WebP to PGM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "pgm",
+        "from-webp",
+        "to-pgm"
+      ]
+    },
+    {
+      "type": "convert.webp_to_png",
+      "url": "webp-to-png",
+      "from": "webp",
+      "to": "png",
+      "title": "WebP to PNG",
+      "description": "WebP to PNG Converter. Convert WebP to PNG Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "png",
+        "from-webp",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.webp_to_ppm",
+      "url": "webp-to-ppm",
+      "from": "webp",
+      "to": "ppm",
+      "title": "WebP to PPM",
+      "description": "WebP to PPM Converter. Convert WebP to PPM Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "ppm",
+        "from-webp",
+        "to-ppm"
+      ]
+    },
+    {
+      "type": "convert.webp_to_tiff",
+      "url": "webp-to-tiff",
+      "from": "webp",
+      "to": "tiff",
+      "title": "WebP to TIFF",
+      "description": "WebP to TIFF Converter. Convert WebP to TIFF Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "tiff",
+        "from-webp",
+        "to-tiff"
+      ]
+    },
+    {
+      "type": "convert.webp_to_yuv",
+      "url": "webp-to-yuv",
+      "from": "webp",
+      "to": "yuv",
+      "title": "WebP to YUV",
+      "description": "WebP to YUV Converter. Convert WebP to YUV Online with Free Image Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "webp",
+        "yuv",
+        "from-webp",
+        "to-yuv"
+      ]
+    },
+    {
+      "type": "convert.website_to_jpg",
+      "url": "website-to-jpg",
+      "from": "website",
+      "to": "jpg",
+      "title": "Website to JPG",
+      "description": "Website to JPG Converter. Save Website to JPG Online, Create Thumbnail. API available.",
+      "options": [
+        "background",
+        "images",
+        "javascript",
+        "viewport_width",
+        "viewport_height",
+        "emulate_device"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "image",
+        "from-html",
+        "to-jpg"
+      ]
+    },
+    {
+      "type": "convert.website_to_pdf",
+      "url": "website-to-pdf",
+      "from": "website",
+      "to": "pdf",
+      "title": "HTML to PDF",
+      "description": "HTML to PDF Converter. Convert HTML to PDF Online with Free PDF Converter. API Available.",
+      "options": [
+        "orientation",
+        "pagesize",
+        "colormode",
+        "background",
+        "images",
+        "javascript",
+        "margin_top",
+        "margin_right",
+        "margin_bottom",
+        "margin_left"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "html",
+        "from-html",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.website_to_png",
+      "url": "website-to-png",
+      "from": "website",
+      "to": "png",
+      "title": "Website to PNG",
+      "description": "Website to PNG Converter. Convert Website to PNG Online, Create Thumbnail. API available.",
+      "options": [
+        "background",
+        "images",
+        "javascript",
+        "viewport_width",
+        "viewport_height",
+        "emulate_device"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "image",
+        "from-html",
+        "to-png"
+      ]
+    },
+    {
+      "type": "convert.word_to_html",
+      "url": "word-to-html",
+      "from": "word",
+      "to": "html",
+      "title": "Word to HTML",
+      "description": "Word to HTML Converter. Convert DOC to HTML Online. Import DOCX, download HTML. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "html",
+        "from-word",
+        "to-html"
+      ]
+    },
+    {
+      "type": "convert.word_to_markdown",
+      "url": "word-to-markdown",
+      "from": "word",
+      "to": "markdown",
+      "title": "Word to Markdown",
+      "description": "Word to Markdown Converter. Convert DOCX to Markdown Online with Free Converter. Import Word document, download MD file. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "markdown",
+        "office",
+        "from-word",
+        "from-docx",
+        "to-markdown"
+      ]
+    },
+    {
+      "type": "convert.word_to_pdf",
+      "url": "word-to-pdf",
+      "from": "word",
+      "to": "pdf",
+      "title": "Word to PDF",
+      "description": "Word to PDF Converter. Convert DOC to PDF Online. Import DOCX, download PDF. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "pdf",
+        "from-word",
+        "to-pdf"
+      ]
+    },
+    {
+      "type": "convert.word_to_text",
+      "url": "word-to-text",
+      "from": "word",
+      "to": "text",
+      "title": "Word to Text",
+      "description": "Word to Text Converter. Convert DOC to Text Online. Import DOCX, download TXT. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": false,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "text",
+        "office",
+        "from-word",
+        "to-text"
+      ]
+    },
+    {
+      "type": "convert.xls_to_srt",
+      "url": "xls-to-srt",
+      "from": "xls",
+      "to": "srt",
+      "title": "XLS to SRT",
+      "description": "Change XLS to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "from-excel",
+        "to-srt"
+      ]
+    },
+    {
+      "type": "convert.xlsx_to_srt",
+      "url": "xlsx-to-srt",
+      "from": "xlsx",
+      "to": "srt",
+      "title": "XLSX to SRT",
+      "description": "Change XLSX to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "subtitles",
+        "excel",
+        "office",
+        "from-excel",
+        "to-srt",
+        "from-xls"
+      ]
+    },
+    {
+      "type": "convert.xml_to_csv",
+      "url": "xml-to-csv",
+      "from": "xml",
+      "to": "csv",
+      "title": "XML to CSV",
+      "description": "Change XML File to CSV with Our Tool. Upload Large Files. API Available. Simple Interface. Zapier automation available. Change XML to CSV in Seconds",
+      "options": [
+        "delimiter",
+        "quote",
+        "ignore_errors",
+        "copy_parent_values"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "csv",
+        "xml",
+        "office",
+        "from-xml",
+        "to-csv"
+      ]
+    },
+    {
+      "type": "convert.xml_to_excel",
+      "url": "xml-to-excel",
+      "from": "xml",
+      "to": "excel",
+      "title": "XML to Excel",
+      "description": "Use Our Tool to Convert XML Files to Excel. Easy and Fast Data Transform. API Available. All Files are Encrypted. Convert Large XML Files",
+      "options": [
+        "split_excel_rows_limit",
+        "excel_format",
+        "ignore_errors",
+        "copy_parent_values"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "xml",
+        "excel",
+        "from-xml",
+        "to-excel"
+      ]
+    },
+    {
+      "type": "convert.xml_to_json",
+      "url": "xml-to-json",
+      "from": "xml",
+      "to": "json",
+      "title": "XML to JSON",
+      "description": "XML to JSON Converter. Convert XML to JSON Online with Free Converter. Import XML, Save JSON. XML conversion to JSON. API available.",
+      "options": [
+        "space",
+        "prefix_attr",
+        "prefix_text",
+        "attr_always_object",
+        "text_always_object"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "xml",
+        "from-xml",
+        "to-json"
+      ]
+    },
+    {
+      "type": "convert.xml_to_parquet",
+      "url": "xml-to-parquet",
+      "from": "xml",
+      "to": "parquet",
+      "title": "XML to Parquet",
+      "description": "XML to Parquet Converter. Convert XML to Parquet Online. Columnar format for big data analytics. API available.",
+      "options": [
+        "ignore_errors",
+        "copy_parent_values"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "parquet",
+        "xml",
+        "from-xml",
+        "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.yaml_to_json",
+      "url": "yaml-to-json",
+      "from": "yaml",
+      "to": "json",
+      "title": "YAML to JSON",
+      "description": "YAML to JSON Converter. Convert YAML to JSON Online with Free YAML Converter. API Available.",
+      "options": [
+        "space"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "yaml",
+        "to-json",
+        "from-yaml"
+      ]
+    }
+  ]
+}

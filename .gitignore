@@ -27,3 +27,6 @@ coverage/
 # Local profile / scratch
 profiles.toml
 scratch/
+
+# Local-only dev scripts (regeneration helpers, etc.)
+scripts/

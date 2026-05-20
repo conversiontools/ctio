@@ -6,7 +6,7 @@
       "name": "ctio",
       "dependencies": {
         "cac": "^6.7.14",
-        "conversiontools": "^2.0.0",
+        "conversiontools": "^2.1.0",
         "smol-toml": "^1.3.0",
       },
       "devDependencies": {
@@ -24,7 +24,7 @@
 
     "cac": ["cac@6.7.14", "", {}, "sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ=="],
 
-    "conversiontools": ["conversiontools@2.0.4", "", {}, "sha512-kTSEFi7hLrxgYYkYl0ajefLzWWiLsoS1pZbt76EEOsObtNUiLXNE92iXL+T5iX15PW2X2WveJCfPZnuv5mtZgQ=="],
+    "conversiontools": ["conversiontools@2.1.0", "", {}, "sha512-y38Sg8xD7h5xdIjS685E2CeXMM2Bqc6+POt/QnSihBk9ufupZE8cLvYlokX2GF3HBG9R+fEiQwG5vsbcqw4LhQ=="],
 
     "smol-toml": ["smol-toml@1.6.1", "", {}, "sha512-dWUG8F5sIIARXih1DTaQAX4SsiTXhInKf1buxdY9DIg4ZYPZK5nGM1VRIYmEbDbsHt7USo99xSLFu5Q1IqTmsg=="],
 
