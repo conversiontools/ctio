@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-20T20:29:09.467Z",
+  "generatedAt": "2026-05-20T20:34:07.713Z",
   "source": "Conversion Tools converter registry",
   "count": 205,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
       "url": "ai-docx-to-speech",
-      "from": "ai_docx",
+      "from": "docx",
       "to": "mp3",
       "title": "AI: DOCX to Speech",
       "description": "AI: DOCX to Speech Converter. Convert Word documents to natural-sounding audio with AI. Supports multiple languages and voices.",
@@ -32,7 +32,7 @@
     {
       "type": "convert.ai_flac_to_text",
       "url": "ai-flac-to-text",
-      "from": "ai_flac",
+      "from": "flac",
       "to": "text",
       "title": "AI: FLAC to Text",
       "description": "AI: FLAC to Text Transcription. Transcribe FLAC audio files to text using AI. Fast and accurate speech-to-text. API available.",
@@ -55,7 +55,7 @@
     {
       "type": "convert.ai_jpg_to_json",
       "url": "ai-jpg-to-json",
-      "from": "ai_jpg",
+      "from": "jpg",
       "to": "json",
       "title": "AI: JPG to JSON",
       "description": "AI: JPG to JSON Converter. Extract structured data from JPG to JSON Online with Free to Try AI Converter. API available.",
@@ -76,7 +76,7 @@
     {
       "type": "convert.ai_md_to_mp3",
       "url": "ai-markdown-to-speech",
-      "from": "ai_md",
+      "from": "md",
       "to": "mp3",
       "title": "AI: Markdown to Speech",
       "description": "AI: Markdown to Speech Converter. Convert Markdown files to natural-sounding audio with AI. Supports multiple languages and voices.",
@@ -102,7 +102,7 @@
     {
       "type": "convert.ai_mp3_to_text",
       "url": "ai-mp3-to-text",
-      "from": "ai_mp3",
+      "from": "mp3",
       "to": "text",
       "title": "AI: MP3 to Text",
       "description": "AI: MP3 to Text Transcription. Transcribe MP3 audio files to text using AI. Fast and accurate speech-to-text. API available.",
@@ -125,7 +125,7 @@
     {
       "type": "convert.ai_pdf_to_csv",
       "url": "ai-pdf-to-csv",
-      "from": "ai_pdf",
+      "from": "pdf",
       "to": "csv",
       "title": "AI: PDF to CSV",
       "description": "AI: PDF to CSV Converter. Extract structured data from PDF to CSV Online with Free to Try AI Converter. OCR support for scanned PDFs. API available.",
@@ -151,7 +151,7 @@
     {
       "type": "convert.ai_pdf_to_excel",
       "url": "ai-pdf-to-excel",
-      "from": "ai_pdf",
+      "from": "pdf",
       "to": "excel",
       "title": "AI: PDF to Excel",
       "description": "AI: PDF to Excel Converter. Extract structured data from PDF to Excel Online with Free to Try AI Converter. OCR support for scanned PDFs. API available.",
@@ -175,7 +175,7 @@
     {
       "type": "convert.ai_pdf_to_json",
       "url": "ai-pdf-to-json",
-      "from": "ai_pdf",
+      "from": "pdf",
       "to": "json",
       "title": "AI: PDF to JSON",
       "description": "AI: PDF to JSON Converter. Extract structured data from PDF to JSON Online with Free to Try AI Converter. API available.",
@@ -198,7 +198,7 @@
     {
       "type": "convert.ai_pdf_to_markdown",
       "url": "ai-pdf-to-markdown",
-      "from": "ai_pdf",
+      "from": "pdf",
       "to": "markdown",
       "title": "AI: PDF to Markdown",
       "description": "AI: PDF to Markdown Converter. Extract text with formatting from PDF to Markdown Online with Free to Try AI Converter. API available.",
@@ -221,7 +221,7 @@
     {
       "type": "convert.ai_pdf_to_mp3",
       "url": "ai-pdf-to-speech",
-      "from": "ai_pdf",
+      "from": "pdf",
       "to": "mp3",
       "title": "AI: PDF to Speech",
       "description": "AI: PDF to Speech Converter. Convert PDF documents to natural-sounding audio with AI. Supports multiple languages and voices.",
@@ -247,7 +247,7 @@
     {
       "type": "convert.ai_png_to_json",
       "url": "ai-png-to-json",
-      "from": "ai_png",
+      "from": "png",
       "to": "json",
       "title": "AI: PNG to JSON",
       "description": "AI: PNG to JSON Converter. Extract structured data from PNG to JSON Online with Free to Try AI Converter. API available.",
@@ -268,7 +268,7 @@
     {
       "type": "convert.ai_text_to_mp3",
       "url": "ai-text-to-speech",
-      "from": "ai_text",
+      "from": "text",
       "to": "mp3",
       "title": "AI: Text to Speech",
       "description": "AI: Text to Speech Converter. Convert text to natural-sounding audio with AI. Supports multiple languages and voices. API available.",
@@ -340,7 +340,7 @@
     {
       "type": "convert.ai_wav_to_text",
       "url": "ai-wav-to-text",
-      "from": "ai_wav",
+      "from": "wav",
       "to": "text",
       "title": "AI: WAV to Text",
       "description": "AI: WAV to Text Transcription. Transcribe WAV audio files to text using AI. Fast and accurate speech-to-text. API available.",
@@ -2522,7 +2522,7 @@
     {
       "type": "convert.ocr_jpg_to_pdf",
       "url": "ocr-jpg-to-pdf",
-      "from": "ocr_jpg",
+      "from": "jpg",
       "to": "pdf",
       "title": "OCR: JPG to PDF",
       "description": "OCR: JPG to PDF Converter. Extract text from JPG to PDF Online with Free OCR Converter. API Available.",
@@ -2543,7 +2543,7 @@
     {
       "type": "convert.ocr_jpg_to_text",
       "url": "ocr-jpg-to-text",
-      "from": "ocr_jpg",
+      "from": "jpg",
       "to": "text",
       "title": "OCR: JPG to Text",
       "description": "OCR: JPG to Text Converter. Extract text from JPG to Text Online with Free OCR Converter. API Available.",
@@ -2564,7 +2564,7 @@
     {
       "type": "convert.ocr_pdf_to_pdf",
       "url": "ocr-pdf-to-pdf",
-      "from": "ocr_pdf",
+      "from": "pdf",
       "to": "pdf",
       "title": "OCR: PDF Image to PDF Text",
       "description": "OCR: PDF Image to PDF Text Converter. Extract text from PDF (as image) to PDF Text format Online with Free OCR Converter. API Available.",
@@ -2585,7 +2585,7 @@
     {
       "type": "convert.ocr_pdf_to_text",
       "url": "ocr-pdf-to-text",
-      "from": "ocr_pdf",
+      "from": "pdf",
       "to": "text",
       "title": "OCR: PDF (Image) to Text",
       "description": "OCR: PDF to Text Converter. Extract text from PDF (as image) to Text Online with Free OCR Converter. API Available.",
@@ -2606,7 +2606,7 @@
     {
       "type": "convert.ocr_png_to_pdf",
       "url": "ocr-png-to-pdf",
-      "from": "ocr_png",
+      "from": "png",
       "to": "pdf",
       "title": "OCR: PNG to PDF",
       "description": "OCR: PNG to PDF Converter. Extract text from PNG to PDF Online with Free OCR Converter. API Available.",
@@ -2627,7 +2627,7 @@
     {
       "type": "convert.ocr_png_to_text",
       "url": "ocr-png-to-text",
-      "from": "ocr_png",
+      "from": "png",
       "to": "text",
       "title": "OCR: PNG to Text",
       "description": "Transform PNG Image to Text Online with our Converter. Quick and easy. Confidential. Available Pricing. Zapier automation is available. Try it Now",
