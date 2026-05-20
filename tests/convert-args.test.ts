@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 
 import { __testables } from "@/commands/convert";
 
-const { normalizeType, parseOptionFlags, coerceValue } = __testables;
+const { normalizeType, parseOptionFlags, coerceValue, resolvePollInterval } = __testables;
 
 describe("normalizeType", () => {
   test("prepends `convert.` when missing", () => {
@@ -28,6 +28,29 @@ describe("coerceValue", () => {
     expect(coerceValue("no")).toBe("no");
     expect(coerceValue("comma")).toBe("comma");
     expect(coerceValue("")).toBe("");
+  });
+});
+
+describe("resolvePollInterval", () => {
+  test("undefined returns default 500", () => {
+    expect(resolvePollInterval(undefined)).toBe(500);
+  });
+  test("accepts numeric string", () => {
+    expect(resolvePollInterval("1000")).toBe(1000);
+  });
+  test("accepts number", () => {
+    expect(resolvePollInterval(2500)).toBe(2500);
+  });
+  test("accepts the minimum (100ms)", () => {
+    expect(resolvePollInterval(100)).toBe(100);
+  });
+  test("rejects below minimum", () => {
+    expect(() => resolvePollInterval(99)).toThrow(/Invalid --poll-interval/);
+    expect(() => resolvePollInterval(50)).toThrow();
+    expect(() => resolvePollInterval(0)).toThrow();
+  });
+  test("rejects non-numeric input", () => {
+    expect(() => resolvePollInterval("fast")).toThrow(/Invalid --poll-interval/);
   });
 });
 

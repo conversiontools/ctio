@@ -3,6 +3,7 @@ import type { Readable } from "node:stream";
 
 import type { CAC } from "cac";
 
+import { resolvePollInterval } from "@/commands/convert";
 import { createClient } from "@/lib/client";
 import { CtioError, ExitCode, UsageError } from "@/lib/errors";
 import { debug, info } from "@/lib/logger";
@@ -14,6 +15,7 @@ interface TaskFlags {
   wait?: boolean;
   download?: boolean;
   timeout?: number | string;
+  pollInterval?: number | string;
   status?: string;
   limit?: number | string;
   profile?: string;
@@ -47,6 +49,7 @@ export function registerTask(cli: CAC): void {
     .option("--wait", "Block until task reaches SUCCESS or ERROR")
     .option("--download", "Download result file (after --wait if pending). Use [output] = `-` for stdout")
     .option("--timeout <sec>", "Cap --wait time in seconds (0 = no cap)", { default: 0 })
+    .option("--poll-interval <ms>", "Status poll interval in ms (default 500)")
     .option("--status <status>", "list: filter by status (PENDING|RUNNING|SUCCESS|ERROR)")
     .option("--limit <n>", "list: cap entries (server may also cap)")
     .example("  ctio task <id>")
@@ -110,7 +113,9 @@ async function runTaskShow(
       throw new UsageError(`Invalid --timeout "${flags.timeout}".`);
     }
     if (format === "pretty") info(`waiting for ${task.id}...`);
+    const pollingInterval = resolvePollInterval(flags.pollInterval);
     await task.wait({
+      pollingInterval,
       ...(timeoutSec > 0 ? { timeout: timeoutSec * 1000 } : {}),
       onProgress: (s) => {
         debug(`progress status=${s.status} ${s.conversionProgress ?? 0}%`);

@@ -1,4 +1,3 @@
-import { basename } from "node:path";
 import type { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 
@@ -8,16 +7,15 @@ import { createClient } from "@/lib/client";
 import { CtioError, ExitCode, UsageError } from "@/lib/errors";
 import { debug, info } from "@/lib/logger";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
-import { regionToBaseUrl } from "@/lib/region";
 import { openInput, openOutput } from "@/lib/streams";
 import { resolveAuth } from "@/lib/token";
-import { streamUpload } from "@/lib/upload";
 
 interface ConvertFlags {
   type?: string;
   option?: string[] | string;
   url?: string;
   sandbox?: boolean;
+  pollInterval?: number | string;
   profile?: string;
   token?: string;
   region?: string;
@@ -27,6 +25,21 @@ interface ConvertFlags {
   verbose?: boolean;
 }
 
+const DEFAULT_POLL_INTERVAL_MS = 500;
+const MIN_POLL_INTERVAL_MS = 100;
+
+export function resolvePollInterval(raw: number | string | undefined): number {
+  if (raw === undefined) return DEFAULT_POLL_INTERVAL_MS;
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < MIN_POLL_INTERVAL_MS) {
+    throw new UsageError(
+      `Invalid --poll-interval "${raw}".`,
+      `Must be a number ≥ ${MIN_POLL_INTERVAL_MS} (milliseconds).`,
+    );
+  }
+  return n;
+}
+
 export function registerConvert(cli: CAC): void {
   cli
     .command("convert [input] [output]", "Run a conversion task")
@@ -34,6 +47,7 @@ export function registerConvert(cli: CAC): void {
     .option("--option <kv>", "Conversion option as key=value (repeatable)", { type: [] })
     .option("--url <url>", "Use a remote URL as input instead of a local file")
     .option("--sandbox", "Sandbox mode (skips conversion, validates plumbing)")
+    .option("--poll-interval <ms>", `Status poll interval in ms (default ${DEFAULT_POLL_INTERVAL_MS})`)
     .example("  ctio convert -t json_to_excel data.json out.xlsx")
     .example("  cat data.json | ctio convert -t json_to_excel - out.xlsx")
     .example("  ctio convert -t xml_to_csv data.xml - > out.csv")
@@ -92,15 +106,7 @@ async function runConvert(
         ? `input: file=${src.path} size=${src.size ?? "?"}`
         : "input: stdin (streaming)",
     );
-    const uploadBaseUrl = auth.baseUrlOverride ?? regionToBaseUrl(auth.region);
-    const uploadFilename =
-      src.kind === "file" && src.path ? basename(src.path) : "stdin";
-    fileId = await streamUpload({
-      baseURL: uploadBaseUrl,
-      token: auth.token,
-      source: src.stream() as Readable,
-      filename: uploadFilename,
-    });
+    fileId = await client.files.upload(src.stream() as Readable);
     debug(`upload complete file_id=${fileId}`);
   }
 
@@ -116,7 +122,10 @@ async function runConvert(
 
   if (format === "pretty") info(`task ${task.id} created, waiting...`);
 
+  const pollingInterval = resolvePollInterval(flags.pollInterval);
+
   await task.wait({
+    pollingInterval,
     onProgress: (s) => {
       debug(`progress status=${s.status} ${s.conversionProgress ?? 0}%`);
       if (format === "pretty") {
@@ -215,6 +224,7 @@ export const __testables = {
   normalizeType,
   parseOptionFlags,
   coerceValue,
+  resolvePollInterval,
 };
 
 function emitStatus(payload: unknown, format: OutputFormat, fileOnStdout: boolean): void {
