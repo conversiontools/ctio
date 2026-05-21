@@ -13,7 +13,22 @@ import { error, setVerbose } from "@/lib/logger";
 
 const VERSION = packageJson.version;
 
+// Claude Code plugin hint: when ctio runs inside Claude Code (CLAUDECODE=1),
+// emit a one-line marker to stderr so Claude Code can offer to install our
+// plugin from the official Anthropic marketplace. The marker is stripped from
+// the model's view, and Claude Code only acts on it for plugins in
+// `claude-plugins-official` - so this is dormant until the plugin is accepted
+// there. See https://code.claude.com/docs/en/plugin-hints
+function emitClaudeCodePluginHint(): void {
+  if (process.env["CLAUDECODE"]) {
+    process.stderr.write(
+      '<claude-code-hint v="1" type="plugin" value="conversiontools@claude-plugins-official" />\n',
+    );
+  }
+}
+
 async function main(): Promise<void> {
+  emitClaudeCodePluginHint();
   const cli = cac("ctio");
 
   cli
