@@ -106,7 +106,17 @@ async function runConvert(
         ? `input: file=${src.path} size=${src.size ?? "?"}`
         : "input: stdin (streaming)",
     );
-    fileId = await client.files.upload(src.stream() as Readable);
+    const choice = pickUploadInput(src);
+    if (choice.kind === "path") {
+      // Pass the path string so the SDK sets the multipart filename to the
+      // basename - otherwise the uploaded file loses its original name.
+      fileId = await client.files.upload(choice.path);
+    } else {
+      // stdin: there is no path to derive a filename from. The upload
+      // goes out with the default "file" - the user explicitly piped,
+      // so they've already opted out of a meaningful name.
+      fileId = await client.files.upload(src.stream() as Readable);
+    }
     debug(`upload complete file_id=${fileId}`);
   }
 
@@ -183,6 +193,24 @@ function unswapStdio(v: string | undefined): string | undefined {
   return v === STDIO_SENTINEL ? "-" : v;
 }
 
+export type UploadChoice =
+  | { kind: "path"; path: string }
+  | { kind: "stream" };
+
+/**
+ * Decide whether to upload via path string (lets the SDK extract a basename
+ * for the multipart filename header) or via raw stream (no filename hint).
+ *
+ * Always prefer path when available. Stdin is the only legitimate stream
+ * case - it genuinely has no source filename to send.
+ */
+export function pickUploadInput(src: { kind: "file" | "stdin"; path?: string }): UploadChoice {
+  if (src.kind === "file" && src.path) {
+    return { kind: "path", path: src.path };
+  }
+  return { kind: "stream" };
+}
+
 function pickFormat(raw: string | undefined): OutputFormat {
   const candidate = raw ?? "json";
   if (!isOutputFormat(candidate)) {
@@ -225,6 +253,7 @@ export const __testables = {
   parseOptionFlags,
   coerceValue,
   resolvePollInterval,
+  pickUploadInput,
 };
 
 function emitStatus(payload: unknown, format: OutputFormat, fileOnStdout: boolean): void {

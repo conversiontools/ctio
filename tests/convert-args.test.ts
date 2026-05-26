@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 
 import { __testables } from "@/commands/convert";
 
-const { normalizeType, parseOptionFlags, coerceValue, resolvePollInterval } = __testables;
+const { normalizeType, parseOptionFlags, coerceValue, resolvePollInterval, pickUploadInput } = __testables;
 
 describe("normalizeType", () => {
   test("prepends `convert.` when missing", () => {
@@ -51,6 +51,34 @@ describe("resolvePollInterval", () => {
   });
   test("rejects non-numeric input", () => {
     expect(() => resolvePollInterval("fast")).toThrow(/Invalid --poll-interval/);
+  });
+});
+
+describe("pickUploadInput", () => {
+  test("file source with a path returns path choice (so SDK can extract basename)", () => {
+    expect(pickUploadInput({ kind: "file", path: "/tmp/some_real_input.xlsx" })).toEqual({
+      kind: "path",
+      path: "/tmp/some_real_input.xlsx",
+    });
+  });
+
+  test("file source with path on Windows-style path", () => {
+    expect(pickUploadInput({ kind: "file", path: "C:/repo/ct/sample.json" })).toEqual({
+      kind: "path",
+      path: "C:/repo/ct/sample.json",
+    });
+  });
+
+  test("stdin source returns stream choice", () => {
+    expect(pickUploadInput({ kind: "stdin" })).toEqual({ kind: "stream" });
+  });
+
+  test("defensive: file source without a path falls back to stream choice", () => {
+    expect(pickUploadInput({ kind: "file" })).toEqual({ kind: "stream" });
+  });
+
+  test("defensive: file source with empty string path falls back to stream choice", () => {
+    expect(pickUploadInput({ kind: "file", path: "" })).toEqual({ kind: "stream" });
   });
 });
 

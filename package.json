@@ -1,6 +1,6 @@
 {
   "name": "ctio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Composable CLI for the Conversion Tools API",
   "type": "module",
   "bin": {
@@ -11,8 +11,8 @@
     "build": "bun build --compile --minify --sourcemap src/index.ts --outfile dist/ctio",
     "build:mac-arm": "bun build --compile --minify --sourcemap --target=bun-darwin-arm64 src/index.ts --outfile dist/ctio-darwin-arm64",
     "build:mac-x64": "bun build --compile --minify --sourcemap --target=bun-darwin-x64 src/index.ts --outfile dist/ctio-darwin-x64",
-    "build:linux":   "bun build --compile --minify --sourcemap --target=bun-linux-x64 src/index.ts --outfile dist/ctio-linux-x64",
-    "build:win":     "bun build --compile --minify --sourcemap --target=bun-windows-x64 src/index.ts --outfile dist/ctio-windows-x64.exe",
+    "build:linux": "bun build --compile --minify --sourcemap --target=bun-linux-x64 src/index.ts --outfile dist/ctio-linux-x64",
+    "build:win": "bun build --compile --minify --sourcemap --target=bun-windows-x64 src/index.ts --outfile dist/ctio-windows-x64.exe",
     "build:all": "bun run build:mac-arm && bun run build:mac-x64 && bun run build:linux && bun run build:win",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
