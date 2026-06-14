@@ -43,7 +43,7 @@ describe("resolveParseToken", () => {
   });
   test("defaults to the geo base URL and honors --base-url", () => {
     process.env["CT_PARSE_TOKEN"] = "k";
-    expect(resolveParseToken({}).baseUrl).toBe("https://api.conversiontools.io/v1");
+    expect(resolveParseToken({}).baseUrl).toBe("https://api-parse.conversiontools.io/v1");
     expect(resolveParseToken({ baseUrlFlag: "http://localhost:6082/v1" }).baseUrl).toBe(
       "http://localhost:6082/v1",
     );

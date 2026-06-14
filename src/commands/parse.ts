@@ -86,7 +86,7 @@ export function registerParse(cli: CAC): void {
         form.append("fields", JSON.stringify(fields));
       }
 
-      const url = `${baseUrl}/parse/extract`;
+      const url = `${baseUrl}/extract`;
       debug(`POST ${url} (${fileBuf.length} bytes)`);
 
       let res: Response;

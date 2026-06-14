@@ -1,6 +1,6 @@
 import { AuthMissingError, UsageError } from "./errors";
 import { getActiveProfile, getProfile, loadProfiles, type Profile } from "./profile";
-import { isRegion, regionToBaseUrl, type Region } from "./region";
+import { isRegion, type Region } from "./region";
 
 export interface ResolveOptions {
   tokenFlag?: string | undefined;
@@ -102,6 +102,9 @@ export interface ResolvedParseAuth {
   source: "flag" | "env";
 }
 
+// The Parse API is served from its own host.
+const PARSE_BASE_URL = "https://api-parse.conversiontools.io/v1";
+
 /**
  * Resolve the Parse API key. Parse uses its own API keys, created at
  * https://parse.conversiontools.io. Precedence: --parse-token flag >
@@ -111,7 +114,7 @@ export function resolveParseToken(opts: {
   parseTokenFlag?: string | undefined;
   baseUrlFlag?: string | undefined;
 }): ResolvedParseAuth {
-  const baseUrl = opts.baseUrlFlag ?? regionToBaseUrl("auto");
+  const baseUrl = opts.baseUrlFlag ?? PARSE_BASE_URL;
 
   if (opts.parseTokenFlag) {
     return { parseToken: opts.parseTokenFlag, baseUrl, source: "flag" };
