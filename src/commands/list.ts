@@ -1,6 +1,6 @@
 import type { CAC } from "cac";
 
-import converterData from "@/data/conversions.json" with { type: "json" };
+import { CONVERTERS, type ConverterEntry } from "@/lib/converters";
 import { UsageError } from "@/lib/errors";
 import { info } from "@/lib/logger";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
@@ -13,26 +13,6 @@ interface ListFlags {
   detail?: boolean;
   format?: string;
 }
-
-interface ConverterEntry {
-  type: string;
-  url: string;
-  from: string | null;
-  to: string | null;
-  title: string;
-  description: string;
-  options: string[];
-  ai: boolean;
-  custom: boolean;
-  batch: boolean;
-  comingSoon: boolean;
-  registrationRequired: boolean;
-  groups: string[];
-}
-
-const CONVERTERS: readonly ConverterEntry[] = (
-  converterData as { converters: ConverterEntry[] }
-).converters;
 
 export function registerList(cli: CAC): void {
   cli
@@ -101,7 +81,13 @@ function renderPretty(list: readonly ConverterEntry[], detail: boolean): void {
     process.stdout.write(`  ${c.title}\n`);
     if (c.from && c.to) process.stdout.write(`  from: ${c.from}  to: ${c.to}\n`);
     if (tags) process.stdout.write(`  tags: ${tags}\n`);
-    if (c.options.length > 0) {
+    if (c.optionSpecs && c.optionSpecs.length > 0) {
+      process.stdout.write(`  options:\n`);
+      for (const o of c.optionSpecs) {
+        const vals = o.values && o.values.length > 0 ? ` = ${o.values.join(" | ")}` : "";
+        process.stdout.write(`    ${o.name}${vals}\n`);
+      }
+    } else if (c.options.length > 0) {
       process.stdout.write(`  options: ${c.options.join(", ")}\n`);
     }
     process.stdout.write("\n");

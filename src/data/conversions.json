@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-20T20:34:07.713Z",
+  "generatedAt": "2026-06-14T22:44:53.948Z",
   "source": "Conversion Tools converter registry",
-  "count": 205,
+  "count": 206,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -27,6 +27,26 @@
         "office",
         "from-docx",
         "to-mp3"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_tts",
+          "title": "Language",
+          "type": "string",
+          "default": "en"
+        },
+        {
+          "name": "output_tts",
+          "title": "Output Format",
+          "type": "string",
+          "default": "mp3"
+        },
+        {
+          "name": "voice_tts",
+          "title": "Voice",
+          "type": "string",
+          "default": "default"
+        }
       ]
     },
     {
@@ -97,6 +117,26 @@
         "markdown",
         "from-markdown",
         "to-mp3"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_tts",
+          "title": "Language",
+          "type": "string",
+          "default": "en"
+        },
+        {
+          "name": "output_tts",
+          "title": "Output Format",
+          "type": "string",
+          "default": "mp3"
+        },
+        {
+          "name": "voice_tts",
+          "title": "Voice",
+          "type": "string",
+          "default": "default"
+        }
       ]
     },
     {
@@ -132,7 +172,9 @@
       "options": [
         "images",
         "delimiter",
-        "quote"
+        "quote",
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": true,
       "custom": false,
@@ -146,6 +188,48 @@
         "office",
         "from-pdf",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -156,7 +240,9 @@
       "title": "AI: PDF to Excel",
       "description": "AI: PDF to Excel Converter. Extract structured data from PDF to Excel Online with Free to Try AI Converter. OCR support for scanned PDFs. API available.",
       "options": [
-        "images"
+        "images",
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": true,
       "custom": false,
@@ -170,6 +256,31 @@
         "excel",
         "from-pdf",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -193,6 +304,14 @@
         "json",
         "from-pdf",
         "to-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -216,6 +335,14 @@
         "markdown",
         "from-pdf",
         "to-markdown"
+      ],
+      "optionSpecs": [
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -242,6 +369,26 @@
         "pdf",
         "from-pdf",
         "to-mp3"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_tts",
+          "title": "Language",
+          "type": "string",
+          "default": "en"
+        },
+        {
+          "name": "output_tts",
+          "title": "Output Format",
+          "type": "string",
+          "default": "mp3"
+        },
+        {
+          "name": "voice_tts",
+          "title": "Voice",
+          "type": "string",
+          "default": "default"
+        }
       ]
     },
     {
@@ -291,6 +438,52 @@
         "mp3",
         "from-text",
         "to-mp3"
+      ],
+      "optionSpecs": [
+        {
+          "name": "tts_text",
+          "title": "Text to convert to speech",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "language_tts",
+          "title": "Language",
+          "type": "string",
+          "default": "en"
+        },
+        {
+          "name": "output_tts",
+          "title": "Output Format",
+          "type": "string",
+          "default": "mp3"
+        },
+        {
+          "name": "voice_tts",
+          "title": "Voice",
+          "type": "string",
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "type": "convert.ai_to_pdf",
+      "url": "ai-to-pdf",
+      "from": "ai",
+      "to": "pdf",
+      "title": "AI to PDF",
+      "description": "AI to PDF Converter. Convert Adobe Illustrator (.ai) files to PDF Online with Free Converter. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "pdf",
+        "from-ai",
+        "to-pdf"
       ]
     },
     {
@@ -335,6 +528,58 @@
         "translate",
         "from-srt",
         "to-srt"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language",
+          "title": "Target Language",
+          "type": "enum",
+          "default": "en",
+          "values": [
+            "en",
+            "ar_SA",
+            "bg_BG",
+            "ca_ES",
+            "zh_CN",
+            "zh_TW",
+            "cs_CZ",
+            "da_DK",
+            "nl_NL",
+            "en_US",
+            "en_UK",
+            "fa_IR",
+            "fi_FI",
+            "fr_FR",
+            "de_DE",
+            "el_GR",
+            "he_IL",
+            "hi_IN",
+            "hu_HU",
+            "id_ID",
+            "it_IT",
+            "ja_JP",
+            "ko_KR",
+            "ms_MY",
+            "no_NO",
+            "pl_PL",
+            "pt_PT",
+            "ru_RU",
+            "sr_RS",
+            "sl_SI",
+            "es_ES",
+            "sv_SE",
+            "th_TH",
+            "tr_TR",
+            "uk_UA",
+            "vi_VN"
+          ]
+        },
+        {
+          "name": "ai_instruction",
+          "title": "Custom Instructions (optional)",
+          "type": "string",
+          "default": ""
+        }
       ]
     },
     {
@@ -366,7 +611,7 @@
       "from": "ass",
       "to": "excel",
       "title": "ASS to Excel",
-      "description": "Convert ASS to Excel with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX.",
+      "description": "Convert ASS to Excel with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX.",
       "options": [
         "excel_format"
       ],
@@ -382,6 +627,17 @@
         "to-excel",
         "from-ass",
         "to-xlsx"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -507,6 +763,25 @@
         "jpg",
         "from-avif",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -712,6 +987,31 @@
         "csv",
         "to-csv",
         "from-bson"
+      ],
+      "optionSpecs": [
+        {
+          "name": "bson_raw",
+          "title": "Export raw BSON data",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -736,6 +1036,23 @@
         "office",
         "to-excel",
         "from-bson"
+      ],
+      "optionSpecs": [
+        {
+          "name": "bson_raw",
+          "title": "Export raw BSON data",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -759,6 +1076,28 @@
         "csv",
         "from-csv",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -777,7 +1116,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -785,6 +1124,52 @@
         "json",
         "from-csv",
         "to-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        },
+        {
+          "name": "index_records",
+          "title": "Add index attribute for records?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "prefix_attr",
+          "title": "Attributes prefix",
+          "type": "enum",
+          "default": "@",
+          "values": [
+            "@",
+            "#",
+            "_",
+            "__"
+          ]
+        },
+        {
+          "name": "ignore_errors",
+          "title": "Ignore validation errors?",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -808,6 +1193,25 @@
         "csv",
         "from-csv",
         "to-jsonl"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -830,6 +1234,19 @@
         "csv",
         "from-csv",
         "to-parquet"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        }
       ]
     },
     {
@@ -852,6 +1269,19 @@
         "csv",
         "from-csv",
         "to-srt"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        }
       ]
     },
     {
@@ -881,6 +1311,66 @@
         "xml",
         "from-csv",
         "to-xml"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "show_columns",
+          "title": "Add <columns /> section?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "index_records",
+          "title": "Add index attribute for records?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ignore_errors",
+          "title": "Ignore validation errors?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "add_empty_nodes",
+          "title": "Add empty nodes (when no value present)?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "short_tag_empty_node",
+          "title": "Use short tag <node/> for empty nodes?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "xml_encoding",
+          "title": "XML Encoding (Output file)",
+          "type": "enum",
+          "default": "utf-8",
+          "values": [
+            "utf-8",
+            "utf-16le",
+            "utf-16be"
+          ]
+        }
       ]
     },
     {
@@ -946,7 +1436,7 @@
       "from": "excel",
       "to": "ass",
       "title": "Excel to ASS",
-      "description": "Convert Excel to ASS Subtitles with our Conversion Tool. Quick and easy. 100% Confidential.",
+      "description": "Convert Excel to ASS Subtitles with our Conversion Tools. Quick and easy. 100% Confidential.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -976,7 +1466,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -984,6 +1474,31 @@
         "csv",
         "from-excel",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "utf8_bom",
+          "title": "Save file with UTF-8 BOM",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -1001,7 +1516,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1009,6 +1524,32 @@
         "html",
         "from-excel",
         "to-html"
+      ],
+      "optionSpecs": [
+        {
+          "name": "recalculate",
+          "title": "Re-calculate Excel file before converting",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "make_sortable",
+          "title": "Make columns sortable?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "title_overview",
+          "title": "Title for 'Overview' label",
+          "type": "string",
+          "default": "Overview"
+        },
+        {
+          "name": "title_sheet",
+          "title": "Title for 'Sheet X' label",
+          "type": "string",
+          "default": "Sheet"
+        }
       ]
     },
     {
@@ -1026,7 +1567,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1035,6 +1576,46 @@
         "json",
         "from-excel",
         "to-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        },
+        {
+          "name": "index_records",
+          "title": "Add index attribute for records?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "prefix_attr",
+          "title": "Attributes prefix",
+          "type": "enum",
+          "default": "@",
+          "values": [
+            "@",
+            "#",
+            "_",
+            "__"
+          ]
+        }
       ]
     },
     {
@@ -1068,7 +1649,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1104,13 +1685,13 @@
       "from": "excel",
       "to": "pdf",
       "title": "Excel to PDF",
-      "description": "Change Excel Table to PDF with our Conversion Tool. Quick file transformation from XLS to PDF. 100% Confidential. API available. Customer support",
+      "description": "Change Excel Table to PDF with our Conversion Tools. Quick file transformation from XLS to PDF. 100% Confidential. API available. Customer support",
       "options": [
         "orientation"
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1118,6 +1699,18 @@
         "office",
         "from-excel",
         "to-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "orientation",
+          "title": "Page layout orientation",
+          "type": "enum",
+          "default": "Portrait",
+          "values": [
+            "Portrait",
+            "Landscape"
+          ]
+        }
       ]
     },
     {
@@ -1159,7 +1752,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1168,6 +1761,49 @@
         "xml",
         "from-excel",
         "to-xml"
+      ],
+      "optionSpecs": [
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "show_columns",
+          "title": "Add <columns /> section?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "index_records",
+          "title": "Add index attribute for records?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "add_empty_nodes",
+          "title": "Add empty nodes (when no value present)?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "short_tag_empty_node",
+          "title": "Use short tag <node/> for empty nodes?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "xml_encoding",
+          "title": "XML Encoding (Output file)",
+          "type": "enum",
+          "default": "utf-8",
+          "values": [
+            "utf-8",
+            "utf-16le",
+            "utf-16be"
+          ]
+        }
       ]
     },
     {
@@ -1180,7 +1816,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1211,6 +1847,17 @@
         "excel",
         "from-xml",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -1289,6 +1936,23 @@
         "mp3",
         "to-mp3",
         "from-flac"
+      ],
+      "optionSpecs": [
+        {
+          "name": "bitrate",
+          "title": "Bitrate",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "96",
+            "128",
+            "160",
+            "192",
+            "256",
+            "320"
+          ]
+        }
       ]
     },
     {
@@ -1314,6 +1978,44 @@
         "wav",
         "from-flac",
         "to-wav"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sampling_rate",
+          "title": "Sampling Rate",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "8000",
+            "16000",
+            "44100",
+            "48000"
+          ]
+        },
+        {
+          "name": "bit_depth",
+          "title": "Bit Depth",
+          "type": "enum",
+          "default": "16",
+          "values": [
+            "8",
+            "16",
+            "24",
+            "32"
+          ]
+        },
+        {
+          "name": "audio_channels",
+          "title": "Audio Channels",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "1",
+            "2"
+          ]
+        }
       ]
     },
     {
@@ -1334,6 +2036,22 @@
       "groups": [
         "format",
         "json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        }
       ]
     },
     {
@@ -1378,6 +2096,14 @@
         "webp",
         "from-gif",
         "to-webp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "webp_quality",
+          "title": "WebP Quality (0 - 100)",
+          "type": "number",
+          "default": 75
+        }
       ]
     },
     {
@@ -1422,6 +2148,19 @@
         "bmp",
         "from-heic",
         "to-bmp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        }
       ]
     },
     {
@@ -1444,6 +2183,25 @@
         "image",
         "from-heic",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -1568,6 +2326,19 @@
         "csv",
         "from-html",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        }
       ]
     },
     {
@@ -1587,7 +2358,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1595,6 +2366,162 @@
         "image",
         "from-html",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "background",
+          "title": "Use HTML page background?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "javascript",
+          "title": "Allow web page to run JavaScript?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "viewport_width",
+          "title": "Viewport Width, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "viewport_height",
+          "title": "Viewport Height, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "emulate_device",
+          "title": "Emulate Device",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "iPad",
+            "iPad landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 550",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Moto G4",
+            "Moto G4 landscape"
+          ]
+        }
       ]
     },
     {
@@ -1627,7 +2554,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1654,7 +2581,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -1662,6 +2589,162 @@
         "image",
         "from-html",
         "to-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "background",
+          "title": "Use HTML page background?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "javascript",
+          "title": "Allow web page to run JavaScript?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "viewport_width",
+          "title": "Viewport Width, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "viewport_height",
+          "title": "Viewport Height, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "emulate_device",
+          "title": "Emulate Device",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "iPad",
+            "iPad landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 550",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Moto G4",
+            "Moto G4 landscape"
+          ]
+        }
       ]
     },
     {
@@ -1686,6 +2769,17 @@
         "from-html",
         "to-word",
         "to-docx"
+      ],
+      "optionSpecs": [
+        {
+          "name": "word_format",
+          "title": "Word file format",
+          "type": "enum",
+          "values": [
+            "docx",
+            "doc"
+          ]
+        }
       ]
     },
     {
@@ -1771,6 +2865,18 @@
         "image",
         "from-jpg",
         "to-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "orientation",
+          "title": "Page layout orientation",
+          "type": "enum",
+          "default": "Portrait",
+          "values": [
+            "Portrait",
+            "Landscape"
+          ]
+        }
       ]
     },
     {
@@ -1851,6 +2957,14 @@
         "webp",
         "from-jpg",
         "to-webp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "webp_quality",
+          "title": "WebP Quality (0 - 100)",
+          "type": "number",
+          "default": 75
+        }
       ]
     },
     {
@@ -1875,6 +2989,25 @@
         "csv",
         "to-csv",
         "from-jsonl"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -1899,6 +3032,17 @@
         "office",
         "to-excel",
         "from-jsonl"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -1910,7 +3054,9 @@
       "description": "Transform JSON to CSV with Conversion Tools. Quick and Easy Tool. Privacy and Security. Possibility to Convert Large JSON Files. API Available.",
       "options": [
         "delimiter",
-        "quote"
+        "quote",
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -1922,6 +3068,42 @@
         "csv",
         "to-csv",
         "from-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -1932,7 +3114,9 @@
       "title": "JSON to Excel",
       "description": "Convert JSON to Excel with our Free Online Tool. Quick & Easy Data Conversion. Secure & Confidential. No Installation Required. Download Excel File Instantly.",
       "options": [
-        "excel_format"
+        "excel_format",
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -1945,6 +3129,34 @@
         "office",
         "to-excel",
         "from-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -1987,6 +3199,22 @@
         "xml",
         "to-xml",
         "from-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        }
       ]
     },
     {
@@ -2030,6 +3258,25 @@
         "csv",
         "from-jsonl",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -2053,6 +3300,17 @@
         "office",
         "from-jsonl",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -2117,6 +3375,19 @@
         "bmp",
         "from-jxl",
         "to-bmp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        }
       ]
     },
     {
@@ -2183,6 +3454,25 @@
         "jpg",
         "from-jxl",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -2258,7 +3548,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2279,7 +3569,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2299,7 +3589,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2319,7 +3609,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2343,7 +3633,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2351,6 +3641,32 @@
         "pdf",
         "from-markdown",
         "to-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "margin_top",
+          "title": "Top Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_right",
+          "title": "Right Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_bottom",
+          "title": "Bottom Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_left",
+          "title": "Left Margin, in px",
+          "type": "string",
+          "default": ""
+        }
       ]
     },
     {
@@ -2363,7 +3679,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2495,6 +3811,44 @@
         "wav",
         "from-mp3",
         "to-wav"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sampling_rate",
+          "title": "Sampling Rate",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "8000",
+            "16000",
+            "44100",
+            "48000"
+          ]
+        },
+        {
+          "name": "bit_depth",
+          "title": "Bit Depth",
+          "type": "enum",
+          "default": "16",
+          "values": [
+            "8",
+            "16",
+            "24",
+            "32"
+          ]
+        },
+        {
+          "name": "audio_channels",
+          "title": "Audio Channels",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "1",
+            "2"
+          ]
+        }
       ]
     },
     {
@@ -2517,6 +3871,23 @@
         "audio",
         "to-mp3",
         "from-mp4"
+      ],
+      "optionSpecs": [
+        {
+          "name": "bitrate",
+          "title": "Bitrate",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "96",
+            "128",
+            "160",
+            "192",
+            "256",
+            "320"
+          ]
+        }
       ]
     },
     {
@@ -2538,6 +3909,14 @@
         "ocr",
         "to-pdf",
         "from-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2559,6 +3938,14 @@
         "ocr",
         "to-text",
         "from-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2573,13 +3960,21 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
         "ocr",
         "to-pdf",
         "from-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2594,13 +3989,21 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
         "ocr",
         "to-text",
         "from-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2622,6 +4025,14 @@
         "ocr",
         "to-pdf",
         "from-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2643,6 +4054,14 @@
         "ocr",
         "to-text",
         "from-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "language_ocr",
+          "title": "Languages used (multiple choice)",
+          "type": "string",
+          "default": "eng"
+        }
       ]
     },
     {
@@ -2657,7 +4076,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2665,6 +4084,19 @@
         "csv",
         "from-ods",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        }
       ]
     },
     {
@@ -2679,13 +4111,24 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
         "office",
         "from-ods",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -2698,7 +4141,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2718,7 +4161,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2750,6 +4193,31 @@
         "csv",
         "from-parquet",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "utf8_bom",
+          "title": "Save file with UTF-8 BOM",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -2773,6 +4241,17 @@
         "office",
         "from-parquet",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -2795,6 +4274,22 @@
         "json",
         "from-parquet",
         "to-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        }
       ]
     },
     {
@@ -2827,7 +4322,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2846,7 +4341,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2877,6 +4372,25 @@
         "office",
         "from-pdf",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -2889,7 +4403,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2919,6 +4433,17 @@
         "excel",
         "from-pdf",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "version",
+          "title": "Version",
+          "type": "enum",
+          "values": [
+            "2",
+            "1"
+          ]
+        }
       ]
     },
     {
@@ -2931,7 +4456,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2950,7 +4475,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2971,7 +4496,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -2979,6 +4504,14 @@
         "html",
         "from-pdf",
         "to-html"
+      ],
+      "optionSpecs": [
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -3004,6 +4537,41 @@
         "image",
         "from-pdf",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        },
+        {
+          "name": "colormode",
+          "title": "Use Colors",
+          "type": "enum",
+          "values": [
+            "colored",
+            "grayscale"
+          ]
+        },
+        {
+          "name": "progressive_jpeg",
+          "title": "Create Progressive JPEG",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -3016,7 +4584,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -3047,6 +4615,39 @@
         "image",
         "from-pdf",
         "to-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        },
+        {
+          "name": "colormode3",
+          "title": "Use Colors",
+          "type": "enum",
+          "values": [
+            "colored",
+            "grayscale",
+            "monochrome"
+          ]
+        },
+        {
+          "name": "background_color",
+          "title": "Background Color",
+          "type": "enum",
+          "values": [
+            "white",
+            "transparent"
+          ]
+        }
       ]
     },
     {
@@ -3070,6 +4671,38 @@
         "image",
         "from-pdf",
         "to-svg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        },
+        {
+          "name": "pagesize",
+          "title": "Page size",
+          "type": "enum",
+          "values": [
+            "A4",
+            "Letter",
+            "Legal",
+            "Tabloid",
+            "Ledger",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A5",
+            "A6"
+          ]
+        }
       ]
     },
     {
@@ -3114,6 +4747,39 @@
         "image",
         "from-pdf",
         "to-tiff"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        },
+        {
+          "name": "colormode3",
+          "title": "Use Colors",
+          "type": "enum",
+          "values": [
+            "colored",
+            "grayscale",
+            "monochrome"
+          ]
+        },
+        {
+          "name": "background_color",
+          "title": "Background Color",
+          "type": "enum",
+          "values": [
+            "white",
+            "transparent"
+          ]
+        }
       ]
     },
     {
@@ -3140,6 +4806,41 @@
         "office",
         "from-pdf",
         "to-word"
+      ],
+      "optionSpecs": [
+        {
+          "name": "word_format",
+          "title": "Word file format",
+          "type": "enum",
+          "values": [
+            "docx",
+            "doc"
+          ]
+        },
+        {
+          "name": "margin_top",
+          "title": "Top Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_right",
+          "title": "Right Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_bottom",
+          "title": "Bottom Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_left",
+          "title": "Left Margin, in px",
+          "type": "string",
+          "default": ""
+        }
       ]
     },
     {
@@ -3204,6 +4905,25 @@
         "image",
         "from-png",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -3247,6 +4967,18 @@
         "image",
         "from-png",
         "to-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "orientation",
+          "title": "Page layout orientation",
+          "type": "enum",
+          "default": "Portrait",
+          "values": [
+            "Portrait",
+            "Landscape"
+          ]
+        }
       ]
     },
     {
@@ -3308,6 +5040,20 @@
         "svg",
         "from-png",
         "to-svg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        }
       ]
     },
     {
@@ -3331,6 +5077,14 @@
         "webp",
         "from-png",
         "to-webp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "webp_quality",
+          "title": "WebP Quality (0 - 100)",
+          "type": "number",
+          "default": 75
+        }
       ]
     },
     {
@@ -3450,6 +5204,17 @@
         "xml",
         "from-xml",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -3492,6 +5257,17 @@
         "xml",
         "from-xml",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -3535,6 +5311,31 @@
         "csv",
         "to-csv",
         "from-srt"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "join_multiline_with_space",
+          "title": "Join multiline text with spaces",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -3543,7 +5344,7 @@
       "from": "srt",
       "to": "excel",
       "title": "SRT to Excel",
-      "description": "Convert SRT to Excel with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT to Excel with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
       "options": [
         "excel_format",
         "join_multiline_with_space"
@@ -3560,6 +5361,23 @@
         "to-excel",
         "from-srt",
         "to-xlsx"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        },
+        {
+          "name": "join_multiline_with_space",
+          "title": "Join multiline text with spaces",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -3603,6 +5421,14 @@
         "srt",
         "to-vtt",
         "from-srt"
+      ],
+      "optionSpecs": [
+        {
+          "name": "clear_markup",
+          "title": "Clear markup from the file",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -3611,7 +5437,7 @@
       "from": "srt",
       "to": "xls",
       "title": "SRT to XLS",
-      "description": "Convert SRT to XLS with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT to XLS with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
       "options": [
         "excel_format"
       ],
@@ -3626,6 +5452,17 @@
         "office",
         "to-excel",
         "from-srt"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -3634,7 +5471,7 @@
       "from": "srt",
       "to": "xlsx",
       "title": "SRT to XLSX",
-      "description": "Convert SRT to XLSX with our Conversion Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT to XLSX with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
       "options": [
         "excel_format"
       ],
@@ -3650,6 +5487,17 @@
         "to-excel",
         "from-srt",
         "to-xls"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        }
       ]
     },
     {
@@ -3673,6 +5521,37 @@
         "image",
         "from-svg",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -3694,6 +5573,20 @@
         "image",
         "from-svg",
         "to-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_resolution",
+          "title": "Image Resolution",
+          "type": "enum",
+          "default": "150",
+          "values": [
+            "72",
+            "150",
+            "300",
+            "600"
+          ]
+        }
       ]
     },
     {
@@ -3759,6 +5652,14 @@
         "webp",
         "from-tiff",
         "to-webp"
+      ],
+      "optionSpecs": [
+        {
+          "name": "webp_quality",
+          "title": "WebP Quality (0 - 100)",
+          "type": "number",
+          "default": 75
+        }
       ]
     },
     {
@@ -3899,6 +5800,23 @@
         "mp3",
         "to-mp3",
         "from-wav"
+      ],
+      "optionSpecs": [
+        {
+          "name": "bitrate",
+          "title": "Bitrate",
+          "type": "enum",
+          "default": "default",
+          "values": [
+            "default",
+            "96",
+            "128",
+            "160",
+            "192",
+            "256",
+            "320"
+          ]
+        }
       ]
     },
     {
@@ -3986,6 +5904,25 @@
         "jpg",
         "from-webp",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "alpha_background",
+          "title": "Alpha Background Color",
+          "type": "enum",
+          "default": "white",
+          "values": [
+            "white",
+            "black",
+            "custom"
+          ]
+        },
+        {
+          "name": "jpeg_quality",
+          "title": "JPEG Quality (0 - 100)",
+          "type": "number",
+          "default": 80
+        }
       ]
     },
     {
@@ -4152,7 +6089,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -4160,6 +6097,162 @@
         "image",
         "from-html",
         "to-jpg"
+      ],
+      "optionSpecs": [
+        {
+          "name": "background",
+          "title": "Use HTML page background?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "javascript",
+          "title": "Allow web page to run JavaScript?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "viewport_width",
+          "title": "Viewport Width, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "viewport_height",
+          "title": "Viewport Height, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "emulate_device",
+          "title": "Emulate Device",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "iPad",
+            "iPad landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 550",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Moto G4",
+            "Moto G4 landscape"
+          ]
+        }
       ]
     },
     {
@@ -4191,6 +6284,87 @@
         "html",
         "from-html",
         "to-pdf"
+      ],
+      "optionSpecs": [
+        {
+          "name": "orientation",
+          "title": "Page layout orientation",
+          "type": "enum",
+          "default": "Portrait",
+          "values": [
+            "Portrait",
+            "Landscape"
+          ]
+        },
+        {
+          "name": "pagesize",
+          "title": "Page size",
+          "type": "enum",
+          "values": [
+            "A4",
+            "Letter",
+            "Legal",
+            "Tabloid",
+            "Ledger",
+            "A0",
+            "A1",
+            "A2",
+            "A3",
+            "A5",
+            "A6"
+          ]
+        },
+        {
+          "name": "colormode",
+          "title": "Use Colors",
+          "type": "enum",
+          "values": [
+            "colored",
+            "grayscale"
+          ]
+        },
+        {
+          "name": "background",
+          "title": "Use HTML page background?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "javascript",
+          "title": "Allow web page to run JavaScript?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "margin_top",
+          "title": "Top Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_right",
+          "title": "Right Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_bottom",
+          "title": "Bottom Margin, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "margin_left",
+          "title": "Left Margin, in px",
+          "type": "string",
+          "default": ""
+        }
       ]
     },
     {
@@ -4210,7 +6384,7 @@
       ],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -4218,6 +6392,162 @@
         "image",
         "from-html",
         "to-png"
+      ],
+      "optionSpecs": [
+        {
+          "name": "background",
+          "title": "Use HTML page background?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "images",
+          "title": "Include images?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "javascript",
+          "title": "Allow web page to run JavaScript?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "viewport_width",
+          "title": "Viewport Width, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "viewport_height",
+          "title": "Viewport Height, in px",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "emulate_device",
+          "title": "Emulate Device",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "iPad",
+            "iPad landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 550",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Moto G4",
+            "Moto G4 landscape"
+          ]
+        }
       ]
     },
     {
@@ -4250,7 +6580,7 @@
       "options": [],
       "ai": false,
       "custom": false,
-      "batch": false,
+      "batch": true,
       "comingSoon": false,
       "registrationRequired": false,
       "groups": [
@@ -4355,7 +6685,8 @@
         "delimiter",
         "quote",
         "ignore_errors",
-        "copy_parent_values"
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -4368,6 +6699,48 @@
         "office",
         "from-xml",
         "to-csv"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "quote",
+          "title": "Always quote all non-empty fields",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "ignore_errors",
+          "title": "Ignore validation errors?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -4381,7 +6754,8 @@
         "split_excel_rows_limit",
         "excel_format",
         "ignore_errors",
-        "copy_parent_values"
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -4394,6 +6768,46 @@
         "excel",
         "from-xml",
         "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "split_excel_rows_limit",
+          "title": "Split result in multiple Excel files (when Excel Rows Limit reached)?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
+          ]
+        },
+        {
+          "name": "ignore_errors",
+          "title": "Ignore validation errors?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -4420,6 +6834,58 @@
         "xml",
         "from-xml",
         "to-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        },
+        {
+          "name": "prefix_attr",
+          "title": "Attributes prefix",
+          "type": "enum",
+          "default": "@",
+          "values": [
+            "@",
+            "#",
+            "_",
+            "__"
+          ]
+        },
+        {
+          "name": "prefix_text",
+          "title": "Text prefix",
+          "type": "enum",
+          "default": "#",
+          "values": [
+            "@",
+            "#",
+            "_",
+            "__"
+          ]
+        },
+        {
+          "name": "attr_always_object",
+          "title": "Always make an object for attributes",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "text_always_object",
+          "title": "Always make an object for text node",
+          "type": "boolean",
+          "default": false
+        }
       ]
     },
     {
@@ -4431,7 +6897,8 @@
       "description": "XML to Parquet Converter. Convert XML to Parquet Online. Columnar format for big data analytics. API available.",
       "options": [
         "ignore_errors",
-        "copy_parent_values"
+        "copy_parent_values",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -4443,6 +6910,31 @@
         "xml",
         "from-xml",
         "to-parquet"
+      ],
+      "optionSpecs": [
+        {
+          "name": "ignore_errors",
+          "title": "Ignore validation errors?",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "copy_parent_values",
+          "title": "Copy parent nodes values",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels"
+          ]
+        }
       ]
     },
     {
@@ -4465,6 +6957,22 @@
         "yaml",
         "to-json",
         "from-yaml"
+      ],
+      "optionSpecs": [
+        {
+          "name": "space",
+          "title": "White space for indentation",
+          "type": "enum",
+          "default": "2s",
+          "values": [
+            "0",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "1t"
+          ]
+        }
       ]
     }
   ]

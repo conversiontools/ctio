@@ -5,6 +5,7 @@ import packageJson from "../package.json" with { type: "json" };
 
 import { registerAuth } from "@/commands/auth";
 import { registerConvert } from "@/commands/convert";
+import { registerDescribe } from "@/commands/describe";
 import { registerList } from "@/commands/list";
 import { registerTask } from "@/commands/task";
 import { registerVersion } from "@/commands/version";
@@ -43,6 +44,7 @@ async function main(): Promise<void> {
   registerConvert(cli);
   registerTask(cli);
   registerList(cli);
+  registerDescribe(cli);
   registerAuth(cli);
   registerVersion(cli, VERSION);
 
