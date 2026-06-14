@@ -7,6 +7,7 @@ import { registerAuth } from "@/commands/auth";
 import { registerConvert } from "@/commands/convert";
 import { registerDescribe } from "@/commands/describe";
 import { registerList } from "@/commands/list";
+import { registerParse } from "@/commands/parse";
 import { registerTask } from "@/commands/task";
 import { registerVersion } from "@/commands/version";
 import { CtioError, ExitCode } from "@/lib/errors";
@@ -42,6 +43,7 @@ async function main(): Promise<void> {
     .option("--format <format>", "Output format: json | pretty | ndjson", { default: "json" });
 
   registerConvert(cli);
+  registerParse(cli);
   registerTask(cli);
   registerList(cli);
   registerDescribe(cli);

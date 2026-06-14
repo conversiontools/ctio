@@ -1,6 +1,6 @@
 import { AuthMissingError, UsageError } from "./errors";
 import { getActiveProfile, getProfile, loadProfiles, type Profile } from "./profile";
-import { isRegion, type Region } from "./region";
+import { isRegion, regionToBaseUrl, type Region } from "./region";
 
 export interface ResolveOptions {
   tokenFlag?: string | undefined;
@@ -94,4 +94,34 @@ function finalize(args: {
     source: args.source,
     ...(args.profileName ? { profileName: args.profileName } : {}),
   };
+}
+
+export interface ResolvedParseAuth {
+  parseToken: string;
+  baseUrl: string;
+  source: "flag" | "env";
+}
+
+/**
+ * Resolve the Parse API key. Parse uses its own API keys, created at
+ * https://parse.conversiontools.io. Precedence: --parse-token flag >
+ * CT_PARSE_TOKEN env. The base URL is the Parse host unless --base-url overrides.
+ */
+export function resolveParseToken(opts: {
+  parseTokenFlag?: string | undefined;
+  baseUrlFlag?: string | undefined;
+}): ResolvedParseAuth {
+  const baseUrl = opts.baseUrlFlag ?? regionToBaseUrl("auto");
+
+  if (opts.parseTokenFlag) {
+    return { parseToken: opts.parseTokenFlag, baseUrl, source: "flag" };
+  }
+  const env = process.env["CT_PARSE_TOKEN"];
+  if (env) {
+    return { parseToken: env, baseUrl, source: "env" };
+  }
+  throw new UsageError(
+    "No Parse API key found.",
+    "Pass --parse-token <key> or set CT_PARSE_TOKEN. Create a key at https://parse.conversiontools.io.",
+  );
 }
