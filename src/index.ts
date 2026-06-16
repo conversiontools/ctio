@@ -8,6 +8,7 @@ import { registerConvert } from "@/commands/convert";
 import { registerDescribe } from "@/commands/describe";
 import { registerList } from "@/commands/list";
 import { registerParse } from "@/commands/parse";
+import { registerStudio } from "@/commands/studio";
 import { registerTask } from "@/commands/task";
 import { registerVersion } from "@/commands/version";
 import { CtioError, ExitCode } from "@/lib/errors";
@@ -44,6 +45,7 @@ async function main(): Promise<void> {
 
   registerConvert(cli);
   registerParse(cli);
+  registerStudio(cli);
   registerTask(cli);
   registerList(cli);
   registerDescribe(cli);
