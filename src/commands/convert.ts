@@ -53,7 +53,8 @@ export function registerConvert(cli: CAC): void {
     .example("  ctio convert -t xml_to_csv data.xml - > out.csv")
     .example("  ctio convert -t excel_to_xml in.xlsx out.xml --option header=yes")
     .action(async (input: string | undefined, output: string | undefined, flags: ConvertFlags) => {
-      await runConvert(unswapStdio(input), unswapStdio(output), flags);
+      const pos = resolvePositionals(unswapStdio(input), unswapStdio(output), Boolean(flags.url));
+      await runConvert(pos.input, pos.output, flags);
     });
 }
 
@@ -193,6 +194,23 @@ function unswapStdio(v: string | undefined): string | undefined {
   return v === STDIO_SENTINEL ? "-" : v;
 }
 
+/**
+ * `convert [input] [output]` binds a lone positional to `input`. But a URL
+ * conversion (`--url`) takes no input positional, so a single positional there
+ * is really the OUTPUT (e.g. `convert -t website_to_pdf out.pdf --url ...`).
+ * When --url is set and only one positional was given, treat it as the output.
+ */
+export function resolvePositionals(
+  input: string | undefined,
+  output: string | undefined,
+  hasUrl: boolean,
+): { input: string | undefined; output: string | undefined } {
+  if (hasUrl && input !== undefined && output === undefined) {
+    return { input: undefined, output: input };
+  }
+  return { input, output };
+}
+
 export type UploadChoice =
   | { kind: "path"; path: string }
   | { kind: "stream" };
@@ -254,6 +272,7 @@ export const __testables = {
   coerceValue,
   resolvePollInterval,
   pickUploadInput,
+  resolvePositionals,
 };
 
 function emitStatus(payload: unknown, format: OutputFormat, fileOnStdout: boolean): void {

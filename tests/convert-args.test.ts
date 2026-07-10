@@ -2,7 +2,7 @@ import { describe, expect, test } from "bun:test";
 
 import { __testables } from "@/commands/convert";
 
-const { normalizeType, parseOptionFlags, coerceValue, resolvePollInterval, pickUploadInput } = __testables;
+const { normalizeType, parseOptionFlags, coerceValue, resolvePollInterval, pickUploadInput, resolvePositionals } = __testables;
 
 describe("normalizeType", () => {
   test("prepends `convert.` when missing", () => {
@@ -102,5 +102,51 @@ describe("parseOptionFlags", () => {
   test("throws on malformed entry", () => {
     expect(() => parseOptionFlags(["nokey"])).toThrow();
     expect(() => parseOptionFlags(["=value"])).toThrow();
+  });
+});
+
+describe("resolvePositionals", () => {
+  // The bug: `ctio convert -t xml_to_excel out.xlsx --url <URL>` bound out.xlsx
+  // to input, leaving no output. With --url set, a lone positional is the output.
+  test("--url + single positional -> positional becomes output", () => {
+    expect(resolvePositionals("out.xlsx", undefined, true)).toEqual({
+      input: undefined,
+      output: "out.xlsx",
+    });
+  });
+
+  test("--url + single positional '-' -> stdout output", () => {
+    expect(resolvePositionals("-", undefined, true)).toEqual({
+      input: undefined,
+      output: "-",
+    });
+  });
+
+  test("--url + no positionals -> unchanged (runConvert reports missing output)", () => {
+    expect(resolvePositionals(undefined, undefined, true)).toEqual({
+      input: undefined,
+      output: undefined,
+    });
+  });
+
+  test("--url + two positionals -> unchanged (runConvert rejects input + url together)", () => {
+    expect(resolvePositionals("in.xml", "out.xlsx", true)).toEqual({
+      input: "in.xml",
+      output: "out.xlsx",
+    });
+  });
+
+  test("no --url + single positional -> unchanged (stays as input)", () => {
+    expect(resolvePositionals("data.json", undefined, false)).toEqual({
+      input: "data.json",
+      output: undefined,
+    });
+  });
+
+  test("no --url + two positionals -> unchanged (normal file->file)", () => {
+    expect(resolvePositionals("data.json", "out.xlsx", false)).toEqual({
+      input: "data.json",
+      output: "out.xlsx",
+    });
   });
 });
