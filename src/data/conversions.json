@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-14T22:44:53.948Z",
+  "generatedAt": "2026-07-25T10:28:09.712Z",
   "source": "Conversion Tools converter registry",
-  "count": 206,
+  "count": 212,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -227,7 +227,8 @@
             "table",
             "key_value",
             "element_rows",
-            "path_levels"
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -278,7 +279,8 @@
             "table",
             "key_value",
             "element_rows",
-            "path_levels"
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -1056,6 +1058,68 @@
       ]
     },
     {
+      "type": "convert.compress_image",
+      "url": "compress-image",
+      "from": null,
+      "to": null,
+      "title": "Compress Image",
+      "description": "Compress an image to a target file size online. Shrink PNG, JPG or WebP photos to fit upload, email or form limits - the result keeps the original format.",
+      "options": [
+        "image_target_size"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "image",
+        "compress",
+        "png",
+        "jpg",
+        "webp",
+        "reduce-size"
+      ],
+      "optionSpecs": [
+        {
+          "name": "image_target_size",
+          "title": "Target file size",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "type": "convert.compress_video",
+      "url": "compress-video",
+      "from": null,
+      "to": null,
+      "title": "Compress Video",
+      "description": "Compress a video to a target file size online. Shrink MP4, MOV, MKV, AVI or WEBM to fit Discord, email or upload limits, and download a web-playable MP4.",
+      "options": [
+        "video_target_size"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "video",
+        "compress",
+        "mp4",
+        "to-mp4",
+        "from-video",
+        "reduce-size"
+      ],
+      "optionSpecs": [
+        {
+          "name": "video_target_size",
+          "title": "Target file size",
+          "type": "string"
+        }
+      ]
+    },
+    {
       "type": "convert.csv_to_excel",
       "url": "csv-to-excel",
       "from": "csv",
@@ -1748,7 +1812,8 @@
         "index_records",
         "add_empty_nodes",
         "short_tag_empty_node",
-        "xml_encoding"
+        "xml_encoding",
+        "date_format"
       ],
       "ai": false,
       "custom": false,
@@ -1802,6 +1867,16 @@
             "utf-8",
             "utf-16le",
             "utf-16be"
+          ]
+        },
+        {
+          "name": "date_format",
+          "title": "Date format",
+          "type": "enum",
+          "values": [
+            "as_is",
+            "iso",
+            "iso8601"
           ]
         }
       ]
@@ -2107,6 +2182,47 @@
       ]
     },
     {
+      "type": "convert.gst_to_csv",
+      "url": "gstr-json-to-csv",
+      "from": "gst",
+      "to": "csv",
+      "title": "GSTR JSON to CSV",
+      "description": "Convert GST return and refund-statement JSON to CSV online. Turn GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B and RFD-01 refund statements (Annexure-B) from the GST portal or offline tool into clean CSV files, one per section, delivered as a zip. Convert many files at once. Files are private and encrypted.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "csv",
+        "to-csv",
+        "from-json"
+      ]
+    },
+    {
+      "type": "convert.gst_to_excel",
+      "url": "gstr-json-to-excel",
+      "from": "gst",
+      "to": "excel",
+      "title": "GSTR JSON to Excel",
+      "description": "Convert GST return and refund-statement JSON to Excel online. Turn GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B and RFD-01 refund statements (Annexure-B) from the GST portal or offline tool into a clean, readable Excel workbook with one sheet per section. Convert many files at once. Files are private and encrypted.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "excel",
+        "office",
+        "to-excel",
+        "from-json"
+      ]
+    },
+    {
       "type": "convert.heic_to_avif",
       "url": "heic-to-avif",
       "from": "heic",
@@ -2337,6 +2453,39 @@
             "semicolon",
             "vertical_bar",
             "tabulation"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "convert.html_table_to_excel",
+      "url": "html-to-excel",
+      "from": "html_table",
+      "to": "excel",
+      "title": "HTML Table to Excel",
+      "description": "Extract HTML Table to Excel (XLSX, XLS). Quick and easy. Confidential. API and Zapier automation available. Try it Now",
+      "options": [
+        "excel_format"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "html",
+        "excel",
+        "from-html",
+        "to-excel"
+      ],
+      "optionSpecs": [
+        {
+          "name": "excel_format",
+          "title": "Excel file format",
+          "type": "enum",
+          "values": [
+            "xlsx",
+            "xls"
           ]
         }
       ]
@@ -2976,7 +3125,8 @@
       "description": "JSON Objects (one per line) to CSV Converter. Convert JSON objects to CSV Online with Free JSON Converter. Import JSON, Save CSV (TSV). API Available.",
       "options": [
         "delimiter",
-        "quote"
+        "quote",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -2999,7 +3149,11 @@
             "comma",
             "semicolon",
             "vertical_bar",
-            "tabulation"
+            "tabulation",
+            "colon",
+            "caret",
+            "tilde",
+            "space"
           ]
         },
         {
@@ -3007,6 +3161,18 @@
           "title": "Always quote all non-empty fields",
           "type": "boolean",
           "default": true
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels",
+            "transpose"
+          ]
         }
       ]
     },
@@ -3018,7 +3184,8 @@
       "title": "JSON objects to Excel",
       "description": "JSON objects to Excel Converter. Convert JSON objects to Excel Online with Free JSON Converter. Import JSON, Save Excel (XLSX, XLS). JSON conversion to Excel. API Available.",
       "options": [
-        "excel_format"
+        "excel_format",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -3041,6 +3208,18 @@
           "values": [
             "xlsx",
             "xls"
+          ]
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -3078,7 +3257,11 @@
             "comma",
             "semicolon",
             "vertical_bar",
-            "tabulation"
+            "tabulation",
+            "colon",
+            "caret",
+            "tilde",
+            "space"
           ]
         },
         {
@@ -3101,7 +3284,8 @@
             "table",
             "key_value",
             "element_rows",
-            "path_levels"
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -3154,7 +3338,8 @@
             "table",
             "key_value",
             "element_rows",
-            "path_levels"
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -3246,7 +3431,8 @@
       "description": "JSONL to CSV Converter. Convert JSON Lines to CSV Online. Export NDJSON to spreadsheet format. API available.",
       "options": [
         "delimiter",
-        "quote"
+        "quote",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -3268,7 +3454,11 @@
             "comma",
             "semicolon",
             "vertical_bar",
-            "tabulation"
+            "tabulation",
+            "colon",
+            "caret",
+            "tilde",
+            "space"
           ]
         },
         {
@@ -3276,6 +3466,18 @@
           "title": "Always quote all non-empty fields",
           "type": "boolean",
           "default": true
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels",
+            "transpose"
+          ]
         }
       ]
     },
@@ -3287,7 +3489,8 @@
       "title": "JSONL to Excel",
       "description": "JSONL to Excel Converter. Convert JSON Lines to Excel Online. Export NDJSON to spreadsheet format. API available.",
       "options": [
-        "excel_format"
+        "excel_format",
+        "output_layout"
       ],
       "ai": false,
       "custom": false,
@@ -3309,6 +3512,18 @@
           "values": [
             "xlsx",
             "xls"
+          ]
+        },
+        {
+          "name": "output_layout",
+          "title": "Output layout (table shape)",
+          "type": "enum",
+          "values": [
+            "table",
+            "key_value",
+            "element_rows",
+            "path_levels",
+            "transpose"
           ]
         }
       ]
@@ -6571,6 +6786,26 @@
       ]
     },
     {
+      "type": "convert.word_to_latex",
+      "url": "word-to-latex",
+      "from": "word",
+      "to": "latex",
+      "title": "Word to LaTeX",
+      "description": "Word to LaTeX Converter. Convert DOCX to LaTeX Online with Free Converter. Import Word document, download LaTeX .tex file. API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "from-word",
+        "from-docx",
+        "to-latex"
+      ]
+    },
+    {
       "type": "convert.word_to_markdown",
       "url": "word-to-markdown",
       "from": "word",
@@ -6751,7 +6986,6 @@
       "title": "XML to Excel",
       "description": "Use Our Tool to Convert XML Files to Excel. Easy and Fast Data Transform. API Available. All Files are Encrypted. Convert Large XML Files",
       "options": [
-        "split_excel_rows_limit",
         "excel_format",
         "ignore_errors",
         "copy_parent_values",
@@ -6770,12 +7004,6 @@
         "to-excel"
       ],
       "optionSpecs": [
-        {
-          "name": "split_excel_rows_limit",
-          "title": "Split result in multiple Excel files (when Excel Rows Limit reached)?",
-          "type": "boolean",
-          "default": true
-        },
         {
           "name": "excel_format",
           "title": "Excel file format",
