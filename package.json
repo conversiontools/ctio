@@ -1,6 +1,6 @@
 {
   "name": "ctio",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Composable CLI for the Conversion Tools API",
   "type": "module",
   "bin": {

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-25T10:28:09.712Z",
+  "generatedAt": "2026-08-15T10:29:52.541Z",
   "source": "Conversion Tools converter registry",
-  "count": 212,
+  "count": 213,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -1089,6 +1089,36 @@
       ]
     },
     {
+      "type": "convert.compress_pdf",
+      "url": "compress-pdf",
+      "from": null,
+      "to": null,
+      "title": "Compress PDF",
+      "description": "Compress a PDF to a target file size online. Shrink scanned documents and reports to fit upload forms, email or portal limits - the text stays selectable.",
+      "options": [
+        "pdf_target_size"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "pdf",
+        "compress",
+        "from-pdf",
+        "to-pdf",
+        "reduce-size"
+      ],
+      "optionSpecs": [
+        {
+          "name": "pdf_target_size",
+          "title": "Target file size",
+          "type": "string"
+        }
+      ]
+    },
+    {
       "type": "convert.compress_video",
       "url": "compress-video",
       "from": null,
@@ -1319,7 +1349,7 @@
       "from": "csv",
       "to": "srt",
       "title": "CSV to SRT",
-      "description": "Subtitles CSV to SRT Converter. Convert CSV file to SRT Subtitles Online with Free SRT Converter. API Available.",
+      "description": "Convert CSV to SRT subtitles online for free. Bring a start time, an end time and the subtitle text under whatever headers you already use. Nothing to install.",
       "options": [
         "delimiter"
       ],
@@ -1783,7 +1813,7 @@
       "from": "excel",
       "to": "srt",
       "title": "Excel to SRT",
-      "description": "Change Excel Spreadsheet to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "description": "Convert Excel to SRT subtitles online for free. Bring a start time, an end time and the subtitle text under whatever headers you already use. Every worksheet becomes its own SRT file.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -1907,7 +1937,7 @@
       "from": "excel_xml",
       "to": "excel_xlsx",
       "title": "Excel XML to XLSX",
-      "description": "Free Excel XML to Excel XLSX Online Converter. Import Excel XML, download Excel XLSX. Large files up to 1 GB supported. API available.",
+      "description": "Convert Excel 2003 XML Spreadsheet (SpreadsheetML) files into the modern OOXML .xlsx format online. For legacy Excel XML exports up to 1 GB. Free converter, API available.",
       "options": [
         "excel_format"
       ],
@@ -3182,7 +3212,7 @@
       "from": "json_objects",
       "to": "excel",
       "title": "JSON objects to Excel",
-      "description": "JSON objects to Excel Converter. Convert JSON objects to Excel Online with Free JSON Converter. Import JSON, Save Excel (XLSX, XLS). JSON conversion to Excel. API Available.",
+      "description": "Convert a file containing multiple JSON objects, one per line, into a spreadsheet. Built for line-delimited object dumps from databases, logs and streaming APIs. Save XLSX or XLS. API available.",
       "options": [
         "excel_format",
         "output_layout"
@@ -4441,7 +4471,7 @@
       "from": "parquet",
       "to": "excel",
       "title": "Parquet to Excel",
-      "description": "Parquet to Excel Converter. Convert Parquet to Excel Online. Export columnar data to spreadsheet format. API available.",
+      "description": "Convert Parquet to Excel online for free. Open a Parquet file in Excel or Google Sheets with no coding and no data tools to set up. Nothing to install.",
       "options": [
         "excel_format"
       ],
@@ -5510,7 +5540,7 @@
       "from": "srt",
       "to": "csv",
       "title": "SRT to CSV",
-      "description": "Subtitles SRT to CSV Converter. Convert SRT Subtitles to CSV Online with Free SRT Converter. API Available.",
+      "description": "Convert SRT subtitles to CSV online for free. Every cue becomes a row with index, start, end and text columns. Pick your delimiter. Nothing to install.",
       "options": [
         "delimiter",
         "quote",
@@ -5559,7 +5589,7 @@
       "from": "srt",
       "to": "excel",
       "title": "SRT to Excel",
-      "description": "Convert SRT to Excel with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT subtitles to Excel online for free. Every cue becomes a row with index, start, end and text columns - edit in Excel, then convert back to SRT.",
       "options": [
         "excel_format",
         "join_multiline_with_space"
@@ -5652,7 +5682,7 @@
       "from": "srt",
       "to": "xls",
       "title": "SRT to XLS",
-      "description": "Convert SRT to XLS with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT subtitles to XLS online for free - the legacy Excel 97-2003 format. Each cue becomes a row with index, start, end and text columns.",
       "options": [
         "excel_format"
       ],
@@ -5686,7 +5716,7 @@
       "from": "srt",
       "to": "xlsx",
       "title": "SRT to XLSX",
-      "description": "Convert SRT to XLSX with our Conversion Tools. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. Automation with Zapier is available",
+      "description": "Convert SRT subtitles to XLSX online for free. Each cue becomes a row with index, start, end and text columns, ready to open in Excel 2007 and later.",
       "options": [
         "excel_format"
       ],
@@ -6872,7 +6902,7 @@
       "from": "xls",
       "to": "srt",
       "title": "XLS to SRT",
-      "description": "Change XLS to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "description": "Convert XLS to SRT subtitles online for free - the legacy Excel 97-2003 format. Bring a start time, an end time and the subtitle text under whatever headers you already use.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -6893,7 +6923,7 @@
       "from": "xlsx",
       "to": "srt",
       "title": "XLSX to SRT",
-      "description": "Change XLSX to SRT via our Converter Tool. Quick and easy. Confidential. Available Pricing. Reliable Operation of Services. Try it Now",
+      "description": "Convert XLSX to SRT subtitles online for free. Bring a start time, an end time and the subtitle text under whatever headers you already use. Every worksheet becomes its own SRT file.",
       "options": [],
       "ai": false,
       "custom": false,
