@@ -4,8 +4,9 @@ import { pipeline } from "node:stream/promises";
 import type { CAC } from "cac";
 
 import { createClient } from "@/lib/client";
+import { findConverter } from "@/lib/converters";
 import { CtioError, ExitCode, UsageError } from "@/lib/errors";
-import { debug, info } from "@/lib/logger";
+import { debug, info, warn } from "@/lib/logger";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
 import { openInput, openOutput } from "@/lib/streams";
 import { resolveAuth } from "@/lib/token";
@@ -69,6 +70,9 @@ async function runConvert(
   const format = pickFormat(flags.format);
   const conversionType = normalizeType(flags.type);
   const conversionOptions = parseOptionFlags(flags.option);
+  for (const key of unknownOptionKeys(conversionType, Object.keys(conversionOptions))) {
+    warn(`unknown option "${key}" for ${conversionType} - sending it anyway (see \`ctio describe ${flags.type}\`)`);
+  }
   if (flags.sandbox) conversionOptions["sandbox"] = true;
 
   const auth = await resolveAuth({
@@ -123,11 +127,11 @@ async function runConvert(
 
   const task = await client.createTask({
     type: conversionType,
-    options: {
-      ...(fileId ? { file_id: fileId } : {}),
+    options: buildTaskOptions({
+      ...(fileId ? { fileId } : {}),
       ...(urlForTask ? { url: urlForTask } : {}),
-      ...conversionOptions,
-    },
+      options: conversionOptions,
+    }),
   });
   debug(`task created id=${task.id}`);
 
@@ -186,6 +190,35 @@ async function runConvert(
 
 function normalizeType(raw: string): string {
   return raw.startsWith("convert.") ? raw : `convert.${raw}`;
+}
+
+/**
+ * Build the `options` payload sent to the API. User `--option` values are
+ * spread LAST so they always win - nothing (defaults included) may overwrite
+ * what the user explicitly asked for.
+ */
+export function buildTaskOptions(args: {
+  fileId?: string;
+  url?: string;
+  options: Record<string, unknown>;
+}): Record<string, unknown> {
+  return {
+    ...(args.fileId ? { file_id: args.fileId } : {}),
+    ...(args.url ? { url: args.url } : {}),
+    ...args.options,
+  };
+}
+
+/**
+ * Warn (never drop) when `--option` names a key the bundled catalog doesn't
+ * list for this converter - a silently ignored typo is worse than a stray
+ * warning. The catalog snapshot can lag a freshly shipped option, so this is
+ * advisory only: the option is still sent, and the API remains the authority.
+ */
+export function unknownOptionKeys(type: string, keys: string[]): string[] {
+  const converter = findConverter(type);
+  if (!converter || converter.options.length === 0) return [];
+  return keys.filter((k) => k !== "sandbox" && !converter.options.includes(k));
 }
 
 const STDIO_SENTINEL = "__ctio_stdio__";
@@ -257,12 +290,24 @@ function parseOptionFlags(raw: string[] | string | undefined): Record<string, un
   return out;
 }
 
+/**
+ * Coerce a `--option key=value` value for the API payload.
+ *
+ * Numeric-looking values stay STRINGS on purpose. Several options are string
+ * enums of digits (`version: '2'|'1'|'3'`, `bitrate: '128'|...`, `bit_depth`,
+ * `audio_channels`, `sampling_rate`, `image_resolution`). The API validates
+ * those with an exact-match list lookup, so a JSON number never matches and the
+ * value is silently REPLACED by that option's default - the conversion then
+ * reports SUCCESS while having ignored the flag (e.g. `--option version=1` ran
+ * as version 2). Options that genuinely want a number parse it from the string
+ * anyway (parseInt/parseFloat), so strings are safe across the board.
+ *
+ * Booleans stay real booleans: the API's yes/no options explicitly accept
+ * `true`/`false` alongside 'yes'/'on', and the string "true" is NOT accepted.
+ */
 function coerceValue(v: string): unknown {
   if (v === "true") return true;
   if (v === "false") return false;
-  if (v === "") return "";
-  if (/^-?\d+$/.test(v)) return Number.parseInt(v, 10);
-  if (/^-?\d+\.\d+$/.test(v)) return Number.parseFloat(v);
   return v;
 }
 
@@ -273,6 +318,8 @@ export const __testables = {
   resolvePollInterval,
   pickUploadInput,
   resolvePositionals,
+  buildTaskOptions,
+  unknownOptionKeys,
 };
 
 function emitStatus(payload: unknown, format: OutputFormat, fileOnStdout: boolean): void {

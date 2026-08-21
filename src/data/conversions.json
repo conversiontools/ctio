@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T10:29:52.541Z",
+  "generatedAt": "2026-08-21T15:19:50.731Z",
   "source": "Conversion Tools converter registry",
   "count": 213,
   "converters": [
@@ -243,7 +243,8 @@
       "options": [
         "images",
         "copy_parent_values",
-        "output_layout"
+        "output_layout",
+        "password"
       ],
       "ai": true,
       "custom": false,
@@ -282,6 +283,12 @@
             "path_levels",
             "transpose"
           ]
+        },
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
         }
       ]
     },
@@ -4665,7 +4672,8 @@
       "title": "PDF to Excel",
       "description": "Export PDF to Excel Table with our Tool. Quick Transformation. 100% Confidential. All Excel formats available: XLS, XLSX. 24/7 Customer Support",
       "options": [
-        "version"
+        "version",
+        "password"
       ],
       "ai": false,
       "custom": false,
@@ -4688,6 +4696,12 @@
             "2",
             "1"
           ]
+        },
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
         }
       ]
     },
@@ -5979,8 +5993,8 @@
         "subtitles",
         "srt",
         "to-srt",
-        "from-srt",
-        "from-vtt"
+        "from-vtt",
+        "from-srt"
       ]
     },
     {
