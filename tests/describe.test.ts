@@ -54,3 +54,23 @@ describe("buildExample", () => {
     expect(buildExample(fake, [])).toBe("ctio convert -t a_to_b input.a out.b");
   });
 });
+
+describe("multi-file converters", () => {
+  test("the validator lists both of its files, in order", () => {
+    expect(findConverter("validate_xml_xsd")?.fileInputs).toEqual([
+      { key: "file_id", description: "XML file" },
+      { key: "file_id1", description: "XSD schema" },
+    ]);
+  });
+
+  test("single-file converters carry no fileInputs", () => {
+    expect(findConverter("xml_to_csv")?.fileInputs).toBeUndefined();
+  });
+
+  test("the example passes the second file with --file", () => {
+    const validator = findConverter("validate_xml_xsd");
+    expect(validator && buildExample(validator, [])).toBe(
+      "ctio convert -t validate_xml_xsd <xml-file> <output> --file <xsd-schema>",
+    );
+  });
+});

@@ -4,7 +4,7 @@ import { pipeline } from "node:stream/promises";
 import type { CAC } from "cac";
 
 import { createClient } from "@/lib/client";
-import { findConverter } from "@/lib/converters";
+import { findConverter, type FileInputSpec } from "@/lib/converters";
 import { CtioError, ExitCode, UsageError } from "@/lib/errors";
 import { debug, info, warn } from "@/lib/logger";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
@@ -14,6 +14,7 @@ import { resolveAuth } from "@/lib/token";
 interface ConvertFlags {
   type?: string;
   option?: string[] | string;
+  file?: string[] | string;
   url?: string;
   sandbox?: boolean;
   pollInterval?: number | string;
@@ -46,6 +47,7 @@ export function registerConvert(cli: CAC): void {
     .command("convert [input] [output]", "Run a conversion task")
     .option("-t, --type <type>", "Conversion type (e.g. json_to_excel, convert.json_to_excel)")
     .option("--option <kv>", "Conversion option as key=value (repeatable)", { type: [] })
+    .option("--file <path>", "Extra input file, for converters that take more than one (repeatable, in order - see `ctio describe`)", { type: [] })
     .option("--url <url>", "Use a remote URL as input instead of a local file")
     .option("--sandbox", "Sandbox mode (skips conversion, validates plumbing)")
     .option("--poll-interval <ms>", `Status poll interval in ms (default ${DEFAULT_POLL_INTERVAL_MS})`)
@@ -53,6 +55,7 @@ export function registerConvert(cli: CAC): void {
     .example("  cat data.json | ctio convert -t json_to_excel - out.xlsx")
     .example("  ctio convert -t xml_to_csv data.xml - > out.csv")
     .example("  ctio convert -t excel_to_xml in.xlsx out.xml --option header=yes")
+    .example("  ctio convert -t validate_xml_xsd data.xml report.txt --file schema.xsd")
     .action(async (input: string | undefined, output: string | undefined, flags: ConvertFlags) => {
       const pos = resolvePositionals(unswapStdio(input), unswapStdio(output), Boolean(flags.url));
       await runConvert(pos.input, pos.output, flags);
@@ -74,6 +77,9 @@ async function runConvert(
     warn(`unknown option "${key}" for ${conversionType} - sending it anyway (see \`ctio describe ${flags.type}\`)`);
   }
   if (flags.sandbox) conversionOptions["sandbox"] = true;
+  // Before auth and upload: a missing second file fails fast, naming it.
+  const extraFiles = parseFileFlags(flags.file);
+  checkFileInputs(conversionType, extraFiles);
 
   const auth = await resolveAuth({
     tokenFlag: flags.token,
@@ -95,6 +101,9 @@ async function runConvert(
   if (!flags.url && !inputArg) {
     throw new UsageError("Missing input.", 'Pass a file path, "-" for stdin, or --url <URL>.');
   }
+
+  // Open (and so check) every extra file before uploading anything.
+  const extraSources = await Promise.all(extraFiles.map((extraPath) => openInput(extraPath)));
 
   const started = Date.now();
   let fileId: string | undefined;
@@ -125,11 +134,21 @@ async function runConvert(
     debug(`upload complete file_id=${fileId}`);
   }
 
+  const extraFileIds: string[] = [];
+  for (const extra of extraSources) {
+    const choice = pickUploadInput(extra);
+    if (choice.kind !== "path") throw new UsageError("--file does not read stdin.");
+    const extraFileId = await client.files.upload(choice.path);
+    debug(`upload complete extra file_id=${extraFileId}`);
+    extraFileIds.push(extraFileId);
+  }
+
   const task = await client.createTask({
     type: conversionType,
     options: buildTaskOptions({
       ...(fileId ? { fileId } : {}),
       ...(urlForTask ? { url: urlForTask } : {}),
+      extraFileIds,
       options: conversionOptions,
     }),
   });
@@ -200,13 +219,58 @@ function normalizeType(raw: string): string {
 export function buildTaskOptions(args: {
   fileId?: string;
   url?: string;
+  extraFileIds?: string[];
   options: Record<string, unknown>;
 }): Record<string, unknown> {
+  const extraFiles = Object.fromEntries(
+    (args.extraFileIds ?? []).map((id, index) => [`file_id${index + 1}`, id]),
+  );
   return {
     ...(args.fileId ? { file_id: args.fileId } : {}),
     ...(args.url ? { url: args.url } : {}),
+    ...extraFiles,
     ...args.options,
   };
+}
+
+function parseFileFlags(raw: string[] | string | undefined): string[] {
+  if (raw === undefined || raw === null) return [];
+  const list = (Array.isArray(raw) ? raw : [raw]).filter(
+    (e): e is string => typeof e === "string" && e.length > 0,
+  );
+  if (list.includes("-")) {
+    throw new UsageError("--file does not read stdin.", "Pass a file path; only the main input can be \"-\".");
+  }
+  return list;
+}
+
+const describeInput = (input: FileInputSpec, index: number): string =>
+  `the ${input.description} (${index === 0 ? "input" : "--file"})`;
+
+/**
+ * A converter that takes more than one file (the XML/XSD validator: the XML
+ * plus its schema) needs every one of them. Checked against the bundled catalog
+ * BEFORE anything is uploaded, so a forgotten schema is named right away
+ * instead of failing on the server. A converter the snapshot doesn't know, or
+ * lists as single-file, is left to the API (the snapshot can lag).
+ */
+function checkFileInputs(type: string, extraFiles: string[]): void {
+  const inputs = findConverter(type)?.fileInputs;
+  if (!inputs || inputs.length < 2) {
+    if (extraFiles.length > 0) {
+      warn(`${type} takes one input file - sending --file anyway (see \`ctio describe ${type}\`)`);
+    }
+    return;
+  }
+  const extraInputs = inputs.slice(1);
+  const needs = `${type} needs ${inputs.length} files: ${inputs.map(describeInput).join(" and ")}.`;
+  const missing = extraInputs[extraFiles.length];
+  if (missing) {
+    throw new UsageError(`Missing the ${missing.description}. ${needs}`, `Add it with --file <path>.`);
+  }
+  if (extraFiles.length > extraInputs.length) {
+    throw new UsageError(`Too many --file values. ${needs}`);
+  }
 }
 
 /**
@@ -320,6 +384,8 @@ export const __testables = {
   resolvePositionals,
   buildTaskOptions,
   unknownOptionKeys,
+  parseFileFlags,
+  checkFileInputs,
 };
 
 function emitStatus(payload: unknown, format: OutputFormat, fileOnStdout: boolean): void {

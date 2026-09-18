@@ -11,6 +11,9 @@ ctio convert -t json_to_excel data.json out.xlsx
 # Pipe through stdin/stdout
 cat data.json | ctio convert -t json_to_excel - - > out.xlsx
 
+# Converters that take more than one file get the rest with --file
+ctio convert -t validate_xml_xsd data.xml report.txt --file schema.xsd
+
 # Compose
 ctio parse invoice.pdf --schema purchase-invoice \
   | jq '.line_items' \

@@ -1,6 +1,6 @@
 import type { CAC } from "cac";
 
-import { findConverter, type ConverterEntry, type OptionSpec } from "@/lib/converters";
+import { findConverter, type ConverterEntry, type FileInputSpec, type OptionSpec } from "@/lib/converters";
 import { UsageError } from "@/lib/errors";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
 
@@ -47,8 +47,10 @@ function renderPretty(c: ConverterEntry): void {
   process.stdout.write("\n");
 
   const specs = c.optionSpecs ?? [];
+  if (c.fileInputs) renderFileInputs(c.fileInputs);
   if (specs.length === 0 && c.options.length === 0) {
     process.stdout.write("This converter takes no options.\n");
+    if (c.fileInputs) process.stdout.write(`\nExample:\n  ${buildExample(c, specs)}\n`);
     return;
   }
 
@@ -63,6 +65,19 @@ function renderPretty(c: ConverterEntry): void {
   process.stdout.write(`\nExample:\n  ${buildExample(c, specs)}\n`);
 }
 
+function renderFileInputs(inputs: FileInputSpec[]): void {
+  process.stdout.write("Input files (all required):\n");
+  inputs.forEach((input, index) => {
+    const how = index === 0 ? "<input>" : "--file <path>";
+    process.stdout.write(`  ${how.padEnd(14)} ${input.description}\n`);
+  });
+  process.stdout.write("\n");
+}
+
+// "XSD schema" -> "<xsd-schema>": a placeholder that says what goes there.
+const placeholder = (input: FileInputSpec): string =>
+  `<${input.description.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}>`;
+
 function renderOption(o: OptionSpec): void {
   const typeLabel = o.type ? ` (${o.type})` : "";
   const def = o.default === undefined ? "" : `   [default: ${String(o.default)}]`;
@@ -75,6 +90,11 @@ function renderOption(o: OptionSpec): void {
 
 function buildExample(c: ConverterEntry, specs: OptionSpec[]): string {
   const short = c.type.replace(/^convert\./, "");
+  const [mainInput, ...extraInputs] = c.fileInputs ?? [];
+  if (mainInput) {
+    const extras = extraInputs.map((input) => ` --file ${placeholder(input)}`).join("");
+    return `ctio convert -t ${short} ${placeholder(mainInput)} <output>${extras}`;
+  }
   const inExt = c.from ?? "input";
   const outExt = c.to ?? "out";
   // Show the --option syntax using the first allowed value of the first enum

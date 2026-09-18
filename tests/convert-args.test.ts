@@ -11,6 +11,8 @@ const {
   resolvePositionals,
   buildTaskOptions,
   unknownOptionKeys,
+  parseFileFlags,
+  checkFileInputs,
 } = __testables;
 
 describe("normalizeType", () => {
@@ -230,5 +232,50 @@ describe("resolvePositionals", () => {
       input: "data.json",
       output: "out.xlsx",
     });
+  });
+});
+
+// The XML/XSD validator takes two files: the XML (the positional input) and the
+// XSD schema (--file). ctio had no way to send the second one, so every ctio
+// run of it failed on the server with a bare conversion error.
+describe("extra input files (--file)", () => {
+  test("sends --file uploads as file_id1, file_id2, in order", () => {
+    expect(buildTaskOptions({ fileId: "xml", extraFileIds: ["xsd"], options: {} })).toEqual({
+      file_id: "xml",
+      file_id1: "xsd",
+    });
+    expect(buildTaskOptions({ fileId: "a", extraFileIds: ["b", "c"], options: {} })).toEqual({
+      file_id: "a",
+      file_id1: "b",
+      file_id2: "c",
+    });
+  });
+
+  test("parses one or many --file values", () => {
+    expect(parseFileFlags(undefined)).toEqual([]);
+    expect(parseFileFlags("schema.xsd")).toEqual(["schema.xsd"]);
+    expect(parseFileFlags(["a.xsd", "b.xsd"])).toEqual(["a.xsd", "b.xsd"]);
+  });
+
+  test("stdin cannot be an extra file", () => {
+    expect(() => parseFileFlags("-")).toThrow(/--file/);
+  });
+
+  test("the validator without --file fails BEFORE uploading, naming the XSD schema", () => {
+    expect(() => checkFileInputs("convert.validate_xml_xsd", [])).toThrow(
+      "Missing the XSD schema. convert.validate_xml_xsd needs 2 files: the XML file (input) and the XSD schema (--file).",
+    );
+  });
+
+  test("the validator with its schema passes", () => {
+    expect(() => checkFileInputs("convert.validate_xml_xsd", ["schema.xsd"])).not.toThrow();
+  });
+
+  test("too many --file values for the validator is a usage error", () => {
+    expect(() => checkFileInputs("convert.validate_xml_xsd", ["a.xsd", "b.xsd"])).toThrow(/Too many --file/);
+  });
+
+  test("single-file converters need no --file", () => {
+    expect(() => checkFileInputs("convert.xml_to_csv", [])).not.toThrow();
   });
 });

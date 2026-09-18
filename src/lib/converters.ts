@@ -14,6 +14,16 @@ export interface OptionSpec {
   values?: string[];
 }
 
+/**
+ * One file a multi-file converter needs, in order: the first is the positional
+ * input, the rest are passed with `--file` (e.g. the XML/XSD validator's
+ * `file_id1` "XSD schema").
+ */
+export interface FileInputSpec {
+  key: string;
+  description: string;
+}
+
 export interface ConverterEntry {
   type: string;
   url: string;
@@ -23,6 +33,8 @@ export interface ConverterEntry {
   description: string;
   options: string[];
   optionSpecs?: OptionSpec[];
+  /** Only on converters that take more than one file. */
+  fileInputs?: FileInputSpec[];
   ai: boolean;
   custom: boolean;
   batch: boolean;
