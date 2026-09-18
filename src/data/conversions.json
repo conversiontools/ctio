@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-21T15:19:50.731Z",
+  "generatedAt": "2026-09-18T12:10:18.234Z",
   "source": "Conversion Tools converter registry",
-  "count": 213,
+  "count": 218,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -1351,6 +1351,74 @@
       ]
     },
     {
+      "type": "convert.csv_to_sql",
+      "url": "csv-to-sql",
+      "from": "csv",
+      "to": "sql",
+      "title": "CSV to SQL",
+      "description": "CSV to SQL Converter. Turn CSV files into CREATE TABLE and INSERT statements for MySQL, PostgreSQL, SQL Server or SQLite. API available.",
+      "options": [
+        "delimiter",
+        "header",
+        "sql_dialect",
+        "sql_table_name",
+        "sql_create_table"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "sql",
+        "csv",
+        "from-csv",
+        "to-sql"
+      ],
+      "optionSpecs": [
+        {
+          "name": "delimiter",
+          "title": "CSV file delimiter",
+          "type": "enum",
+          "values": [
+            "comma",
+            "semicolon",
+            "vertical_bar",
+            "tabulation"
+          ]
+        },
+        {
+          "name": "header",
+          "title": "Use first line/row as a header?",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "name": "sql_dialect",
+          "title": "Target database",
+          "type": "enum",
+          "values": [
+            "mysql",
+            "postgresql",
+            "sqlserver",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "sql_table_name",
+          "title": "Table name (optional)",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "sql_create_table",
+          "title": "Include CREATE TABLE statement?",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    {
       "type": "convert.csv_to_srt",
       "url": "csv-to-srt",
       "from": "csv",
@@ -1811,6 +1879,56 @@
             "Portrait",
             "Landscape"
           ]
+        }
+      ]
+    },
+    {
+      "type": "convert.excel_to_sql",
+      "url": "excel-to-sql",
+      "from": "excel",
+      "to": "sql",
+      "title": "Excel to SQL",
+      "description": "Excel to SQL Converter. Turn XLS and XLSX spreadsheets into CREATE TABLE and INSERT statements for MySQL, PostgreSQL, SQL Server or SQLite. API available.",
+      "options": [
+        "sql_dialect",
+        "sql_table_name",
+        "sql_create_table"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "sql",
+        "excel",
+        "office",
+        "from-excel",
+        "to-sql"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sql_dialect",
+          "title": "Target database",
+          "type": "enum",
+          "values": [
+            "mysql",
+            "postgresql",
+            "sqlserver",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "sql_table_name",
+          "title": "Table name (optional)",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "sql_create_table",
+          "title": "Include CREATE TABLE statement?",
+          "type": "boolean",
+          "default": true
         }
       ]
     },
@@ -3402,6 +3520,55 @@
       ]
     },
     {
+      "type": "convert.json_to_sql",
+      "url": "json-to-sql",
+      "from": "json",
+      "to": "sql",
+      "title": "JSON to SQL",
+      "description": "JSON to SQL Converter. Turn JSON files into CREATE TABLE and INSERT statements for MySQL, PostgreSQL, SQL Server or SQLite. API available.",
+      "options": [
+        "sql_dialect",
+        "sql_table_name",
+        "sql_create_table"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "sql",
+        "json",
+        "from-json",
+        "to-sql"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sql_dialect",
+          "title": "Target database",
+          "type": "enum",
+          "values": [
+            "mysql",
+            "postgresql",
+            "sqlserver",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "sql_table_name",
+          "title": "Table name (optional)",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "sql_create_table",
+          "title": "Include CREATE TABLE statement?",
+          "type": "boolean",
+          "default": true
+        }
+      ]
+    },
+    {
       "type": "convert.json_to_xml",
       "url": "json-to-xml",
       "from": "json",
@@ -3583,6 +3750,55 @@
         "jsonl",
         "from-jsonl",
         "to-parquet"
+      ]
+    },
+    {
+      "type": "convert.jsonl_to_sql",
+      "url": "jsonl-to-sql",
+      "from": "jsonl",
+      "to": "sql",
+      "title": "JSONL to SQL",
+      "description": "JSONL to SQL Converter. Turn JSON Lines (NDJSON) files into CREATE TABLE and INSERT statements for MySQL, PostgreSQL, SQL Server or SQLite. API available.",
+      "options": [
+        "sql_dialect",
+        "sql_table_name",
+        "sql_create_table"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "sql",
+        "jsonl",
+        "from-jsonl",
+        "to-sql"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sql_dialect",
+          "title": "Target database",
+          "type": "enum",
+          "values": [
+            "mysql",
+            "postgresql",
+            "sqlserver",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "sql_table_name",
+          "title": "Table name (optional)",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "sql_create_table",
+          "title": "Include CREATE TABLE statement?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
@@ -4562,6 +4778,55 @@
         "jsonl",
         "from-parquet",
         "to-jsonl"
+      ]
+    },
+    {
+      "type": "convert.parquet_to_sql",
+      "url": "parquet-to-sql",
+      "from": "parquet",
+      "to": "sql",
+      "title": "Parquet to SQL",
+      "description": "Parquet to SQL Converter. Turn Parquet files into CREATE TABLE and INSERT statements for MySQL, PostgreSQL, SQL Server or SQLite. API available.",
+      "options": [
+        "sql_dialect",
+        "sql_table_name",
+        "sql_create_table"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "sql",
+        "parquet",
+        "from-parquet",
+        "to-sql"
+      ],
+      "optionSpecs": [
+        {
+          "name": "sql_dialect",
+          "title": "Target database",
+          "type": "enum",
+          "values": [
+            "mysql",
+            "postgresql",
+            "sqlserver",
+            "sqlite"
+          ]
+        },
+        {
+          "name": "sql_table_name",
+          "title": "Table name (optional)",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "sql_create_table",
+          "title": "Include CREATE TABLE statement?",
+          "type": "boolean",
+          "default": true
+        }
       ]
     },
     {
