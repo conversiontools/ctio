@@ -4,6 +4,7 @@ import { __testables } from "@/commands/convert";
 
 const {
   resolveType,
+  warningLines,
   audioFormatFromOutputName,
   parseOptionFlags,
   coerceValue,
@@ -315,5 +316,22 @@ describe("extra input files (--file)", () => {
 
   test("single-file converters need no --file", () => {
     expect(() => checkFileInputs("convert.xml_to_csv", [])).not.toThrow();
+  });
+});
+
+describe("warningLines", () => {
+  test("prints each warning the API attached to the new task", () => {
+    expect(
+      warningLines([
+        { code: "OPTIONS_IGNORED", message: "These options are not supported for convert.xml_to_csv and were ignored: delimeter.", options: ["delimeter"] },
+        { code: "OPTION_VALUE_REPLACED", message: "These option values are not supported for convert.xml_to_csv and were replaced with the default: delimiter -> comma.", options: ["delimiter"] },
+      ]),
+    ).toEqual([
+      "These options are not supported for convert.xml_to_csv and were ignored: delimeter.",
+      "These option values are not supported for convert.xml_to_csv and were replaced with the default: delimiter -> comma.",
+    ]);
+  });
+  test("prints nothing for a clean request", () => {
+    expect(warningLines([])).toEqual([]);
   });
 });

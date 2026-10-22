@@ -3,6 +3,7 @@ import type { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 
 import type { CAC } from "cac";
+import type { TaskWarning } from "conversiontools";
 
 import { createClient } from "@/lib/client";
 import { findConverter, normalizeType, type FileInputSpec } from "@/lib/converters";
@@ -154,6 +155,7 @@ async function runConvert(
     }),
   });
   debug(`task created id=${task.id}`);
+  for (const line of warningLines(task.warnings)) warn(line);
 
   if (format === "pretty") info(`task ${task.id} created, waiting...`);
 
@@ -209,6 +211,15 @@ async function runConvert(
 }
 
 /** The converter's own id for a type or one of its aliases (ai_text_to_speech -> convert.ai_text_to_mp3). */
+/**
+ * What the API changed about the request (an ignored option, a value replaced
+ * with its default), one line each. The conversion still runs, so these are
+ * the only sign that it is not running the way it was asked to.
+ */
+function warningLines(warnings: readonly TaskWarning[]): string[] {
+  return warnings.map((w) => w.message);
+}
+
 function resolveType(raw: string): string {
   return findConverter(raw)?.type ?? normalizeType(raw);
 }
@@ -410,6 +421,7 @@ function coerceValue(v: string): unknown {
 
 export const __testables = {
   resolveType,
+  warningLines,
   audioFormatFromOutputName,
   parseOptionFlags,
   coerceValue,
