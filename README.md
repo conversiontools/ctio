@@ -94,6 +94,9 @@ ctio convert -t ai_pdf_to_mp3 handbook.pdf handbook.wav --option voice_tts=gb_ja
 - **Names.** `ai_text_to_speech`, `ai_docx_to_speech`, `ai_pdf_to_speech` and
   `ai_md_to_speech` work as converter names too.
 
+- **Sound.** The audio comes out at spoken-word loudness (about -16 LUFS), 24 kHz mono in both
+  formats, so it can go straight into a video. MP3s report their true duration.
+
 Text to speech uses AI credits (10 per 1,000 characters).
 
 ## License
