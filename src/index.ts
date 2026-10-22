@@ -11,6 +11,7 @@ import { registerParse } from "@/commands/parse";
 import { registerStudio } from "@/commands/studio";
 import { registerTask } from "@/commands/task";
 import { registerVersion } from "@/commands/version";
+import { registerVoices } from "@/commands/voices";
 import { CtioError, ExitCode } from "@/lib/errors";
 import { error, setVerbose } from "@/lib/logger";
 
@@ -49,6 +50,7 @@ async function main(): Promise<void> {
   registerTask(cli);
   registerList(cli);
   registerDescribe(cli);
+  registerVoices(cli);
   registerAuth(cli);
   registerVersion(cli, VERSION);
 

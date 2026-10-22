@@ -42,8 +42,12 @@ function pickFormat(raw: string | undefined): OutputFormat {
 
 function renderPretty(c: ConverterEntry): void {
   process.stdout.write(`${c.title} (${c.type})\n`);
+  if (c.typeAliases?.length) process.stdout.write(`Also runs as: ${c.typeAliases.join(", ")}\n`);
   if (c.description) process.stdout.write(`${c.description}\n`);
-  if (c.from && c.to) process.stdout.write(`Input: ${c.from}   Output: ${c.to}\n`);
+  if (c.from && c.to) {
+    const outputs = [c.to, ...(c.outputAliases ?? [])].join(" | ");
+    process.stdout.write(`Input: ${c.from}   Output: ${outputs}\n`);
+  }
   process.stdout.write("\n");
 
   const specs = c.optionSpecs ?? [];
@@ -86,6 +90,7 @@ function renderOption(o: OptionSpec): void {
   if (o.values && o.values.length > 0) {
     process.stdout.write(`      values: ${o.values.join(" | ")}\n`);
   }
+  if (o.description) process.stdout.write(`      ${o.description}\n`);
 }
 
 function buildExample(c: ConverterEntry, specs: OptionSpec[]): string {

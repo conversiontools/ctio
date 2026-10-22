@@ -11,6 +11,8 @@ export interface OptionSpec {
   title?: string;
   type?: string;
   default?: string | number | boolean;
+  /** What the option accepts beyond `values` (e.g. voice_tts also takes your cloned voices' ids). */
+  description?: string;
   values?: string[];
 }
 
@@ -35,6 +37,12 @@ export interface ConverterEntry {
   optionSpecs?: OptionSpec[];
   /** Only on converters that take more than one file. */
   fileInputs?: FileInputSpec[];
+  /** Other ids the API accepts for this converter (convert.ai_text_to_speech). */
+  typeAliases?: string[];
+  /** Input format synonyms beyond `from` (txt for text). */
+  inputAliases?: string[];
+  /** Output format synonyms beyond `to`, incl. formats an option selects (wav for text to speech). */
+  outputAliases?: string[];
   ai: boolean;
   custom: boolean;
   batch: boolean;
@@ -53,8 +61,8 @@ export function normalizeType(type: string): string {
   return t.startsWith("convert.") ? t : `convert.${t}`;
 }
 
-/** Find a converter by type, accepting the short form (without the convert. prefix). */
+/** Find a converter by type or alias, accepting the short form (without the convert. prefix). */
 export function findConverter(type: string): ConverterEntry | undefined {
   const full = normalizeType(type);
-  return CONVERTERS.find((c) => c.type === full);
+  return CONVERTERS.find((c) => c.type === full || (c.typeAliases ?? []).includes(full));
 }

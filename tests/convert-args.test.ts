@@ -3,7 +3,8 @@ import { describe, expect, test } from "bun:test";
 import { __testables } from "@/commands/convert";
 
 const {
-  normalizeType,
+  resolveType,
+  audioFormatFromOutputName,
   parseOptionFlags,
   coerceValue,
   resolvePollInterval,
@@ -15,12 +16,49 @@ const {
   checkFileInputs,
 } = __testables;
 
-describe("normalizeType", () => {
+describe("resolveType", () => {
   test("prepends `convert.` when missing", () => {
-    expect(normalizeType("json_to_excel")).toBe("convert.json_to_excel");
+    expect(resolveType("json_to_excel")).toBe("convert.json_to_excel");
   });
   test("keeps prefix when already present", () => {
-    expect(normalizeType("convert.json_to_excel")).toBe("convert.json_to_excel");
+    expect(resolveType("convert.json_to_excel")).toBe("convert.json_to_excel");
+  });
+  test("sends an alias as the converter it names", () => {
+    expect(resolveType("ai_text_to_speech")).toBe("convert.ai_text_to_mp3");
+    expect(resolveType("convert.ai_markdown_to_speech")).toBe("convert.ai_md_to_mp3");
+  });
+  test("passes a type the bundle doesn't know through for the API to judge", () => {
+    expect(resolveType("brand_new_to_thing")).toBe("convert.brand_new_to_thing");
+  });
+});
+
+// `out.wav` without --option output_tts used to get MP3 bytes under a .wav name.
+describe("audioFormatFromOutputName", () => {
+  const tts = "convert.ai_text_to_mp3";
+
+  test("takes the format from a .wav or .mp3 output name", () => {
+    expect(audioFormatFromOutputName(tts, {}, "narration.wav")).toEqual({ output_tts: "wav" });
+    expect(audioFormatFromOutputName(tts, { voice_tts: "en_paul_neutral" }, "dir/OUT.MP3")).toEqual({
+      voice_tts: "en_paul_neutral",
+      output_tts: "mp3",
+    });
+  });
+
+  test("keeps an explicit output_tts that agrees with the name", () => {
+    expect(audioFormatFromOutputName(tts, { output_tts: "wav" }, "out.wav")).toEqual({ output_tts: "wav" });
+  });
+
+  test("fails before upload when output_tts contradicts the name", () => {
+    expect(() => audioFormatFromOutputName(tts, { output_tts: "mp3" }, "out.wav")).toThrow(
+      "--option output_tts=mp3 contradicts the output file name out.wav.",
+    );
+  });
+
+  test("leaves stdout, other extensions and other converters alone", () => {
+    expect(audioFormatFromOutputName(tts, {}, "-")).toEqual({});
+    expect(audioFormatFromOutputName(tts, {}, "out.audio")).toEqual({});
+    expect(audioFormatFromOutputName(tts, { output_tts: "flac" }, "out.flac")).toEqual({ output_tts: "flac" });
+    expect(audioFormatFromOutputName("convert.mp4_to_mp3", {}, "out.mp3")).toEqual({});
   });
 });
 

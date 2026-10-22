@@ -1,10 +1,11 @@
+import { basename, extname } from "node:path";
 import type { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 
 import type { CAC } from "cac";
 
 import { createClient } from "@/lib/client";
-import { findConverter, type FileInputSpec } from "@/lib/converters";
+import { findConverter, normalizeType, type FileInputSpec } from "@/lib/converters";
 import { CtioError, ExitCode, UsageError } from "@/lib/errors";
 import { debug, info, warn } from "@/lib/logger";
 import { emit, isOutputFormat, type OutputFormat } from "@/lib/output";
@@ -71,8 +72,8 @@ async function runConvert(
   if (!outputArg) throw new UsageError("Missing output path.", 'Use "-" for stdout, or pass a file path.');
 
   const format = pickFormat(flags.format);
-  const conversionType = normalizeType(flags.type);
-  const conversionOptions = parseOptionFlags(flags.option);
+  const conversionType = resolveType(flags.type);
+  const conversionOptions = audioFormatFromOutputName(conversionType, parseOptionFlags(flags.option), outputArg);
   for (const key of unknownOptionKeys(conversionType, Object.keys(conversionOptions))) {
     warn(`unknown option "${key}" for ${conversionType} - sending it anyway (see \`ctio describe ${flags.type}\`)`);
   }
@@ -207,8 +208,40 @@ async function runConvert(
   emitStatus(status, format, sink.kind === "stdout");
 }
 
-function normalizeType(raw: string): string {
-  return raw.startsWith("convert.") ? raw : `convert.${raw}`;
+/** The converter's own id for a type or one of its aliases (ai_text_to_speech -> convert.ai_text_to_mp3). */
+function resolveType(raw: string): string {
+  return findConverter(raw)?.type ?? normalizeType(raw);
+}
+
+const AUDIO_FORMAT_BY_EXTENSION: Record<string, string> = { ".mp3": "mp3", ".wav": "wav" };
+
+/**
+ * Text to speech writes MP3 unless `output_tts` says otherwise, so `out.wav`
+ * without the option used to get MP3 bytes under a .wav name. The output
+ * file's extension now picks the format when the option is absent, and a
+ * contradiction fails before anything is uploaded.
+ */
+export function audioFormatFromOutputName(
+  type: string,
+  options: Record<string, unknown>,
+  outputPath: string | undefined,
+): Record<string, unknown> {
+  if (!outputPath || outputPath === "-") return options;
+  if (!findConverter(type)?.options.includes("output_tts")) return options;
+  const fromName = AUDIO_FORMAT_BY_EXTENSION[extname(outputPath).toLowerCase()];
+  if (!fromName) return options;
+  const asked = options["output_tts"];
+  if (asked === undefined) {
+    debug(`output_tts=${fromName} (from the output file name)`);
+    return { ...options, output_tts: fromName };
+  }
+  if (String(asked).toLowerCase() !== fromName) {
+    throw new UsageError(
+      `--option output_tts=${String(asked)} contradicts the output file name ${basename(outputPath)}.`,
+      `Drop --option output_tts to get ${fromName} from the file name, or name the output .${String(asked).toLowerCase()}.`,
+    );
+  }
+  return options;
 }
 
 /**
@@ -376,7 +409,8 @@ function coerceValue(v: string): unknown {
 }
 
 export const __testables = {
-  normalizeType,
+  resolveType,
+  audioFormatFromOutputName,
   parseOptionFlags,
   coerceValue,
   resolvePollInterval,

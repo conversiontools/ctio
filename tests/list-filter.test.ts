@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 
 import { __testables } from "@/commands/list";
+import { CONVERTERS } from "@/lib/converters";
 
 const { filterConverters } = __testables;
 
@@ -58,6 +59,17 @@ describe("filterConverters", () => {
       "convert.xml_to_csv",
       "convert.sdimedia.export_xml_to_csv",
     ]);
+  });
+
+  test("to filter matches a format synonym (xlsx for an excel converter)", () => {
+    const withAliases = [entry({ type: "convert.json_to_excel", from: "json", to: "excel" }), entry({ type: "convert.xml_to_csv", from: "xml", to: "csv" })]
+      .map((c) => (c.to === "excel" ? { ...c, outputAliases: ["xlsx", "xls"] } : c));
+    expect(filterConverters(withAliases, { to: "xlsx" }).map((c) => c.type)).toEqual(["convert.json_to_excel"]);
+  });
+
+  test("--to wav finds the text-to-speech converters in the bundled catalog", () => {
+    const types = filterConverters(CONVERTERS, { to: "wav" }).map((c) => c.type);
+    expect(types).toEqual(expect.arrayContaining(["convert.ai_text_to_mp3", "convert.ai_pdf_to_mp3", "convert.ai_docx_to_mp3", "convert.ai_md_to_mp3"]));
   });
 
   test("from + to combined", () => {

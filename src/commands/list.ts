@@ -45,8 +45,8 @@ export function filterConverters(
   const from = flags.from?.toLowerCase().trim();
   const to = flags.to?.toLowerCase().trim();
   return list.filter((c) => {
-    if (from && c.from !== from) return false;
-    if (to && c.to !== to) return false;
+    if (from && c.from !== from && !(c.inputAliases ?? []).includes(from)) return false;
+    if (to && c.to !== to && !(c.outputAliases ?? []).includes(to)) return false;
     if (flags.ai && !c.ai) return false;
     if (flags.custom && !c.custom) return false;
     return true;

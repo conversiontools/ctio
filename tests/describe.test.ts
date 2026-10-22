@@ -24,6 +24,25 @@ describe("findConverter", () => {
   test("returns undefined for an unknown type", () => {
     expect(findConverter("nope_to_nope")).toBeUndefined();
   });
+  test("finds a converter by one of its aliases", () => {
+    expect(findConverter("ai_text_to_speech")?.type).toBe("convert.ai_text_to_mp3");
+    expect(findConverter("convert.ai_pdf_to_speech")?.type).toBe("convert.ai_pdf_to_mp3");
+  });
+});
+
+describe("text-to-speech option metadata", () => {
+  const specs = findConverter("ai_text_to_mp3")?.optionSpecs ?? [];
+  const spec = (name: string) => specs.find((o) => o.name === name);
+
+  test("lists the voices, formats and languages", () => {
+    expect(spec("voice_tts")?.values).toEqual(expect.arrayContaining(["default", "gb_oliver_neutral", "en_paul_neutral", "gb_jane_neutral", "fr_marie_neutral"]));
+    expect(spec("output_tts")?.values).toEqual(["mp3", "wav"]);
+    expect(spec("language_tts")?.values).toContain("fr");
+  });
+
+  test("says voice_tts also takes your cloned voices' ids", () => {
+    expect(spec("voice_tts")?.description).toContain("cloned voices");
+  });
 });
 
 describe("bundled option metadata", () => {

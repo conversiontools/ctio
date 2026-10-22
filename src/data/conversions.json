@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-18T12:11:00.148Z",
+  "generatedAt": "2026-10-22T11:59:53.767Z",
   "source": "Conversion Tools converter registry",
-  "count": 218,
+  "count": 224,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -32,21 +32,80 @@
         {
           "name": "language_tts",
           "title": "Language",
-          "type": "string",
-          "default": "en"
+          "type": "enum",
+          "default": "en",
+          "values": [
+            "en",
+            "fr",
+            "es",
+            "pt",
+            "it",
+            "nl",
+            "de",
+            "hi",
+            "ar"
+          ]
         },
         {
           "name": "output_tts",
           "title": "Output Format",
-          "type": "string",
-          "default": "mp3"
+          "type": "enum",
+          "default": "mp3",
+          "values": [
+            "mp3",
+            "wav"
+          ]
         },
         {
           "name": "voice_tts",
           "title": "Voice",
-          "type": "string",
-          "default": "default"
+          "type": "enum",
+          "default": "default",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "values": [
+            "default",
+            "gb_oliver_excited",
+            "gb_oliver_cheerful",
+            "gb_oliver_confident",
+            "gb_oliver_neutral",
+            "gb_oliver_curious",
+            "gb_oliver_sad",
+            "gb_oliver_angry",
+            "gb_jane_confident",
+            "gb_jane_neutral",
+            "gb_jane_curious",
+            "gb_jane_sad",
+            "gb_jane_frustrated",
+            "gb_jane_confused",
+            "gb_jane_sarcasm",
+            "gb_jane_shameful",
+            "gb_jane_jealousy",
+            "en_paul_excited",
+            "en_paul_cheerful",
+            "en_paul_confident",
+            "en_paul_happy",
+            "en_paul_neutral",
+            "en_paul_sad",
+            "en_paul_frustrated",
+            "en_paul_angry",
+            "fr_marie_excited",
+            "fr_marie_curious",
+            "fr_marie_happy",
+            "fr_marie_neutral",
+            "fr_marie_sad",
+            "fr_marie_angry"
+          ]
         }
+      ],
+      "typeAliases": [
+        "convert.ai_docx_to_speech"
+      ],
+      "inputAliases": [
+        "word",
+        "doc"
+      ],
+      "outputAliases": [
+        "wav"
       ]
     },
     {
@@ -70,6 +129,9 @@
         "text",
         "from-flac",
         "to-text"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -91,6 +153,9 @@
         "json",
         "from-jpg",
         "to-json"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -122,21 +187,80 @@
         {
           "name": "language_tts",
           "title": "Language",
-          "type": "string",
-          "default": "en"
+          "type": "enum",
+          "default": "en",
+          "values": [
+            "en",
+            "fr",
+            "es",
+            "pt",
+            "it",
+            "nl",
+            "de",
+            "hi",
+            "ar"
+          ]
         },
         {
           "name": "output_tts",
           "title": "Output Format",
-          "type": "string",
-          "default": "mp3"
+          "type": "enum",
+          "default": "mp3",
+          "values": [
+            "mp3",
+            "wav"
+          ]
         },
         {
           "name": "voice_tts",
           "title": "Voice",
-          "type": "string",
-          "default": "default"
+          "type": "enum",
+          "default": "default",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "values": [
+            "default",
+            "gb_oliver_excited",
+            "gb_oliver_cheerful",
+            "gb_oliver_confident",
+            "gb_oliver_neutral",
+            "gb_oliver_curious",
+            "gb_oliver_sad",
+            "gb_oliver_angry",
+            "gb_jane_confident",
+            "gb_jane_neutral",
+            "gb_jane_curious",
+            "gb_jane_sad",
+            "gb_jane_frustrated",
+            "gb_jane_confused",
+            "gb_jane_sarcasm",
+            "gb_jane_shameful",
+            "gb_jane_jealousy",
+            "en_paul_excited",
+            "en_paul_cheerful",
+            "en_paul_confident",
+            "en_paul_happy",
+            "en_paul_neutral",
+            "en_paul_sad",
+            "en_paul_frustrated",
+            "en_paul_angry",
+            "fr_marie_excited",
+            "fr_marie_curious",
+            "fr_marie_happy",
+            "fr_marie_neutral",
+            "fr_marie_sad",
+            "fr_marie_angry"
+          ]
         }
+      ],
+      "typeAliases": [
+        "convert.ai_md_to_speech",
+        "convert.ai_markdown_to_speech"
+      ],
+      "inputAliases": [
+        "markdown"
+      ],
+      "outputAliases": [
+        "wav"
       ]
     },
     {
@@ -160,6 +284,9 @@
         "text",
         "from-mp3",
         "to-text"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -290,6 +417,11 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -298,7 +430,7 @@
       "from": "pdf",
       "to": "json",
       "title": "AI: PDF to JSON",
-      "description": "AI: PDF to JSON Converter. Extract structured data from PDF to JSON Online with Free to Try AI Converter. API available.",
+      "description": "Convert PDF to JSON online with AI. Tables come out as rows keyed by column name, sections stay nested, and scans work too. Free account: 10 pages a month.",
       "options": [
         "images"
       ],
@@ -352,6 +484,9 @@
           "type": "boolean",
           "default": true
         }
+      ],
+      "outputAliases": [
+        "md"
       ]
     },
     {
@@ -383,21 +518,76 @@
         {
           "name": "language_tts",
           "title": "Language",
-          "type": "string",
-          "default": "en"
+          "type": "enum",
+          "default": "en",
+          "values": [
+            "en",
+            "fr",
+            "es",
+            "pt",
+            "it",
+            "nl",
+            "de",
+            "hi",
+            "ar"
+          ]
         },
         {
           "name": "output_tts",
           "title": "Output Format",
-          "type": "string",
-          "default": "mp3"
+          "type": "enum",
+          "default": "mp3",
+          "values": [
+            "mp3",
+            "wav"
+          ]
         },
         {
           "name": "voice_tts",
           "title": "Voice",
-          "type": "string",
-          "default": "default"
+          "type": "enum",
+          "default": "default",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "values": [
+            "default",
+            "gb_oliver_excited",
+            "gb_oliver_cheerful",
+            "gb_oliver_confident",
+            "gb_oliver_neutral",
+            "gb_oliver_curious",
+            "gb_oliver_sad",
+            "gb_oliver_angry",
+            "gb_jane_confident",
+            "gb_jane_neutral",
+            "gb_jane_curious",
+            "gb_jane_sad",
+            "gb_jane_frustrated",
+            "gb_jane_confused",
+            "gb_jane_sarcasm",
+            "gb_jane_shameful",
+            "gb_jane_jealousy",
+            "en_paul_excited",
+            "en_paul_cheerful",
+            "en_paul_confident",
+            "en_paul_happy",
+            "en_paul_neutral",
+            "en_paul_sad",
+            "en_paul_frustrated",
+            "en_paul_angry",
+            "fr_marie_excited",
+            "fr_marie_curious",
+            "fr_marie_happy",
+            "fr_marie_neutral",
+            "fr_marie_sad",
+            "fr_marie_angry"
+          ]
         }
+      ],
+      "typeAliases": [
+        "convert.ai_pdf_to_speech"
+      ],
+      "outputAliases": [
+        "wav"
       ]
     },
     {
@@ -458,21 +648,79 @@
         {
           "name": "language_tts",
           "title": "Language",
-          "type": "string",
-          "default": "en"
+          "type": "enum",
+          "default": "en",
+          "values": [
+            "en",
+            "fr",
+            "es",
+            "pt",
+            "it",
+            "nl",
+            "de",
+            "hi",
+            "ar"
+          ]
         },
         {
           "name": "output_tts",
           "title": "Output Format",
-          "type": "string",
-          "default": "mp3"
+          "type": "enum",
+          "default": "mp3",
+          "values": [
+            "mp3",
+            "wav"
+          ]
         },
         {
           "name": "voice_tts",
           "title": "Voice",
-          "type": "string",
-          "default": "default"
+          "type": "enum",
+          "default": "default",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "values": [
+            "default",
+            "gb_oliver_excited",
+            "gb_oliver_cheerful",
+            "gb_oliver_confident",
+            "gb_oliver_neutral",
+            "gb_oliver_curious",
+            "gb_oliver_sad",
+            "gb_oliver_angry",
+            "gb_jane_confident",
+            "gb_jane_neutral",
+            "gb_jane_curious",
+            "gb_jane_sad",
+            "gb_jane_frustrated",
+            "gb_jane_confused",
+            "gb_jane_sarcasm",
+            "gb_jane_shameful",
+            "gb_jane_jealousy",
+            "en_paul_excited",
+            "en_paul_cheerful",
+            "en_paul_confident",
+            "en_paul_happy",
+            "en_paul_neutral",
+            "en_paul_sad",
+            "en_paul_frustrated",
+            "en_paul_angry",
+            "fr_marie_excited",
+            "fr_marie_curious",
+            "fr_marie_happy",
+            "fr_marie_neutral",
+            "fr_marie_sad",
+            "fr_marie_angry"
+          ]
         }
+      ],
+      "typeAliases": [
+        "convert.ai_text_to_speech"
+      ],
+      "inputAliases": [
+        "txt"
+      ],
+      "outputAliases": [
+        "wav"
       ]
     },
     {
@@ -589,6 +837,12 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "inputAliases": [
+        "srt"
+      ],
+      "outputAliases": [
+        "srt"
       ]
     },
     {
@@ -612,6 +866,81 @@
         "text",
         "from-wav",
         "to-text"
+      ],
+      "outputAliases": [
+        "txt"
+      ]
+    },
+    {
+      "type": "convert.ais_to_csv",
+      "url": "ais-json-to-csv",
+      "from": "ais",
+      "to": "csv",
+      "title": "AIS JSON to CSV",
+      "description": "Convert your income tax AIS JSON to CSV online: TDS/TCS, SFT, taxes paid, demand and refund and other information, one clean CSV file per information category in a zip. Opens the AIS Utility JSON with your AIS password. Files are private and encrypted.",
+      "options": [
+        "password"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "csv",
+        "to-csv",
+        "from-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "inputAliases": [
+        "json"
+      ]
+    },
+    {
+      "type": "convert.ais_to_excel",
+      "url": "ais-json-to-excel",
+      "from": "ais",
+      "to": "excel",
+      "title": "AIS JSON to Excel",
+      "description": "Convert your income tax AIS JSON to Excel online: TDS/TCS, SFT, taxes paid, demand and refund and other information, one clean sheet per information category with amounts as numbers. Opens the AIS Utility JSON with your AIS password. Files are private and encrypted.",
+      "options": [
+        "password"
+      ],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "excel",
+        "office",
+        "to-excel",
+        "from-json"
+      ],
+      "optionSpecs": [
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "inputAliases": [
+        "json"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -647,6 +976,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -687,6 +1021,9 @@
         "text",
         "to-text",
         "from-ass"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -756,7 +1093,7 @@
       "from": "avif",
       "to": "jpg",
       "title": "AVIF to JPEG",
-      "description": "AVIF to JPEG Converter. Convert AVIF to JPEG Online with Free Image Converter. API available.",
+      "description": "Convert AVIF to JPG (JPEG) online for free. Turn AVIF images saved from websites into JPEG files that any app or upload form accepts, at the quality you choose.",
       "options": [
         "alpha_background",
         "jpeg_quality"
@@ -791,6 +1128,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -1062,6 +1402,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1093,6 +1438,12 @@
           "title": "Target file size",
           "type": "string"
         }
+      ],
+      "inputAliases": [
+        "image"
+      ],
+      "outputAliases": [
+        "image"
       ]
     },
     {
@@ -1123,6 +1474,12 @@
           "title": "Target file size",
           "type": "string"
         }
+      ],
+      "inputAliases": [
+        "pdf"
+      ],
+      "outputAliases": [
+        "pdf"
       ]
     },
     {
@@ -1154,6 +1511,12 @@
           "title": "Target file size",
           "type": "string"
         }
+      ],
+      "inputAliases": [
+        "video"
+      ],
+      "outputAliases": [
+        "mp4"
       ]
     },
     {
@@ -1162,7 +1525,7 @@
       "from": "csv",
       "to": "excel",
       "title": "CSV to Excel",
-      "description": "Convert CSV into Excel Online with our Tool. Quick file transformation. 100% Confidential. All Excel formats: XLS, XLSX. API available",
+      "description": "Convert CSV to Excel online for free. Upload a CSV file or paste the text, pick the delimiter, and download an XLSX or XLS spreadsheet. No software to install.",
       "options": [
         "delimiter",
         "excel_format"
@@ -1199,6 +1562,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1543,6 +1911,60 @@
       ]
     },
     {
+      "type": "convert.edi_to_csv",
+      "url": "edi-to-csv",
+      "from": "edi",
+      "to": "csv",
+      "title": "EDI to CSV",
+      "description": "Convert EDI to CSV online. Upload an X12 or EDIFACT file and get 850 purchase orders, 810 invoices and 856 ship notices as CSV tables. Any other document becomes a readable segment table.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "edi",
+        "csv",
+        "to-csv",
+        "from-edi"
+      ],
+      "inputAliases": [
+        "x12",
+        "edifact"
+      ]
+    },
+    {
+      "type": "convert.edi_to_excel",
+      "url": "edi-to-excel",
+      "from": "edi",
+      "to": "excel",
+      "title": "EDI to Excel",
+      "description": "Convert EDI to Excel online. Upload an X12 or EDIFACT file and get 850 purchase orders, 810 invoices and 856 ship notices as readable sheets. Any other document becomes a readable segment table.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "edi",
+        "excel",
+        "office",
+        "to-excel",
+        "from-edi"
+      ],
+      "inputAliases": [
+        "x12",
+        "edifact"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
+      ]
+    },
+    {
       "type": "convert.epub_to_azw",
       "url": "epub-to-azw",
       "from": "epub",
@@ -1619,6 +2041,11 @@
         "from-excel",
         "to-ass",
         "from-xlsx"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1627,7 +2054,7 @@
       "from": "excel",
       "to": "csv",
       "title": "Excel to CSV",
-      "description": "Change Excel to CSV Online via our Converter Tool. Quick and easy. All Files are Encrypted. Available Pricing. Reliable Operation of Services. Try Now",
+      "description": "Convert Excel to CSV online for free. Save XLSX, XLS and XLSB spreadsheets as CSV, with every sheet included and the delimiter you choose.",
       "options": [
         "delimiter",
         "quote",
@@ -1668,6 +2095,11 @@
           "type": "boolean",
           "default": false
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1719,6 +2151,14 @@
           "type": "string",
           "default": "Sheet"
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
+      ],
+      "outputAliases": [
+        "htm"
       ]
     },
     {
@@ -1785,6 +2225,11 @@
             "__"
           ]
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1806,6 +2251,11 @@
         "office",
         "from-excel",
         "to-jsonl"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1825,6 +2275,11 @@
         "office",
         "from-excel",
         "to-ods"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1846,6 +2301,11 @@
         "office",
         "from-excel",
         "to-parquet"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1880,6 +2340,11 @@
             "Landscape"
           ]
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1930,6 +2395,11 @@
           "type": "boolean",
           "default": true
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1952,6 +2422,11 @@
         "from-excel",
         "to-srt",
         "from-xlsx"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -1960,7 +2435,7 @@
       "from": "excel",
       "to": "xml",
       "title": "Excel to XML",
-      "description": "Export Excel File to XML Online with our Converter. Quick and easy. Confidential. Custom Conversion. Zapier automation available. Try it Now",
+      "description": "Excel to XML converter: turn XLSX or XLS spreadsheets into clean XML online. Column headers become element names, dates come out as ISO, and every sheet gets its own XML file. Large files, no install. API available.",
       "options": [
         "header",
         "show_columns",
@@ -2034,6 +2509,11 @@
             "iso8601"
           ]
         }
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -2054,6 +2534,11 @@
         "office",
         "from-excel",
         "to-xps"
+      ],
+      "inputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -2088,6 +2573,15 @@
             "xls"
           ]
         }
+      ],
+      "inputAliases": [
+        "xml"
+      ],
+      "outputAliases": [
+        "excel",
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -2143,6 +2637,12 @@
       "registrationRequired": false,
       "groups": [
         "xml"
+      ],
+      "inputAliases": [
+        "unknown"
+      ],
+      "outputAliases": [
+        "unknown"
       ]
     },
     {
@@ -2282,6 +2782,12 @@
             "1t"
           ]
         }
+      ],
+      "inputAliases": [
+        "json"
+      ],
+      "outputAliases": [
+        "json"
       ]
     },
     {
@@ -2342,7 +2848,7 @@
       "from": "gst",
       "to": "csv",
       "title": "GSTR JSON to CSV",
-      "description": "Convert GST return and refund-statement JSON to CSV online. Turn GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B and RFD-01 refund statements (Annexure-B) from the GST portal or offline tool into clean CSV files, one per section, delivered as a zip. Convert many files at once. Files are private and encrypted.",
+      "description": "Convert GSTR JSON to CSV online: GSTR-1 (including the V3.2 offline tool format), GSTR-2A, GSTR-2B, GSTR-3B, GSTR-9 and IMS downloads, one clean CSV file per section in a zip. Also RFD-01 refund statements (Annexure-B). Convert many files at once. Files are private and encrypted.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -2354,6 +2860,9 @@
         "csv",
         "to-csv",
         "from-json"
+      ],
+      "inputAliases": [
+        "json"
       ]
     },
     {
@@ -2362,7 +2871,7 @@
       "from": "gst",
       "to": "excel",
       "title": "GSTR JSON to Excel",
-      "description": "Convert GST return and refund-statement JSON to Excel online. Turn GSTR-1, GSTR-2A, GSTR-2B, GSTR-3B and RFD-01 refund statements (Annexure-B) from the GST portal or offline tool into a clean, readable Excel workbook with one sheet per section. Convert many files at once. Files are private and encrypted.",
+      "description": "Convert GSTR JSON to Excel online: GSTR-1 (including the V3.2 offline tool format), GSTR-2A, GSTR-2B, GSTR-3B, GSTR-9 and IMS downloads, one clean sheet per section. Also RFD-01 refund statements (Annexure-B) and portal error reports. Convert many files at once. Files are private and encrypted.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -2375,6 +2884,14 @@
         "office",
         "to-excel",
         "from-json"
+      ],
+      "inputAliases": [
+        "json"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -2473,6 +2990,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -2534,6 +3054,9 @@
         "tiff",
         "from-heic",
         "to-tiff"
+      ],
+      "outputAliases": [
+        "tif"
       ]
     },
     {
@@ -2575,6 +3098,10 @@
         "json",
         "from-html",
         "to-json"
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
       ]
     },
     {
@@ -2610,6 +3137,10 @@
             "tabulation"
           ]
         }
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
       ]
     },
     {
@@ -2643,6 +3174,15 @@
             "xls"
           ]
         }
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -2653,12 +3193,12 @@
       "title": "HTML to JPG",
       "description": "HTML to JPG Converter. Save Website to JPG Online. Create Website Thumbnail. API available.",
       "options": [
+        "emulate_device",
         "background",
         "images",
         "javascript",
         "viewport_width",
-        "viewport_height",
-        "emulate_device"
+        "viewport_height"
       ],
       "ai": false,
       "custom": false,
@@ -2672,6 +3212,174 @@
         "to-jpg"
       ],
       "optionSpecs": [
+        {
+          "name": "emulate_device",
+          "title": "Device and screen size",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Desktop 1366x768",
+            "Desktop 1440x900",
+            "Desktop 1536x864",
+            "Desktop 1920x1080",
+            "Desktop 2560x1440",
+            "Desktop 3840x2160",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad",
+            "iPad landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "iPhone 17 Pro Max",
+            "iPhone 17 Pro Max landscape",
+            "iPhone 17 Pro",
+            "iPhone 17 Pro landscape",
+            "iPhone 17",
+            "iPhone 17 landscape",
+            "iPhone Air",
+            "iPhone Air landscape",
+            "iPhone 17e",
+            "iPhone 17e landscape",
+            "iPhone 16 Pro Max",
+            "iPhone 16 Pro Max landscape",
+            "iPhone 16 Pro",
+            "iPhone 16 Pro landscape",
+            "iPhone 16 Plus",
+            "iPhone 16 Plus landscape",
+            "iPhone 16",
+            "iPhone 16 landscape",
+            "iPhone 16e",
+            "iPhone 16e landscape",
+            "iPhone 15 Pro Max",
+            "iPhone 15 Pro Max landscape",
+            "iPhone 15 Pro",
+            "iPhone 15 Pro landscape",
+            "iPhone 15 Plus",
+            "iPhone 15 Plus landscape",
+            "iPhone 15",
+            "iPhone 15 landscape",
+            "iPhone 14 Pro Max",
+            "iPhone 14 Pro Max landscape",
+            "iPhone 14 Pro",
+            "iPhone 14 Pro landscape",
+            "iPhone 14 Plus",
+            "iPhone 14 Plus landscape",
+            "iPhone 14",
+            "iPhone 14 landscape",
+            "iPhone SE (3rd gen)",
+            "iPhone SE (3rd gen) landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Moto G4",
+            "Moto G4 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Microsoft Lumia 550",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape"
+          ]
+        },
         {
           "name": "background",
           "title": "Use HTML page background?",
@@ -2701,131 +3409,13 @@
           "title": "Viewport Height, in px",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "emulate_device",
-          "title": "Emulate Device",
-          "type": "enum",
-          "default": "",
-          "values": [
-            "",
-            "Blackberry PlayBook",
-            "Blackberry PlayBook landscape",
-            "BlackBerry Z30",
-            "BlackBerry Z30 landscape",
-            "Galaxy Note 3",
-            "Galaxy Note 3 landscape",
-            "Galaxy Note II",
-            "Galaxy Note II landscape",
-            "Galaxy S III",
-            "Galaxy S III landscape",
-            "Galaxy S5",
-            "Galaxy S5 landscape",
-            "Galaxy S8",
-            "Galaxy S8 landscape",
-            "Galaxy S9+",
-            "Galaxy S9+ landscape",
-            "Galaxy Tab S4",
-            "Galaxy Tab S4 landscape",
-            "iPad",
-            "iPad landscape",
-            "iPad (gen 6)",
-            "iPad (gen 6) landscape",
-            "iPad (gen 7)",
-            "iPad (gen 7) landscape",
-            "iPad Mini",
-            "iPad Mini landscape",
-            "iPad Pro",
-            "iPad Pro landscape",
-            "iPad Pro 11",
-            "iPad Pro 11 landscape",
-            "iPhone 4",
-            "iPhone 4 landscape",
-            "iPhone 5",
-            "iPhone 5 landscape",
-            "iPhone 6",
-            "iPhone 6 landscape",
-            "iPhone 6 Plus",
-            "iPhone 6 Plus landscape",
-            "iPhone 7",
-            "iPhone 7 landscape",
-            "iPhone 7 Plus",
-            "iPhone 7 Plus landscape",
-            "iPhone 8",
-            "iPhone 8 landscape",
-            "iPhone 8 Plus",
-            "iPhone 8 Plus landscape",
-            "iPhone SE",
-            "iPhone SE landscape",
-            "iPhone X",
-            "iPhone X landscape",
-            "iPhone XR",
-            "iPhone XR landscape",
-            "iPhone 11",
-            "iPhone 11 landscape",
-            "iPhone 11 Pro",
-            "iPhone 11 Pro landscape",
-            "iPhone 11 Pro Max",
-            "iPhone 11 Pro Max landscape",
-            "iPhone 12",
-            "iPhone 12 landscape",
-            "iPhone 12 Pro",
-            "iPhone 12 Pro landscape",
-            "iPhone 12 Pro Max",
-            "iPhone 12 Pro Max landscape",
-            "iPhone 12 Mini",
-            "iPhone 12 Mini landscape",
-            "iPhone 13",
-            "iPhone 13 landscape",
-            "iPhone 13 Pro",
-            "iPhone 13 Pro landscape",
-            "iPhone 13 Pro Max",
-            "iPhone 13 Pro Max landscape",
-            "iPhone 13 Mini",
-            "iPhone 13 Mini landscape",
-            "JioPhone 2",
-            "JioPhone 2 landscape",
-            "Kindle Fire HDX",
-            "Kindle Fire HDX landscape",
-            "LG Optimus L70",
-            "LG Optimus L70 landscape",
-            "Microsoft Lumia 550",
-            "Microsoft Lumia 950",
-            "Microsoft Lumia 950 landscape",
-            "Nexus 10",
-            "Nexus 10 landscape",
-            "Nexus 4",
-            "Nexus 4 landscape",
-            "Nexus 5",
-            "Nexus 5 landscape",
-            "Nexus 5X",
-            "Nexus 5X landscape",
-            "Nexus 6",
-            "Nexus 6 landscape",
-            "Nexus 6P",
-            "Nexus 6P landscape",
-            "Nexus 7",
-            "Nexus 7 landscape",
-            "Nokia Lumia 520",
-            "Nokia Lumia 520 landscape",
-            "Nokia N9",
-            "Nokia N9 landscape",
-            "Pixel 2",
-            "Pixel 2 landscape",
-            "Pixel 2 XL",
-            "Pixel 2 XL landscape",
-            "Pixel 3",
-            "Pixel 3 landscape",
-            "Pixel 4",
-            "Pixel 4 landscape",
-            "Pixel 4a (5G)",
-            "Pixel 4a (5G) landscape",
-            "Pixel 5",
-            "Pixel 5 landscape",
-            "Moto G4",
-            "Moto G4 landscape"
-          ]
         }
+      ],
+      "inputAliases": [
+        "htm"
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -2846,6 +3436,9 @@
         "json",
         "from-html",
         "to-json"
+      ],
+      "inputAliases": [
+        "htm"
       ]
     },
     {
@@ -2866,6 +3459,12 @@
         "html",
         "from-html",
         "to-markdown"
+      ],
+      "inputAliases": [
+        "htm"
+      ],
+      "outputAliases": [
+        "md"
       ]
     },
     {
@@ -2876,12 +3475,12 @@
       "title": "HTML to PNG",
       "description": "HTML to PNG Converter. Save Website to PNG Online. Create Website Thumbnail. API available.",
       "options": [
+        "emulate_device",
         "background",
         "images",
         "javascript",
         "viewport_width",
-        "viewport_height",
-        "emulate_device"
+        "viewport_height"
       ],
       "ai": false,
       "custom": false,
@@ -2895,6 +3494,174 @@
         "to-png"
       ],
       "optionSpecs": [
+        {
+          "name": "emulate_device",
+          "title": "Device and screen size",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Desktop 1366x768",
+            "Desktop 1440x900",
+            "Desktop 1536x864",
+            "Desktop 1920x1080",
+            "Desktop 2560x1440",
+            "Desktop 3840x2160",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad",
+            "iPad landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "iPhone 17 Pro Max",
+            "iPhone 17 Pro Max landscape",
+            "iPhone 17 Pro",
+            "iPhone 17 Pro landscape",
+            "iPhone 17",
+            "iPhone 17 landscape",
+            "iPhone Air",
+            "iPhone Air landscape",
+            "iPhone 17e",
+            "iPhone 17e landscape",
+            "iPhone 16 Pro Max",
+            "iPhone 16 Pro Max landscape",
+            "iPhone 16 Pro",
+            "iPhone 16 Pro landscape",
+            "iPhone 16 Plus",
+            "iPhone 16 Plus landscape",
+            "iPhone 16",
+            "iPhone 16 landscape",
+            "iPhone 16e",
+            "iPhone 16e landscape",
+            "iPhone 15 Pro Max",
+            "iPhone 15 Pro Max landscape",
+            "iPhone 15 Pro",
+            "iPhone 15 Pro landscape",
+            "iPhone 15 Plus",
+            "iPhone 15 Plus landscape",
+            "iPhone 15",
+            "iPhone 15 landscape",
+            "iPhone 14 Pro Max",
+            "iPhone 14 Pro Max landscape",
+            "iPhone 14 Pro",
+            "iPhone 14 Pro landscape",
+            "iPhone 14 Plus",
+            "iPhone 14 Plus landscape",
+            "iPhone 14",
+            "iPhone 14 landscape",
+            "iPhone SE (3rd gen)",
+            "iPhone SE (3rd gen) landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Moto G4",
+            "Moto G4 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Microsoft Lumia 550",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape"
+          ]
+        },
         {
           "name": "background",
           "title": "Use HTML page background?",
@@ -2924,131 +3691,10 @@
           "title": "Viewport Height, in px",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "emulate_device",
-          "title": "Emulate Device",
-          "type": "enum",
-          "default": "",
-          "values": [
-            "",
-            "Blackberry PlayBook",
-            "Blackberry PlayBook landscape",
-            "BlackBerry Z30",
-            "BlackBerry Z30 landscape",
-            "Galaxy Note 3",
-            "Galaxy Note 3 landscape",
-            "Galaxy Note II",
-            "Galaxy Note II landscape",
-            "Galaxy S III",
-            "Galaxy S III landscape",
-            "Galaxy S5",
-            "Galaxy S5 landscape",
-            "Galaxy S8",
-            "Galaxy S8 landscape",
-            "Galaxy S9+",
-            "Galaxy S9+ landscape",
-            "Galaxy Tab S4",
-            "Galaxy Tab S4 landscape",
-            "iPad",
-            "iPad landscape",
-            "iPad (gen 6)",
-            "iPad (gen 6) landscape",
-            "iPad (gen 7)",
-            "iPad (gen 7) landscape",
-            "iPad Mini",
-            "iPad Mini landscape",
-            "iPad Pro",
-            "iPad Pro landscape",
-            "iPad Pro 11",
-            "iPad Pro 11 landscape",
-            "iPhone 4",
-            "iPhone 4 landscape",
-            "iPhone 5",
-            "iPhone 5 landscape",
-            "iPhone 6",
-            "iPhone 6 landscape",
-            "iPhone 6 Plus",
-            "iPhone 6 Plus landscape",
-            "iPhone 7",
-            "iPhone 7 landscape",
-            "iPhone 7 Plus",
-            "iPhone 7 Plus landscape",
-            "iPhone 8",
-            "iPhone 8 landscape",
-            "iPhone 8 Plus",
-            "iPhone 8 Plus landscape",
-            "iPhone SE",
-            "iPhone SE landscape",
-            "iPhone X",
-            "iPhone X landscape",
-            "iPhone XR",
-            "iPhone XR landscape",
-            "iPhone 11",
-            "iPhone 11 landscape",
-            "iPhone 11 Pro",
-            "iPhone 11 Pro landscape",
-            "iPhone 11 Pro Max",
-            "iPhone 11 Pro Max landscape",
-            "iPhone 12",
-            "iPhone 12 landscape",
-            "iPhone 12 Pro",
-            "iPhone 12 Pro landscape",
-            "iPhone 12 Pro Max",
-            "iPhone 12 Pro Max landscape",
-            "iPhone 12 Mini",
-            "iPhone 12 Mini landscape",
-            "iPhone 13",
-            "iPhone 13 landscape",
-            "iPhone 13 Pro",
-            "iPhone 13 Pro landscape",
-            "iPhone 13 Pro Max",
-            "iPhone 13 Pro Max landscape",
-            "iPhone 13 Mini",
-            "iPhone 13 Mini landscape",
-            "JioPhone 2",
-            "JioPhone 2 landscape",
-            "Kindle Fire HDX",
-            "Kindle Fire HDX landscape",
-            "LG Optimus L70",
-            "LG Optimus L70 landscape",
-            "Microsoft Lumia 550",
-            "Microsoft Lumia 950",
-            "Microsoft Lumia 950 landscape",
-            "Nexus 10",
-            "Nexus 10 landscape",
-            "Nexus 4",
-            "Nexus 4 landscape",
-            "Nexus 5",
-            "Nexus 5 landscape",
-            "Nexus 5X",
-            "Nexus 5X landscape",
-            "Nexus 6",
-            "Nexus 6 landscape",
-            "Nexus 6P",
-            "Nexus 6P landscape",
-            "Nexus 7",
-            "Nexus 7 landscape",
-            "Nokia Lumia 520",
-            "Nokia Lumia 520 landscape",
-            "Nokia N9",
-            "Nokia N9 landscape",
-            "Pixel 2",
-            "Pixel 2 landscape",
-            "Pixel 2 XL",
-            "Pixel 2 XL landscape",
-            "Pixel 3",
-            "Pixel 3 landscape",
-            "Pixel 4",
-            "Pixel 4 landscape",
-            "Pixel 4a (5G)",
-            "Pixel 4a (5G) landscape",
-            "Pixel 5",
-            "Pixel 5 landscape",
-            "Moto G4",
-            "Moto G4 landscape"
-          ]
         }
+      ],
+      "inputAliases": [
+        "htm"
       ]
     },
     {
@@ -3084,6 +3730,13 @@
             "doc"
           ]
         }
+      ],
+      "inputAliases": [
+        "htm"
+      ],
+      "outputAliases": [
+        "doc",
+        "docx"
       ]
     },
     {
@@ -3105,6 +3758,9 @@
         "avif",
         "from-jpg",
         "to-avif"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3126,6 +3782,9 @@
         "heic",
         "from-jpg",
         "to-heic"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3147,6 +3806,9 @@
         "jxl",
         "from-jpg",
         "to-jxl"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3181,6 +3843,9 @@
             "Landscape"
           ]
         }
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3200,6 +3865,9 @@
         "image",
         "from-jpg",
         "to-pgm"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3219,6 +3887,9 @@
         "image",
         "from-jpg",
         "to-png"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3238,6 +3909,9 @@
         "image",
         "from-jpg",
         "to-ppm"
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3269,6 +3943,9 @@
           "type": "number",
           "default": 75
         }
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3277,7 +3954,7 @@
       "from": "json_objects",
       "to": "csv",
       "title": "JSON objects to CSV",
-      "description": "JSON Objects (one per line) to CSV Converter. Convert JSON objects to CSV Online with Free JSON Converter. Import JSON, Save CSV (TSV). API Available.",
+      "description": "Convert a file of multiple JSON objects, one per line, into CSV (TSV). Built for line-delimited dumps from databases, logs and streaming APIs. For a single JSON document or array, use JSON to CSV.",
       "options": [
         "delimiter",
         "quote",
@@ -3329,6 +4006,9 @@
             "transpose"
           ]
         }
+      ],
+      "inputAliases": [
+        "jsonl"
       ]
     },
     {
@@ -3377,6 +4057,14 @@
             "transpose"
           ]
         }
+      ],
+      "inputAliases": [
+        "jsonl"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -3385,7 +4073,7 @@
       "from": "json",
       "to": "csv",
       "title": "JSON to CSV",
-      "description": "Transform JSON to CSV with Conversion Tools. Quick and Easy Tool. Privacy and Security. Possibility to Convert Large JSON Files. API Available.",
+      "description": "JSON to CSV converter: turn a JSON file or array into CSV online, including large and nested JSON, with your choice of delimiter and table layout. Free, no install. API available.",
       "options": [
         "delimiter",
         "quote",
@@ -3451,7 +4139,7 @@
       "from": "json",
       "to": "excel",
       "title": "JSON to Excel",
-      "description": "Convert JSON to Excel with our Free Online Tool. Quick & Easy Data Conversion. Secure & Confidential. No Installation Required. Download Excel File Instantly.",
+      "description": "Convert JSON to Excel with our free online tool. Upload your JSON file and download an XLSX spreadsheet with every field in its own column. No sign-up.",
       "options": [
         "excel_format",
         "copy_parent_values",
@@ -3497,6 +4185,11 @@
             "transpose"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -3624,6 +4317,9 @@
         "yaml",
         "to-yaml",
         "from-json"
+      ],
+      "outputAliases": [
+        "yml"
       ]
     },
     {
@@ -3730,6 +4426,11 @@
             "transpose"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -3941,6 +4642,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -3949,7 +4653,7 @@
       "from": "jxl",
       "to": "png",
       "title": "JXL to PNG",
-      "description": "Free JXL to PNG converter. Convert JPEG XL files to PNG format with full transparency support. Open JXL files and export to universally compatible PNG online.",
+      "description": "Convert JXL to PNG online for free. Open JPEG XL (.jxl) images as PNG files that work in every app and browser, with transparency and 16-bit color kept.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -3983,6 +4687,9 @@
         "tiff",
         "from-jxl",
         "to-tiff"
+      ],
+      "outputAliases": [
+        "tif"
       ]
     },
     {
@@ -4025,6 +4732,13 @@
         "from-markdown",
         "to-word",
         "to-docx"
+      ],
+      "inputAliases": [
+        "md"
+      ],
+      "outputAliases": [
+        "word",
+        "doc"
       ]
     },
     {
@@ -4045,6 +4759,9 @@
         "ebook",
         "from-markdown",
         "to-epub"
+      ],
+      "inputAliases": [
+        "md"
       ]
     },
     {
@@ -4065,6 +4782,12 @@
         "html",
         "from-markdown",
         "to-html"
+      ],
+      "inputAliases": [
+        "md"
+      ],
+      "outputAliases": [
+        "htm"
       ]
     },
     {
@@ -4084,6 +4807,9 @@
         "markdown",
         "from-markdown",
         "to-latex"
+      ],
+      "inputAliases": [
+        "md"
       ]
     },
     {
@@ -4135,6 +4861,9 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "inputAliases": [
+        "md"
       ]
     },
     {
@@ -4155,6 +4884,12 @@
         "text",
         "from-markdown",
         "to-text"
+      ],
+      "inputAliases": [
+        "md"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -4241,7 +4976,7 @@
       "from": "mov",
       "to": "mp4",
       "title": "MOV to MP4",
-      "description": "MOV to MP4 Converter. Convert MOV to MP4 Online with Free Video Converter. API Available.",
+      "description": "Convert MOV to MP4 online for free. Turn QuickTime and iPhone videos into MP4 files that play on Windows, Android, TVs and the web. No software to install.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -4262,7 +4997,7 @@
       "from": "mp3",
       "to": "wav",
       "title": "MP3 to WAV",
-      "description": "MP3 to WAV Converter. Convert MP3 to WAV Online with Free Audio Converter. API Available.",
+      "description": "Convert MP3 to WAV online for free. Pick 16, 24 or 32-bit, 44.1 or 48 kHz, mono or stereo. Upload a ZIP to convert many MP3 files at once.",
       "options": [
         "sampling_rate",
         "bit_depth",
@@ -4325,7 +5060,7 @@
       "from": "mp4",
       "to": "mp3",
       "title": "MP4 to MP3",
-      "description": "MP4 to MP3 Converter. Extract audio from MP4 to MP3 Online with Free MP4 Converter. API Available.",
+      "description": "Convert MP4 to MP3 online for free. Extract the audio from an MP4 video and save it as an MP3 at the bitrate you choose. No software to install.",
       "options": [
         "bitrate"
       ],
@@ -4385,6 +5120,9 @@
           "type": "string",
           "default": "eng"
         }
+      ],
+      "inputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -4414,6 +5152,12 @@
           "type": "string",
           "default": "eng"
         }
+      ],
+      "inputAliases": [
+        "jpeg"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -4472,6 +5216,9 @@
           "type": "string",
           "default": "eng"
         }
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -4530,6 +5277,9 @@
           "type": "string",
           "default": "eng"
         }
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -4573,7 +5323,7 @@
       "from": "ods",
       "to": "excel",
       "title": "ODS to Excel",
-      "description": "ODS to Excel Converter. Convert ODS to Excel Online with Free Converter. Import OpenOffice Calc ODS, download Excel. API available.",
+      "description": "ODS to Excel converter: open OpenOffice or LibreOffice Calc .ods spreadsheets in Excel. Keeps every sheet, formulas, formatting, merged cells and charts. Save as XLSX or XLS. Free online, API available.",
       "options": [
         "excel_format"
       ],
@@ -4597,6 +5347,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -4625,7 +5380,7 @@
       "from": "oxps",
       "to": "pdf",
       "title": "OXPS to PDF",
-      "description": "OXPS to PDF Converter. Convert OXPS to PDF Online. Import OXPS, download PDF. API available.",
+      "description": "Free OXPS to PDF converter, no sign-up. Turn OXPS or XPS files from Windows into a PDF with every page kept and the text still selectable and searchable.",
       "options": [],
       "ai": false,
       "custom": false,
@@ -4720,6 +5475,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -4968,6 +5728,11 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -5036,6 +5801,9 @@
           "type": "boolean",
           "default": true
         }
+      ],
+      "outputAliases": [
+        "htm"
       ]
     },
     {
@@ -5044,12 +5812,13 @@
       "from": "pdf",
       "to": "jpg",
       "title": "PDF to JPG",
-      "description": "PDF to JPEG Converter. Convert PDF to JPG Online with Free PDF Converter. API available.",
+      "description": "Convert PDF to JPG online for free. Each page becomes a sharp JPG image, and multi-page PDFs come as one ZIP. Choose the resolution and quality.",
       "options": [
         "image_resolution",
         "jpeg_quality",
         "colormode",
-        "progressive_jpeg"
+        "progressive_jpeg",
+        "password"
       ],
       "ai": false,
       "custom": false,
@@ -5095,7 +5864,16 @@
           "title": "Create Progressive JPEG",
           "type": "boolean",
           "default": false
+        },
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -5123,11 +5901,12 @@
       "from": "pdf",
       "to": "png",
       "title": "PDF to PNG",
-      "description": "Change PDF to PNG via our Converter Tool. 72, 150, 300, 600 PPI. High quality. 100% Confidential. Quick and easy. Transform PDF to PNG in seconds",
+      "description": "Convert PDF to PNG online for free. Lossless, high-quality PNG images up to 600 PPI, with an optional transparent background. One PNG per page.",
       "options": [
         "image_resolution",
         "colormode3",
-        "background_color"
+        "background_color",
+        "password"
       ],
       "ai": false,
       "custom": false,
@@ -5171,6 +5950,12 @@
             "white",
             "transparent"
           ]
+        },
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
         }
       ]
     },
@@ -5215,6 +6000,7 @@
           "type": "enum",
           "values": [
             "A4",
+            "Single page",
             "Letter",
             "Legal",
             "Tabloid",
@@ -5247,6 +6033,9 @@
         "text",
         "from-pdf",
         "to-text"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -5255,7 +6044,7 @@
       "from": "pdf",
       "to": "tiff",
       "title": "PDF to TIFF",
-      "description": "Change PDF to TIFF with out tool. 72, 150, 300, 600 PPI. Easy and Fast Data Transformation. Available Pricing. Automation with Zapier is available",
+      "description": "Convert PDF to TIFF online for free at 300 or 600 DPI (also 72 and 150). Color, grayscale or black and white. One TIFF per page, multi-page PDFs as a ZIP.",
       "options": [
         "image_resolution",
         "colormode3",
@@ -5304,6 +6093,9 @@
             "transparent"
           ]
         }
+      ],
+      "outputAliases": [
+        "tif"
       ]
     },
     {
@@ -5312,7 +6104,7 @@
       "from": "pdf",
       "to": "word",
       "title": "PDF to Word",
-      "description": "Turn PDF into Word with our tool within seconds. Privacy and Security. Simple interface. API available. Custom Converter development. Try it Now",
+      "description": "Convert PDF to an editable Word document online for free. Get a DOCX file, or a DOC for older Word versions, with the text, images and layout kept.",
       "options": [
         "word_format",
         "margin_top",
@@ -5365,6 +6157,10 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "outputAliases": [
+        "doc",
+        "docx"
       ]
     },
     {
@@ -5448,6 +6244,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -5612,6 +6411,58 @@
       ]
     },
     {
+      "type": "convert.postman_results_to_csv",
+      "url": "postman-test-results-to-csv",
+      "from": "postman_results",
+      "to": "csv",
+      "title": "Postman Test Results to CSV",
+      "description": "Convert Postman Collection Runner results (.postman_test_run.json) to CSV online: one row per request with method, URL, status code and response time, a run summary, and every test per iteration. Files are private and encrypted.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "csv",
+        "to-csv",
+        "from-json"
+      ],
+      "inputAliases": [
+        "json"
+      ]
+    },
+    {
+      "type": "convert.postman_results_to_excel",
+      "url": "postman-test-results-to-excel",
+      "from": "postman_results",
+      "to": "excel",
+      "title": "Postman Test Results to Excel",
+      "description": "Convert Postman Collection Runner results (.postman_test_run.json) to Excel online: one row per request with method, URL, status code and response time, a run summary, and every test per iteration with failures highlighted. Files are private and encrypted.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "json",
+        "excel",
+        "office",
+        "to-excel",
+        "from-json"
+      ],
+      "inputAliases": [
+        "json"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
+      ]
+    },
+    {
       "type": "convert.powerpoint_to_html",
       "url": "powerpoint-to-html",
       "from": "powerpoint",
@@ -5629,6 +6480,14 @@
         "html",
         "from-powerpoint",
         "to-html"
+      ],
+      "inputAliases": [
+        "ppt",
+        "pptx",
+        "presentation"
+      ],
+      "outputAliases": [
+        "htm"
       ]
     },
     {
@@ -5649,6 +6508,11 @@
         "pdf",
         "from-powerpoint",
         "to-pdf"
+      ],
+      "inputAliases": [
+        "ppt",
+        "pptx",
+        "presentation"
       ]
     },
     {
@@ -5669,6 +6533,14 @@
         "office",
         "from-powerpoint",
         "to-text"
+      ],
+      "inputAliases": [
+        "ppt",
+        "pptx",
+        "presentation"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -5686,6 +6558,12 @@
       "registrationRequired": false,
       "groups": [
         "image"
+      ],
+      "inputAliases": [
+        "exif"
+      ],
+      "outputAliases": [
+        "exif"
       ]
     },
     {
@@ -5706,6 +6584,9 @@
         "xml",
         "from-xml",
         "to-csv"
+      ],
+      "inputAliases": [
+        "xml"
       ]
     },
     {
@@ -5739,6 +6620,14 @@
             "xls"
           ]
         }
+      ],
+      "inputAliases": [
+        "xml"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -5759,6 +6648,9 @@
         "xml",
         "from-xml",
         "to-csv"
+      ],
+      "inputAliases": [
+        "xml"
       ]
     },
     {
@@ -5792,6 +6684,14 @@
             "xls"
           ]
         }
+      ],
+      "inputAliases": [
+        "xml"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -5902,6 +6802,11 @@
           "type": "boolean",
           "default": false
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -5923,6 +6828,9 @@
         "to-text",
         "from-srt",
         "from-vtt"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -5987,6 +6895,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "excel",
+        "xlsx",
+        "spreadsheet"
       ]
     },
     {
@@ -6022,6 +6935,11 @@
             "xls"
           ]
         }
+      ],
+      "outputAliases": [
+        "excel",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -6076,6 +6994,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -6132,6 +7053,9 @@
         "heic",
         "from-tiff",
         "to-heic"
+      ],
+      "inputAliases": [
+        "tif"
       ]
     },
     {
@@ -6153,6 +7077,9 @@
         "jxl",
         "from-tiff",
         "to-jxl"
+      ],
+      "inputAliases": [
+        "tif"
       ]
     },
     {
@@ -6184,6 +7111,9 @@
           "type": "number",
           "default": 75
         }
+      ],
+      "inputAliases": [
+        "tif"
       ]
     },
     {
@@ -6201,6 +7131,12 @@
       "registrationRequired": false,
       "groups": [
         "format",
+        "json"
+      ],
+      "inputAliases": [
+        "json"
+      ],
+      "outputAliases": [
         "json"
       ]
     },
@@ -6230,6 +7166,12 @@
           "key": "file_id1",
           "description": "XSD schema"
         }
+      ],
+      "inputAliases": [
+        "unknown"
+      ],
+      "outputAliases": [
+        "unknown"
       ]
     },
     {
@@ -6290,6 +7232,12 @@
         "text",
         "to-text",
         "from-srt"
+      ],
+      "inputAliases": [
+        "srt"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -6319,7 +7267,7 @@
       "from": "wav",
       "to": "mp3",
       "title": "WAV to MP3",
-      "description": "WAV to MP3 Converter. Convert WAV to MP3 Online with Free Audio Converter. API Available.",
+      "description": "Convert WAV to MP3 online for free. Turn large WAV recordings into small MP3 files that play everywhere, at the bitrate you choose. No software to install.",
       "options": [
         "bitrate"
       ],
@@ -6457,6 +7405,9 @@
           "type": "number",
           "default": 80
         }
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -6583,6 +7534,9 @@
         "tiff",
         "from-webp",
         "to-tiff"
+      ],
+      "outputAliases": [
+        "tif"
       ]
     },
     {
@@ -6614,12 +7568,12 @@
       "title": "Website to JPG",
       "description": "Website to JPG Converter. Save Website to JPG Online, Create Thumbnail. API available.",
       "options": [
+        "emulate_device",
         "background",
         "images",
         "javascript",
         "viewport_width",
-        "viewport_height",
-        "emulate_device"
+        "viewport_height"
       ],
       "ai": false,
       "custom": false,
@@ -6633,6 +7587,174 @@
         "to-jpg"
       ],
       "optionSpecs": [
+        {
+          "name": "emulate_device",
+          "title": "Device and screen size",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Desktop 1366x768",
+            "Desktop 1440x900",
+            "Desktop 1536x864",
+            "Desktop 1920x1080",
+            "Desktop 2560x1440",
+            "Desktop 3840x2160",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad",
+            "iPad landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "iPhone 17 Pro Max",
+            "iPhone 17 Pro Max landscape",
+            "iPhone 17 Pro",
+            "iPhone 17 Pro landscape",
+            "iPhone 17",
+            "iPhone 17 landscape",
+            "iPhone Air",
+            "iPhone Air landscape",
+            "iPhone 17e",
+            "iPhone 17e landscape",
+            "iPhone 16 Pro Max",
+            "iPhone 16 Pro Max landscape",
+            "iPhone 16 Pro",
+            "iPhone 16 Pro landscape",
+            "iPhone 16 Plus",
+            "iPhone 16 Plus landscape",
+            "iPhone 16",
+            "iPhone 16 landscape",
+            "iPhone 16e",
+            "iPhone 16e landscape",
+            "iPhone 15 Pro Max",
+            "iPhone 15 Pro Max landscape",
+            "iPhone 15 Pro",
+            "iPhone 15 Pro landscape",
+            "iPhone 15 Plus",
+            "iPhone 15 Plus landscape",
+            "iPhone 15",
+            "iPhone 15 landscape",
+            "iPhone 14 Pro Max",
+            "iPhone 14 Pro Max landscape",
+            "iPhone 14 Pro",
+            "iPhone 14 Pro landscape",
+            "iPhone 14 Plus",
+            "iPhone 14 Plus landscape",
+            "iPhone 14",
+            "iPhone 14 landscape",
+            "iPhone SE (3rd gen)",
+            "iPhone SE (3rd gen) landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Moto G4",
+            "Moto G4 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Microsoft Lumia 550",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape"
+          ]
+        },
         {
           "name": "background",
           "title": "Use HTML page background?",
@@ -6662,131 +7784,14 @@
           "title": "Viewport Height, in px",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "emulate_device",
-          "title": "Emulate Device",
-          "type": "enum",
-          "default": "",
-          "values": [
-            "",
-            "Blackberry PlayBook",
-            "Blackberry PlayBook landscape",
-            "BlackBerry Z30",
-            "BlackBerry Z30 landscape",
-            "Galaxy Note 3",
-            "Galaxy Note 3 landscape",
-            "Galaxy Note II",
-            "Galaxy Note II landscape",
-            "Galaxy S III",
-            "Galaxy S III landscape",
-            "Galaxy S5",
-            "Galaxy S5 landscape",
-            "Galaxy S8",
-            "Galaxy S8 landscape",
-            "Galaxy S9+",
-            "Galaxy S9+ landscape",
-            "Galaxy Tab S4",
-            "Galaxy Tab S4 landscape",
-            "iPad",
-            "iPad landscape",
-            "iPad (gen 6)",
-            "iPad (gen 6) landscape",
-            "iPad (gen 7)",
-            "iPad (gen 7) landscape",
-            "iPad Mini",
-            "iPad Mini landscape",
-            "iPad Pro",
-            "iPad Pro landscape",
-            "iPad Pro 11",
-            "iPad Pro 11 landscape",
-            "iPhone 4",
-            "iPhone 4 landscape",
-            "iPhone 5",
-            "iPhone 5 landscape",
-            "iPhone 6",
-            "iPhone 6 landscape",
-            "iPhone 6 Plus",
-            "iPhone 6 Plus landscape",
-            "iPhone 7",
-            "iPhone 7 landscape",
-            "iPhone 7 Plus",
-            "iPhone 7 Plus landscape",
-            "iPhone 8",
-            "iPhone 8 landscape",
-            "iPhone 8 Plus",
-            "iPhone 8 Plus landscape",
-            "iPhone SE",
-            "iPhone SE landscape",
-            "iPhone X",
-            "iPhone X landscape",
-            "iPhone XR",
-            "iPhone XR landscape",
-            "iPhone 11",
-            "iPhone 11 landscape",
-            "iPhone 11 Pro",
-            "iPhone 11 Pro landscape",
-            "iPhone 11 Pro Max",
-            "iPhone 11 Pro Max landscape",
-            "iPhone 12",
-            "iPhone 12 landscape",
-            "iPhone 12 Pro",
-            "iPhone 12 Pro landscape",
-            "iPhone 12 Pro Max",
-            "iPhone 12 Pro Max landscape",
-            "iPhone 12 Mini",
-            "iPhone 12 Mini landscape",
-            "iPhone 13",
-            "iPhone 13 landscape",
-            "iPhone 13 Pro",
-            "iPhone 13 Pro landscape",
-            "iPhone 13 Pro Max",
-            "iPhone 13 Pro Max landscape",
-            "iPhone 13 Mini",
-            "iPhone 13 Mini landscape",
-            "JioPhone 2",
-            "JioPhone 2 landscape",
-            "Kindle Fire HDX",
-            "Kindle Fire HDX landscape",
-            "LG Optimus L70",
-            "LG Optimus L70 landscape",
-            "Microsoft Lumia 550",
-            "Microsoft Lumia 950",
-            "Microsoft Lumia 950 landscape",
-            "Nexus 10",
-            "Nexus 10 landscape",
-            "Nexus 4",
-            "Nexus 4 landscape",
-            "Nexus 5",
-            "Nexus 5 landscape",
-            "Nexus 5X",
-            "Nexus 5X landscape",
-            "Nexus 6",
-            "Nexus 6 landscape",
-            "Nexus 6P",
-            "Nexus 6P landscape",
-            "Nexus 7",
-            "Nexus 7 landscape",
-            "Nokia Lumia 520",
-            "Nokia Lumia 520 landscape",
-            "Nokia N9",
-            "Nokia N9 landscape",
-            "Pixel 2",
-            "Pixel 2 landscape",
-            "Pixel 2 XL",
-            "Pixel 2 XL landscape",
-            "Pixel 3",
-            "Pixel 3 landscape",
-            "Pixel 4",
-            "Pixel 4 landscape",
-            "Pixel 4a (5G)",
-            "Pixel 4a (5G) landscape",
-            "Pixel 5",
-            "Pixel 5 landscape",
-            "Moto G4",
-            "Moto G4 landscape"
-          ]
         }
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
+      ],
+      "outputAliases": [
+        "jpeg"
       ]
     },
     {
@@ -6797,8 +7802,9 @@
       "title": "HTML to PDF",
       "description": "HTML to PDF Converter. Convert HTML to PDF Online with Free PDF Converter. API Available.",
       "options": [
-        "orientation",
+        "emulate_device",
         "pagesize",
+        "orientation",
         "colormode",
         "background",
         "images",
@@ -6821,13 +7827,171 @@
       ],
       "optionSpecs": [
         {
-          "name": "orientation",
-          "title": "Page layout orientation",
+          "name": "emulate_device",
+          "title": "Device and screen size",
           "type": "enum",
-          "default": "Portrait",
+          "default": "",
           "values": [
-            "Portrait",
-            "Landscape"
+            "",
+            "Desktop 1366x768",
+            "Desktop 1440x900",
+            "Desktop 1536x864",
+            "Desktop 1920x1080",
+            "Desktop 2560x1440",
+            "Desktop 3840x2160",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad",
+            "iPad landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "iPhone 17 Pro Max",
+            "iPhone 17 Pro Max landscape",
+            "iPhone 17 Pro",
+            "iPhone 17 Pro landscape",
+            "iPhone 17",
+            "iPhone 17 landscape",
+            "iPhone Air",
+            "iPhone Air landscape",
+            "iPhone 17e",
+            "iPhone 17e landscape",
+            "iPhone 16 Pro Max",
+            "iPhone 16 Pro Max landscape",
+            "iPhone 16 Pro",
+            "iPhone 16 Pro landscape",
+            "iPhone 16 Plus",
+            "iPhone 16 Plus landscape",
+            "iPhone 16",
+            "iPhone 16 landscape",
+            "iPhone 16e",
+            "iPhone 16e landscape",
+            "iPhone 15 Pro Max",
+            "iPhone 15 Pro Max landscape",
+            "iPhone 15 Pro",
+            "iPhone 15 Pro landscape",
+            "iPhone 15 Plus",
+            "iPhone 15 Plus landscape",
+            "iPhone 15",
+            "iPhone 15 landscape",
+            "iPhone 14 Pro Max",
+            "iPhone 14 Pro Max landscape",
+            "iPhone 14 Pro",
+            "iPhone 14 Pro landscape",
+            "iPhone 14 Plus",
+            "iPhone 14 Plus landscape",
+            "iPhone 14",
+            "iPhone 14 landscape",
+            "iPhone SE (3rd gen)",
+            "iPhone SE (3rd gen) landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Moto G4",
+            "Moto G4 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Microsoft Lumia 550",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape"
           ]
         },
         {
@@ -6836,6 +8000,7 @@
           "type": "enum",
           "values": [
             "A4",
+            "Single page",
             "Letter",
             "Legal",
             "Tabloid",
@@ -6846,6 +8011,16 @@
             "A3",
             "A5",
             "A6"
+          ]
+        },
+        {
+          "name": "orientation",
+          "title": "Page layout orientation",
+          "type": "enum",
+          "default": "Portrait",
+          "values": [
+            "Portrait",
+            "Landscape"
           ]
         },
         {
@@ -6899,6 +8074,10 @@
           "type": "string",
           "default": ""
         }
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
       ]
     },
     {
@@ -6909,12 +8088,12 @@
       "title": "Website to PNG",
       "description": "Website to PNG Converter. Convert Website to PNG Online, Create Thumbnail. API available.",
       "options": [
+        "emulate_device",
         "background",
         "images",
         "javascript",
         "viewport_width",
-        "viewport_height",
-        "emulate_device"
+        "viewport_height"
       ],
       "ai": false,
       "custom": false,
@@ -6928,6 +8107,174 @@
         "to-png"
       ],
       "optionSpecs": [
+        {
+          "name": "emulate_device",
+          "title": "Device and screen size",
+          "type": "enum",
+          "default": "",
+          "values": [
+            "",
+            "Desktop 1366x768",
+            "Desktop 1440x900",
+            "Desktop 1536x864",
+            "Desktop 1920x1080",
+            "Desktop 2560x1440",
+            "Desktop 3840x2160",
+            "iPad Pro 11",
+            "iPad Pro 11 landscape",
+            "iPad Pro",
+            "iPad Pro landscape",
+            "iPad (gen 7)",
+            "iPad (gen 7) landscape",
+            "iPad (gen 6)",
+            "iPad (gen 6) landscape",
+            "iPad Mini",
+            "iPad Mini landscape",
+            "iPad",
+            "iPad landscape",
+            "Galaxy Tab S4",
+            "Galaxy Tab S4 landscape",
+            "Nexus 10",
+            "Nexus 10 landscape",
+            "Nexus 7",
+            "Nexus 7 landscape",
+            "Kindle Fire HDX",
+            "Kindle Fire HDX landscape",
+            "Blackberry PlayBook",
+            "Blackberry PlayBook landscape",
+            "iPhone 17 Pro Max",
+            "iPhone 17 Pro Max landscape",
+            "iPhone 17 Pro",
+            "iPhone 17 Pro landscape",
+            "iPhone 17",
+            "iPhone 17 landscape",
+            "iPhone Air",
+            "iPhone Air landscape",
+            "iPhone 17e",
+            "iPhone 17e landscape",
+            "iPhone 16 Pro Max",
+            "iPhone 16 Pro Max landscape",
+            "iPhone 16 Pro",
+            "iPhone 16 Pro landscape",
+            "iPhone 16 Plus",
+            "iPhone 16 Plus landscape",
+            "iPhone 16",
+            "iPhone 16 landscape",
+            "iPhone 16e",
+            "iPhone 16e landscape",
+            "iPhone 15 Pro Max",
+            "iPhone 15 Pro Max landscape",
+            "iPhone 15 Pro",
+            "iPhone 15 Pro landscape",
+            "iPhone 15 Plus",
+            "iPhone 15 Plus landscape",
+            "iPhone 15",
+            "iPhone 15 landscape",
+            "iPhone 14 Pro Max",
+            "iPhone 14 Pro Max landscape",
+            "iPhone 14 Pro",
+            "iPhone 14 Pro landscape",
+            "iPhone 14 Plus",
+            "iPhone 14 Plus landscape",
+            "iPhone 14",
+            "iPhone 14 landscape",
+            "iPhone SE (3rd gen)",
+            "iPhone SE (3rd gen) landscape",
+            "iPhone 13 Pro Max",
+            "iPhone 13 Pro Max landscape",
+            "iPhone 13 Pro",
+            "iPhone 13 Pro landscape",
+            "iPhone 13",
+            "iPhone 13 landscape",
+            "iPhone 13 Mini",
+            "iPhone 13 Mini landscape",
+            "iPhone 12 Pro Max",
+            "iPhone 12 Pro Max landscape",
+            "iPhone 12 Pro",
+            "iPhone 12 Pro landscape",
+            "iPhone 12",
+            "iPhone 12 landscape",
+            "iPhone 12 Mini",
+            "iPhone 12 Mini landscape",
+            "iPhone 11 Pro Max",
+            "iPhone 11 Pro Max landscape",
+            "iPhone 11 Pro",
+            "iPhone 11 Pro landscape",
+            "iPhone 11",
+            "iPhone 11 landscape",
+            "iPhone XR",
+            "iPhone XR landscape",
+            "iPhone X",
+            "iPhone X landscape",
+            "iPhone SE",
+            "iPhone SE landscape",
+            "iPhone 8 Plus",
+            "iPhone 8 Plus landscape",
+            "iPhone 8",
+            "iPhone 8 landscape",
+            "iPhone 7 Plus",
+            "iPhone 7 Plus landscape",
+            "iPhone 7",
+            "iPhone 7 landscape",
+            "iPhone 6 Plus",
+            "iPhone 6 Plus landscape",
+            "iPhone 6",
+            "iPhone 6 landscape",
+            "iPhone 5",
+            "iPhone 5 landscape",
+            "iPhone 4",
+            "iPhone 4 landscape",
+            "Pixel 5",
+            "Pixel 5 landscape",
+            "Pixel 4a (5G)",
+            "Pixel 4a (5G) landscape",
+            "Pixel 4",
+            "Pixel 4 landscape",
+            "Pixel 3",
+            "Pixel 3 landscape",
+            "Pixel 2 XL",
+            "Pixel 2 XL landscape",
+            "Pixel 2",
+            "Pixel 2 landscape",
+            "Galaxy S9+",
+            "Galaxy S9+ landscape",
+            "Galaxy S8",
+            "Galaxy S8 landscape",
+            "Galaxy S5",
+            "Galaxy S5 landscape",
+            "Galaxy S III",
+            "Galaxy S III landscape",
+            "Galaxy Note 3",
+            "Galaxy Note 3 landscape",
+            "Galaxy Note II",
+            "Galaxy Note II landscape",
+            "Moto G4",
+            "Moto G4 landscape",
+            "Nexus 6P",
+            "Nexus 6P landscape",
+            "Nexus 6",
+            "Nexus 6 landscape",
+            "Nexus 5X",
+            "Nexus 5X landscape",
+            "Nexus 5",
+            "Nexus 5 landscape",
+            "Nexus 4",
+            "Nexus 4 landscape",
+            "JioPhone 2",
+            "JioPhone 2 landscape",
+            "LG Optimus L70",
+            "LG Optimus L70 landscape",
+            "Microsoft Lumia 950",
+            "Microsoft Lumia 950 landscape",
+            "Microsoft Lumia 550",
+            "Nokia Lumia 520",
+            "Nokia Lumia 520 landscape",
+            "Nokia N9",
+            "Nokia N9 landscape",
+            "BlackBerry Z30",
+            "BlackBerry Z30 landscape"
+          ]
+        },
         {
           "name": "background",
           "title": "Use HTML page background?",
@@ -6957,131 +8304,11 @@
           "title": "Viewport Height, in px",
           "type": "string",
           "default": ""
-        },
-        {
-          "name": "emulate_device",
-          "title": "Emulate Device",
-          "type": "enum",
-          "default": "",
-          "values": [
-            "",
-            "Blackberry PlayBook",
-            "Blackberry PlayBook landscape",
-            "BlackBerry Z30",
-            "BlackBerry Z30 landscape",
-            "Galaxy Note 3",
-            "Galaxy Note 3 landscape",
-            "Galaxy Note II",
-            "Galaxy Note II landscape",
-            "Galaxy S III",
-            "Galaxy S III landscape",
-            "Galaxy S5",
-            "Galaxy S5 landscape",
-            "Galaxy S8",
-            "Galaxy S8 landscape",
-            "Galaxy S9+",
-            "Galaxy S9+ landscape",
-            "Galaxy Tab S4",
-            "Galaxy Tab S4 landscape",
-            "iPad",
-            "iPad landscape",
-            "iPad (gen 6)",
-            "iPad (gen 6) landscape",
-            "iPad (gen 7)",
-            "iPad (gen 7) landscape",
-            "iPad Mini",
-            "iPad Mini landscape",
-            "iPad Pro",
-            "iPad Pro landscape",
-            "iPad Pro 11",
-            "iPad Pro 11 landscape",
-            "iPhone 4",
-            "iPhone 4 landscape",
-            "iPhone 5",
-            "iPhone 5 landscape",
-            "iPhone 6",
-            "iPhone 6 landscape",
-            "iPhone 6 Plus",
-            "iPhone 6 Plus landscape",
-            "iPhone 7",
-            "iPhone 7 landscape",
-            "iPhone 7 Plus",
-            "iPhone 7 Plus landscape",
-            "iPhone 8",
-            "iPhone 8 landscape",
-            "iPhone 8 Plus",
-            "iPhone 8 Plus landscape",
-            "iPhone SE",
-            "iPhone SE landscape",
-            "iPhone X",
-            "iPhone X landscape",
-            "iPhone XR",
-            "iPhone XR landscape",
-            "iPhone 11",
-            "iPhone 11 landscape",
-            "iPhone 11 Pro",
-            "iPhone 11 Pro landscape",
-            "iPhone 11 Pro Max",
-            "iPhone 11 Pro Max landscape",
-            "iPhone 12",
-            "iPhone 12 landscape",
-            "iPhone 12 Pro",
-            "iPhone 12 Pro landscape",
-            "iPhone 12 Pro Max",
-            "iPhone 12 Pro Max landscape",
-            "iPhone 12 Mini",
-            "iPhone 12 Mini landscape",
-            "iPhone 13",
-            "iPhone 13 landscape",
-            "iPhone 13 Pro",
-            "iPhone 13 Pro landscape",
-            "iPhone 13 Pro Max",
-            "iPhone 13 Pro Max landscape",
-            "iPhone 13 Mini",
-            "iPhone 13 Mini landscape",
-            "JioPhone 2",
-            "JioPhone 2 landscape",
-            "Kindle Fire HDX",
-            "Kindle Fire HDX landscape",
-            "LG Optimus L70",
-            "LG Optimus L70 landscape",
-            "Microsoft Lumia 550",
-            "Microsoft Lumia 950",
-            "Microsoft Lumia 950 landscape",
-            "Nexus 10",
-            "Nexus 10 landscape",
-            "Nexus 4",
-            "Nexus 4 landscape",
-            "Nexus 5",
-            "Nexus 5 landscape",
-            "Nexus 5X",
-            "Nexus 5X landscape",
-            "Nexus 6",
-            "Nexus 6 landscape",
-            "Nexus 6P",
-            "Nexus 6P landscape",
-            "Nexus 7",
-            "Nexus 7 landscape",
-            "Nokia Lumia 520",
-            "Nokia Lumia 520 landscape",
-            "Nokia N9",
-            "Nokia N9 landscape",
-            "Pixel 2",
-            "Pixel 2 landscape",
-            "Pixel 2 XL",
-            "Pixel 2 XL landscape",
-            "Pixel 3",
-            "Pixel 3 landscape",
-            "Pixel 4",
-            "Pixel 4 landscape",
-            "Pixel 4a (5G)",
-            "Pixel 4a (5G) landscape",
-            "Pixel 5",
-            "Pixel 5 landscape",
-            "Moto G4",
-            "Moto G4 landscape"
-          ]
         }
+      ],
+      "inputAliases": [
+        "html",
+        "htm"
       ]
     },
     {
@@ -7102,6 +8329,13 @@
         "html",
         "from-word",
         "to-html"
+      ],
+      "inputAliases": [
+        "doc",
+        "docx"
+      ],
+      "outputAliases": [
+        "htm"
       ]
     },
     {
@@ -7122,6 +8356,10 @@
         "from-word",
         "from-docx",
         "to-latex"
+      ],
+      "inputAliases": [
+        "doc",
+        "docx"
       ]
     },
     {
@@ -7143,6 +8381,13 @@
         "from-word",
         "from-docx",
         "to-markdown"
+      ],
+      "inputAliases": [
+        "doc",
+        "docx"
+      ],
+      "outputAliases": [
+        "md"
       ]
     },
     {
@@ -7163,6 +8408,10 @@
         "pdf",
         "from-word",
         "to-pdf"
+      ],
+      "inputAliases": [
+        "doc",
+        "docx"
       ]
     },
     {
@@ -7183,6 +8432,13 @@
         "office",
         "from-word",
         "to-text"
+      ],
+      "inputAliases": [
+        "doc",
+        "docx"
+      ],
+      "outputAliases": [
+        "txt"
       ]
     },
     {
@@ -7204,6 +8460,11 @@
         "office",
         "from-excel",
         "to-srt"
+      ],
+      "inputAliases": [
+        "excel",
+        "xlsx",
+        "spreadsheet"
       ]
     },
     {
@@ -7226,6 +8487,11 @@
         "from-excel",
         "to-srt",
         "from-xls"
+      ],
+      "inputAliases": [
+        "excel",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -7355,6 +8621,11 @@
             "path_levels"
           ]
         }
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
@@ -7520,6 +8791,9 @@
             "1t"
           ]
         }
+      ],
+      "inputAliases": [
+        "yml"
       ]
     }
   ]
