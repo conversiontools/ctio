@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T11:59:53.767Z",
+  "generatedAt": "2026-10-23T18:09:52.718Z",
   "source": "Conversion Tools converter registry",
-  "count": 224,
+  "count": 225,
   "converters": [
     {
       "type": "convert.ai_docx_to_mp3",
@@ -5091,6 +5091,31 @@
             "320"
           ]
         }
+      ]
+    },
+    {
+      "type": "convert.numbers_to_excel",
+      "url": "numbers-to-excel",
+      "from": "numbers",
+      "to": "excel",
+      "title": "Numbers to Excel",
+      "description": "Numbers to Excel converter: open Apple Numbers spreadsheets (.numbers) in Excel without a Mac. Every table becomes its own Excel sheet with its values and formulas. Free online, private, API available.",
+      "options": [],
+      "ai": false,
+      "custom": false,
+      "batch": true,
+      "comingSoon": false,
+      "registrationRequired": false,
+      "groups": [
+        "office",
+        "excel",
+        "from-numbers",
+        "to-excel"
+      ],
+      "outputAliases": [
+        "xlsx",
+        "xls",
+        "spreadsheet"
       ]
     },
     {
