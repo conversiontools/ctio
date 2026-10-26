@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T18:09:52.718Z",
+  "generatedAt": "2026-10-26T22:04:19.727Z",
   "source": "Conversion Tools converter registry",
   "count": 225,
   "converters": [
@@ -430,7 +430,7 @@
       "from": "pdf",
       "to": "json",
       "title": "AI: PDF to JSON",
-      "description": "Convert PDF to JSON online with AI. Tables come out as rows keyed by column name, sections stay nested, and scans work too. Free account: 10 pages a month.",
+      "description": "Convert PDF to JSON online with AI. Tables come out as rows keyed by column name, sections stay nested, and scans work too. Free account: 20 pages a month.",
       "options": [
         "images"
       ],
@@ -2957,7 +2957,7 @@
       "from": "heic",
       "to": "jpg",
       "title": "HEIC to JPG",
-      "description": "HEIC to JPG Converter. Convert HEIC to JPG Online with Free Image Converter. API available.",
+      "description": "Convert HEIC to JPG online for free. Open iPhone photos on Windows, Android and any website; the JPG keeps the date the photo was taken.",
       "options": [
         "alpha_background",
         "jpeg_quality"
@@ -3920,7 +3920,7 @@
       "from": "jpg",
       "to": "webp",
       "title": "JPG to WebP",
-      "description": "JPEG to WebP Converter. Convert JPG to WebP Online with Free Image Converter. API available.",
+      "description": "Convert JPG (JPEG) to WebP online for free. At the default quality our test images came out 23% to 60% smaller and look the same at normal size.",
       "options": [
         "webp_quality"
       ],
@@ -5661,7 +5661,8 @@
       "description": "Free PDF to CSV Online Converter. Import PDF, download CSV. API available.",
       "options": [
         "delimiter",
-        "quote"
+        "quote",
+        "password"
       ],
       "ai": false,
       "custom": false,
@@ -5692,6 +5693,12 @@
           "title": "Always quote all non-empty fields",
           "type": "boolean",
           "default": true
+        },
+        {
+          "name": "password",
+          "title": "Password (optional)",
+          "type": "string",
+          "default": ""
         }
       ]
     },
@@ -6410,7 +6417,7 @@
       "from": "png",
       "to": "webp",
       "title": "PNG to WebP",
-      "description": "PNG to WebP Converter. Convert PNG to WebP Online with Free Image Converter. API available.",
+      "description": "Convert PNG to WebP online for free. In our tests the WebP came out 74% to 90% smaller than the PNG, with transparency kept. Choose the quality from 0 to 100.",
       "options": [
         "webp_quality"
       ],
@@ -7395,7 +7402,7 @@
       "from": "webp",
       "to": "jpg",
       "title": "WebP to JPEG",
-      "description": "WebP to JPEG Converter. Convert WebP to JPEG Online with Free Image Converter. API available.",
+      "description": "Convert WebP to JPG (JPEG) online for free. Save web images as JPG files that any app or upload form accepts, at the JPEG quality you choose.",
       "options": [
         "alpha_background",
         "jpeg_quality"
@@ -7504,7 +7511,7 @@
       "from": "webp",
       "to": "png",
       "title": "WebP to PNG",
-      "description": "WebP to PNG Converter. Convert WebP to PNG Online with Free Image Converter. API available.",
+      "description": "Convert WebP to PNG online for free. The PNG has exactly the same pixels as the WebP, transparency included, and opens in every app, editor and upload form.",
       "options": [],
       "ai": false,
       "custom": false,
