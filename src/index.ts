@@ -23,6 +23,8 @@ const VERSION = packageJson.version;
 // the model's view, and Claude Code only acts on it for plugins in
 // `claude-plugins-official` - so this is dormant until the plugin is accepted
 // there. See https://code.claude.com/docs/en/plugin-hints
+// Printed after a successful command only: programs that run ctio and report its
+// stderr as the failure reason must see the error, not this tag.
 function emitClaudeCodePluginHint(): void {
   if (process.env["CLAUDECODE"]) {
     process.stderr.write(
@@ -32,7 +34,6 @@ function emitClaudeCodePluginHint(): void {
 }
 
 async function main(): Promise<void> {
-  emitClaudeCodePluginHint();
   const cli = cac("ctio");
 
   cli
@@ -77,6 +78,7 @@ async function main(): Promise<void> {
 
   try {
     await cli.runMatchedCommand();
+    emitClaudeCodePluginHint();
   } catch (err) {
     if (err instanceof CtioError) {
       error(err.message);

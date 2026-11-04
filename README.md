@@ -83,11 +83,14 @@ ctio convert -t ai_text_to_mp3 script.txt narration.mp3 --option voice_tts=en_pa
 ctio convert -t ai_pdf_to_mp3 handbook.pdf handbook.wav --option voice_tts=gb_jane_neutral
 ```
 
-- **Voices.** `ctio voices --format pretty` lists the built-in voices (`gb_oliver_neutral`,
-  `en_paul_neutral`, `gb_jane_neutral`, `fr_marie_neutral`, and other speaking styles of
-  each) and the voices you cloned. A cloned voice's ID is shown next to it on the
+- **Voices.** `ctio voices --format pretty` lists the 66 built-in voices in 21 languages
+  (`voice_478` Sheila, `en_paul_neutral`, `gb_jane_neutral`, `fr_marie_neutral`, `voice_3133`
+  Haruto, ...) and the voices you cloned. A cloned voice's ID is shown next to it on the
   [voice.conversiontools.io](https://voice.conversiontools.io) dashboard; it works from
   the account that cloned it. An unknown voice is an error, never a silent fallback.
+- **Language.** Each built-in voice lists the `language_tts` code it speaks (`ja` for
+  Haruto). Set `--option language_tts=<code>` to the language your text is written in, and
+  pick a voice that speaks it. `ctio describe ai_text_to_mp3` lists all 38 codes.
 - **Format.** MP3 or WAV, taken from the output file name (`narration.wav`), or set with
   `--option output_tts=wav`. Writing to stdout (`-`) gives MP3 unless `output_tts`
   says otherwise.

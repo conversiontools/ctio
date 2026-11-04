@@ -19,6 +19,8 @@ export interface Voice {
   id: string;
   name: string;
   type: "builtin" | "clone";
+  // Built-in voices: the language_tts code the voice speaks.
+  language?: string;
   created?: string | null;
 }
 
@@ -95,8 +97,11 @@ export function renderTable(voices: readonly Voice[]): string {
   const rows = [...voices].sort((a, b) => Number(a.type === "builtin") - Number(b.type === "builtin"));
   const idWidth = Math.max(2, ...rows.map((v) => v.id.length));
   const nameWidth = Math.max(4, ...rows.map((v) => v.name.length));
-  const line = (id: string, name: string, type: string) => `${id.padEnd(idWidth)}  ${name.padEnd(nameWidth)}  ${type}\n`;
-  return line("ID", "NAME", "TYPE") + rows.map((v) => line(v.id, v.name, v.type)).join("");
+  const languageOf = (v: Voice) => v.language ?? "-";
+  const languageWidth = Math.max(8, ...rows.map((v) => languageOf(v).length));
+  const line = (id: string, name: string, language: string, type: string) =>
+    `${id.padEnd(idWidth)}  ${name.padEnd(nameWidth)}  ${language.padEnd(languageWidth)}  ${type}\n`;
+  return line("ID", "NAME", "LANGUAGE", "TYPE") + rows.map((v) => line(v.id, v.name, languageOf(v), v.type)).join("");
 }
 
 function pickFormat(raw: string | undefined): OutputFormat {
