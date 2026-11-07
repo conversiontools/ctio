@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:19:56.890Z",
+  "generatedAt": "2026-11-07T04:43:45.673Z",
   "source": "Conversion Tools converter registry",
   "count": 225,
   "converters": [
@@ -2431,8 +2431,9 @@
       "from": "excel",
       "to": "json",
       "title": "Excel to JSON",
-      "description": "Excel to JSON File Converter. Quick and easy. 100% Confidential. Simple Interface. Available Pricing. Custom Converter development. API available",
+      "description": "Convert Excel (XLSX, XLS) to JSON online. Each row becomes an object keyed by your headers, numbers stay numbers, empty cells become null. Keyed and per-sheet layouts too.",
       "options": [
+        "output_layout",
         "header",
         "space",
         "index_records",
@@ -2451,6 +2452,19 @@
         "to-json"
       ],
       "optionSpecs": [
+        {
+          "name": "output_layout",
+          "title": "Output layout (JSON shape)",
+          "type": "enum",
+          "values": [
+            "array",
+            "sheets",
+            "rows",
+            "keyed",
+            "pairs",
+            "legacy"
+          ]
+        },
         {
           "name": "header",
           "title": "Use first line/row as a header?",
