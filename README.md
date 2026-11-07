@@ -83,11 +83,11 @@ ctio convert -t ai_text_to_mp3 script.txt narration.mp3 --option voice_tts=en_pa
 ctio convert -t ai_pdf_to_mp3 handbook.pdf handbook.wav --option voice_tts=gb_jane_neutral
 ```
 
-- **Voices.** `ctio voices --format pretty` lists the 66 built-in voices in 21 languages
+- **Voices.** `ctio voice --format pretty` (or `ctio voices`) lists the 66 built-in voices in 21 languages
   (`voice_478` Sheila, `en_paul_neutral`, `gb_jane_neutral`, `fr_marie_neutral`, `voice_3133`
-  Haruto, ...) and the voices you cloned. A cloned voice's ID is shown next to it on the
-  [voice.conversiontools.io](https://voice.conversiontools.io) dashboard; it works from
-  the account that cloned it. An unknown voice is an error, never a silent fallback.
+  Haruto, ...) and the voices you cloned (see [Clone your voice](#clone-your-voice)). A cloned
+  voice works from the account that cloned it. An unknown voice is an error, never a silent
+  fallback.
 - **Language.** Each built-in voice lists the `language_tts` code it speaks (`ja` for
   Haruto). Set `--option language_tts=<code>` to the language your text is written in, and
   pick a voice that speaks it. `ctio describe ai_text_to_mp3` lists all 38 codes.
@@ -101,6 +101,32 @@ ctio convert -t ai_pdf_to_mp3 handbook.pdf handbook.wav --option voice_tts=gb_ja
   formats, so it can go straight into a video. MP3s report their true duration.
 
 Text to speech uses AI credits (10 per 1,000 characters).
+
+## Clone your voice
+
+Record about 10 seconds of clear speech (one speaker, a quiet room), then clone it and narrate
+in it:
+
+```bash
+ctio voice clone my-voice.wav --name "My narrator" --tone calm \
+  --consent "I confirm this is my own voice, or I have the speaker's explicit permission to clone it."
+ctio convert -t ai_text_to_mp3 script.txt narration.mp3 --option voice_tts=<voice_id>
+ctio voice delete <voice_id> --yes
+```
+
+- **Consent.** `--consent` takes the consent statement word for word (`ctio voice` prints it
+  as `consent_statement`). Without it ctio stops before the sample leaves your machine. Clone
+  only your own voice, or a voice whose speaker gave you explicit permission.
+- **Sample.** MP3, WAV, M4A, FLAC, OGG or WebM. 3 seconds minimum, about 10 seconds works
+  best. Up to 512 KB on the free Voice plan, 2 MB on paid plans.
+- **Tone.** A label for the sample's mood: `normal`, `excited`, `cheerful`, `confident`,
+  `curious`, `calm`, `sad`, `angry` or `frustrated`. The clone copies the mood and pace of the
+  recording itself, so record in the mood you want to hear.
+- **Slots.** 1 cloned voice on the free Voice plan, 5 on Starter, 20 on Pro. Deleting a voice
+  frees its slot.
+- Voices cloned with ctio show up on the [voice.conversiontools.io](https://voice.conversiontools.io)
+  dashboard, and voices cloned there show up in `ctio voice`. You can also record a sample
+  right in the dashboard.
 
 ## License
 

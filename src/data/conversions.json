@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T04:43:45.673Z",
+  "generatedAt": "2026-11-07T21:58:17.253Z",
   "source": "Conversion Tools converter registry",
   "count": 225,
   "converters": [
@@ -34,7 +34,7 @@
           "title": "Language",
           "type": "enum",
           "default": "en",
-          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voices`).",
+          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voice`).",
           "values": [
             "en",
             "ar",
@@ -91,7 +91,7 @@
           "title": "Voice",
           "type": "enum",
           "default": "default",
-          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (clone one on voice.conversiontools.io, with `ctio voice clone` or POST /v1/voices; list them with GET /v1/voices or `ctio voice`).",
           "values": [
             "default",
             "voice_478",
@@ -255,7 +255,7 @@
           "title": "Language",
           "type": "enum",
           "default": "en",
-          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voices`).",
+          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voice`).",
           "values": [
             "en",
             "ar",
@@ -312,7 +312,7 @@
           "title": "Voice",
           "type": "enum",
           "default": "default",
-          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (clone one on voice.conversiontools.io, with `ctio voice clone` or POST /v1/voices; list them with GET /v1/voices or `ctio voice`).",
           "values": [
             "default",
             "voice_478",
@@ -652,7 +652,7 @@
           "title": "Language",
           "type": "enum",
           "default": "en",
-          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voices`).",
+          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voice`).",
           "values": [
             "en",
             "ar",
@@ -709,7 +709,7 @@
           "title": "Voice",
           "type": "enum",
           "default": "default",
-          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (clone one on voice.conversiontools.io, with `ctio voice clone` or POST /v1/voices; list them with GET /v1/voices or `ctio voice`).",
           "values": [
             "default",
             "voice_478",
@@ -848,7 +848,7 @@
           "title": "Language",
           "type": "enum",
           "default": "en",
-          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voices`).",
+          "description": "The language your text is written in. The voice reads the text as it is, so pick a voice that speaks this language: each built-in voice lists its language code (GET /v1/voices or `ctio voice`).",
           "values": [
             "en",
             "ar",
@@ -905,7 +905,7 @@
           "title": "Voice",
           "type": "enum",
           "default": "default",
-          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (shown next to each clone on voice.conversiontools.io; list them with GET /v1/voices or `ctio voices`).",
+          "description": "A built-in voice from the list, or the ID of one of your own cloned voices (clone one on voice.conversiontools.io, with `ctio voice clone` or POST /v1/voices; list them with GET /v1/voices or `ctio voice`).",
           "values": [
             "default",
             "voice_478",
