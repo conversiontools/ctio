@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T21:58:17.253Z",
+  "generatedAt": "2026-11-08T16:32:13.692Z",
   "source": "Conversion Tools converter registry",
   "count": 225,
   "converters": [
@@ -6089,9 +6089,10 @@
       "from": "pdf",
       "to": "html",
       "title": "PDF to HTML",
-      "description": "PDF to HTML Converter. Convert PDF to HTML Online with Free PDF Converter. API Available.",
+      "description": "Convert PDF to HTML online for free. Get one HTML file with the layout, fonts and images of every page, and text you can select and search. No sign-up.",
       "options": [
-        "images"
+        "images",
+        "create_zip"
       ],
       "ai": false,
       "custom": false,
@@ -6110,6 +6111,13 @@
           "title": "Include images?",
           "type": "boolean",
           "default": true
+        },
+        {
+          "name": "create_zip",
+          "title": "Create ZIP archive with separate image files?",
+          "type": "boolean",
+          "default": false,
+          "description": "no (default): one self-contained HTML file with the images embedded. yes: a ZIP archive with the HTML file and its images as separate files."
         }
       ],
       "outputAliases": [
