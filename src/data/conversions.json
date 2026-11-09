@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T16:32:13.692Z",
+  "generatedAt": "2026-11-09T12:01:53.845Z",
   "source": "Conversion Tools converter registry",
   "count": 225,
   "converters": [
@@ -6283,7 +6283,7 @@
       "from": "pdf",
       "to": "svg",
       "title": "PDF to SVG",
-      "description": "PDF to SVG Converter. Convert PDF to SVG Online with Free PDF Converter. API Available.",
+      "description": "Convert PDF to SVG online for free. Each page becomes a vector SVG that keeps its shapes, text and size, for websites, design apps and cutting machines. No sign-up.",
       "options": [
         "image_resolution",
         "pagesize"
@@ -6317,18 +6317,12 @@
           "title": "Page size",
           "type": "enum",
           "values": [
+            "Original",
             "A4",
-            "Single page",
             "Letter",
             "Legal",
-            "Tabloid",
-            "Ledger",
-            "A0",
-            "A1",
-            "A2",
             "A3",
-            "A5",
-            "A6"
+            "A5"
           ]
         }
       ]
