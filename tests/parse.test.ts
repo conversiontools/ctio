@@ -65,6 +65,10 @@ describe("planParse", () => {
     expect(() => planParse(undefined, {})).toThrow(UsageError);
     expect(() => planParse("invoice.pdf", { id: "abc123" })).toThrow("not both");
   });
+  test("an id the option parser read as a number is refused, not taken as missing", () => {
+    expect(() => planParse(undefined, { id: 0 })).toThrow("--id 0 is not an extraction id.");
+    expect(() => planParse(undefined, { id: 1.2345e31 })).toThrow(/not an extraction id/);
+  });
   test("a schema only applies to a new extraction", () => {
     expect(() => planParse(undefined, { id: "abc123", schema: "fields.json" })).toThrow(UsageError);
     expect(() => planParse(undefined, { id: "abc123", schemaId: "s1" })).toThrow(UsageError);
@@ -374,6 +378,13 @@ describe("ctio parse against an API", () => {
     const { exitCode, stderr } = await ctio([]);
     expect(exitCode).toBe(2);
     expect(stderr).toContain("Missing the document to extract.");
+    expect(received).toEqual([]);
+  });
+
+  test("an all-digit --id is refused before anything is sent", async () => {
+    const { exitCode, stderr } = await ctio(["--id", "00000000000000000000000000000000"]);
+    expect(exitCode).toBe(2);
+    expect(stderr).toContain("is not an extraction id");
     expect(received).toEqual([]);
   });
 });

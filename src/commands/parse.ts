@@ -22,7 +22,7 @@ interface ParseFlags {
   output?: string;
   schema?: string;
   schemaId?: string;
-  id?: string;
+  id?: string | number;
   timeout?: number | string;
   pollInterval?: number | string;
   parseToken?: string;
@@ -100,14 +100,21 @@ export function loadFields(content: string): unknown[] {
 
 /** A new extraction of a document, or a follow-up on an earlier one by id. */
 export function planParse(file: string | undefined, flags: ParseFlags): ParsePlan {
-  if (file && flags.id) {
-    throw new UsageError("Pass a document or --id, not both.");
-  }
-  if (flags.id) {
+  if (flags.id !== undefined) {
+    if (file) {
+      throw new UsageError("Pass a document or --id, not both.");
+    }
+    // The option parser turns an all-digit value into a number, and its text is gone.
+    if (typeof flags.id !== "string") {
+      throw new UsageError(
+        `--id ${flags.id} is not an extraction id.`,
+        "Use the extraction id that ctio parse printed (32 letters and digits).",
+      );
+    }
     if (flags.schema || flags.schemaId) {
       throw new UsageError("--schema and --schema-id apply to a new extraction, not to --id.");
     }
-    return { source: "id", id: String(flags.id) };
+    return { source: "id", id: flags.id };
   }
   if (!file) {
     throw new UsageError(
