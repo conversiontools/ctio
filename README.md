@@ -15,7 +15,7 @@ cat data.json | ctio convert -t json_to_excel - - > out.xlsx
 ctio convert -t validate_xml_xsd data.xml report.txt --file schema.xsd
 
 # Compose
-ctio parse invoice.pdf --schema purchase-invoice \
+ctio parse invoice.pdf --schema fields.json \
   | jq '.line_items' \
   | ctio convert -t json_to_excel - out.xlsx
 ```
@@ -73,6 +73,30 @@ ctio list --from pdf                 # what converts from PDF
 ctio list --to wav --format pretty   # what produces WAV
 ctio describe xml_to_csv --format pretty   # options, allowed values, defaults
 ```
+
+## Extract data from documents
+
+Pull structured data out of a PDF, scan or photo with [Parse](https://parse.conversiontools.io).
+Parse uses its own API key: create one at parse.conversiontools.io and pass it as
+`CT_PARSE_TOKEN` (or `--parse-token`).
+
+```bash
+ctio parse invoice.pdf                                   # schema-less: Parse picks the fields
+ctio parse contract.pdf --schema fields.json -o out.json # just the fields you list
+ctio parse --id <extraction_id>                          # fetch an earlier extraction
+```
+
+- **Fields.** `fields.json` is a JSON array of fields, or an object with a `fields` array (the
+  shape Parse exports), e.g. `[{"name": "total", "type": "number"}, {"name": "due_date", "type": "date"}]`.
+  `--schema-id` uses a schema saved in Parse instead.
+- **Waiting.** ctio waits until the extraction finishes and prints the data. A long document
+  can take a few minutes; `--format pretty` shows the progress. `--timeout <sec>` caps the wait
+  (default 1800, `0` = no cap). If it runs out, ctio prints the extraction id, and
+  `ctio parse --id <id>` picks it up later.
+- **Failures.** A failed extraction exits non-zero with the reason. ctio never prints `null`
+  for a result it did not get.
+- **Repeats.** The same document with the same fields returns the stored result, and no
+  pages are charged.
 
 ## Text to speech
 
