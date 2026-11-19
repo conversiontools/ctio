@@ -1,5 +1,5 @@
 import { AuthMissingError, UsageError } from "./errors";
-import { getActiveProfile, getProfile, loadProfiles, type Profile } from "./profile";
+import { getActiveProfile, getProfile, loadProfiles, selectedProfileName, type Profile } from "./profile";
 import { isRegion, type Region } from "./region";
 
 export interface ResolveOptions {
@@ -50,8 +50,7 @@ export async function resolveAuth(opts: ResolveOptions): Promise<ResolvedAuth> {
   }
 
   const file = await loadProfiles();
-  const profileName =
-    opts.profileFlag ?? process.env["CT_PROFILE"] ?? file.active;
+  const profileName = selectedProfileName(file, opts.profileFlag);
 
   const profile: Profile | undefined =
     opts.profileFlag ?? process.env["CT_PROFILE"]
@@ -66,6 +65,10 @@ export async function resolveAuth(opts: ResolveOptions): Promise<ResolvedAuth> {
       `Profile "${profileName}" not found.`,
       `Available profiles: ${Object.keys(file.profiles).join(", ")}.`,
     );
+  }
+  // A profile that holds only a Parse API key.
+  if (!profile.token) {
+    throw new AuthMissingError();
   }
 
   return finalize({
@@ -99,21 +102,25 @@ function finalize(args: {
 export interface ResolvedParseAuth {
   parseToken: string;
   baseUrl: string;
-  source: "flag" | "env";
+  source: "flag" | "env" | "profile";
+  profileName?: string;
 }
 
 // The Parse API is served from its own host.
-const PARSE_BASE_URL = "https://api-parse.conversiontools.io/v1";
+export const PARSE_BASE_URL = "https://api-parse.conversiontools.io/v1";
+export const PARSE_KEYS_URL = "https://parse.conversiontools.io/dashboard/api-keys";
 
 /**
  * Resolve the Parse API key. Parse uses its own API keys, created at
  * https://parse.conversiontools.io. Precedence: --parse-token flag >
- * CT_PARSE_TOKEN env. The base URL is the Parse host unless --base-url overrides.
+ * CT_PARSE_TOKEN env > the key `ctio auth login --parse` saved in the profile.
+ * The base URL is the Parse host unless --base-url overrides.
  */
-export function resolveParseToken(opts: {
+export async function resolveParseToken(opts: {
   parseTokenFlag?: string | undefined;
+  profileFlag?: string | undefined;
   baseUrlFlag?: string | undefined;
-}): ResolvedParseAuth {
+}): Promise<ResolvedParseAuth> {
   const baseUrl = opts.baseUrlFlag ?? PARSE_BASE_URL;
 
   if (opts.parseTokenFlag) {
@@ -123,8 +130,14 @@ export function resolveParseToken(opts: {
   if (env) {
     return { parseToken: env, baseUrl, source: "env" };
   }
+  const file = await loadProfiles();
+  const profileName = selectedProfileName(file, opts.profileFlag);
+  const saved = getProfile(file, profileName)?.parseToken;
+  if (saved) {
+    return { parseToken: saved, baseUrl, source: "profile", profileName };
+  }
   throw new UsageError(
     "No Parse API key found.",
-    "Pass --parse-token <key> or set CT_PARSE_TOKEN. Create a key at https://parse.conversiontools.io.",
+    `Run \`ctio auth login --parse\` to save one. Create a key at ${PARSE_KEYS_URL}.`,
   );
 }

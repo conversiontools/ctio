@@ -7,8 +7,10 @@ import { parse, stringify } from "smol-toml";
 import { isRegion, type Region } from "./region";
 import { IoError } from "./errors";
 
+// A profile holds a Conversion Tools token, a Parse API key, or both.
 export interface Profile {
-  token: string;
+  token?: string;
+  parseToken?: string;
   region: Region;
   email?: string;
 }
@@ -41,11 +43,14 @@ function parseProfilesFile(raw: string): ProfilesFile {
     for (const [name, value] of Object.entries(profilesRaw)) {
       if (!isPlainObject(value)) continue;
       const token = value["token"];
+      const parseToken = value["parse_token"];
       const region = value["region"];
       const email = value["email"];
-      if (typeof token !== "string" || typeof region !== "string" || !isRegion(region)) continue;
+      if (typeof region !== "string" || !isRegion(region)) continue;
+      if (typeof token !== "string" && typeof parseToken !== "string") continue;
       profiles[name] = {
-        token,
+        ...(typeof token === "string" ? { token } : {}),
+        ...(typeof parseToken === "string" ? { parseToken } : {}),
         region,
         ...(typeof email === "string" ? { email } : {}),
       };
@@ -71,10 +76,16 @@ export async function loadProfiles(): Promise<ProfilesFile> {
 export async function saveProfiles(data: ProfilesFile): Promise<void> {
   const path = profilesPath();
   await mkdir(dirname(path), { recursive: true });
-  const content = stringify({
-    active: data.active,
-    profiles: data.profiles,
-  });
+  const profiles: Record<string, Record<string, string>> = {};
+  for (const [name, p] of Object.entries(data.profiles)) {
+    profiles[name] = {
+      ...(p.token ? { token: p.token } : {}),
+      ...(p.parseToken ? { parse_token: p.parseToken } : {}),
+      region: p.region,
+      ...(p.email ? { email: p.email } : {}),
+    };
+  }
+  const content = stringify({ active: data.active, profiles });
   await writeFile(path, content, { encoding: "utf8", mode: 0o600 });
   if (platform() !== "win32") {
     try {
@@ -94,4 +105,9 @@ export function getActiveProfile(file: ProfilesFile): Profile | undefined {
 
 export function getProfile(file: ProfilesFile, name: string): Profile | undefined {
   return file.profiles[name];
+}
+
+/** The profile a command uses: --profile, then CT_PROFILE, then the active one. */
+export function selectedProfileName(file: ProfilesFile, profileFlag: string | undefined): string {
+  return profileFlag ?? process.env["CT_PROFILE"] ?? file.active;
 }

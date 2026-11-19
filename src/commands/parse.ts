@@ -26,13 +26,20 @@ interface ParseFlags {
   timeout?: number | string;
   pollInterval?: number | string;
   parseToken?: string;
+  profile?: string;
   baseUrl?: string;
   format?: string;
 }
 
-// The envelope of POST /extract and GET /extractions/:id (and of their errors).
-interface ExtractionResponse {
+// Every Parse API answer, and every Parse API error, carries these.
+interface ParseApiResponse {
   success?: boolean;
+  error?: string | null;
+  message?: string;
+}
+
+// The envelope of POST /extract and GET /extractions/:id.
+interface ExtractionResponse extends ParseApiResponse {
   id?: string;
   status?: string;
   data?: unknown;
@@ -40,8 +47,14 @@ interface ExtractionResponse {
   progress?: number | null;
   pages_used?: number;
   cached?: boolean;
-  error?: string | null;
-  message?: string;
+}
+
+// GET /usage: the key's plan and this month's pages.
+export interface ParseUsage extends ParseApiResponse {
+  plan?: string;
+  pages_used?: number;
+  pages_limit?: number;
+  pages_remaining?: number;
 }
 
 interface ParseContext {
@@ -192,15 +205,19 @@ export function registerParse(cli: CAC): void {
     .option("--id <extraction_id>", "Fetch an earlier extraction (waits if it is still running)")
     .option("--timeout <sec>", `Give up waiting after this many seconds (default ${DEFAULT_TIMEOUT_SECONDS}, 0 = no cap)`)
     .option("--poll-interval <ms>", `Status poll interval in ms (default ${DEFAULT_POLL_INTERVAL_MS})`)
-    .option("--parse-token <token>", "Parse API key (or env CT_PARSE_TOKEN); create one at parse.conversiontools.io")
+    .option(
+      "--parse-token <token>",
+      "Parse API key for this run (default: env CT_PARSE_TOKEN, then the key saved by `ctio auth login --parse`)",
+    )
+    .example("  ctio auth login --parse      # once: save your Parse API key")
     .example("  ctio parse invoice.pdf")
     .example("  ctio parse invoice.pdf --schema fields.json -o out.json")
     .example("  ctio parse --id <extraction_id>")
-    .example("  CT_PARSE_TOKEN=... ctio parse contract.pdf --format pretty")
     .action(async (file: string | undefined, flags: ParseFlags) => {
       const plan = planParse(file, flags);
-      const { parseToken, baseUrl } = resolveParseToken({
+      const { parseToken, baseUrl } = await resolveParseToken({
         parseTokenFlag: flags.parseToken,
+        profileFlag: flags.profile,
         baseUrlFlag: flags.baseUrl,
       });
       const ctx: ParseContext = { parseToken, baseUrl };
@@ -318,12 +335,17 @@ async function followExtraction(
   }
 }
 
-async function parseFetch(
+/** Check a Parse API key: its plan and pages left, or the API's reason for refusing it. */
+export async function checkParseKey(parseToken: string, baseUrl: string): Promise<ParseUsage> {
+  return parseFetch<ParseUsage>({ parseToken, baseUrl }, "GET", "usage");
+}
+
+async function parseFetch<T extends ParseApiResponse = ExtractionResponse>(
   ctx: ParseContext,
   method: "GET" | "POST",
   path: string,
   body?: FormData,
-): Promise<ExtractionResponse> {
+): Promise<T> {
   const url = `${ctx.baseUrl}/${path}`;
   debug(`${method} ${url}`);
 
@@ -339,9 +361,9 @@ async function parseFetch(
   }
 
   const retryable = res.status >= 500 || res.status === 429;
-  let json: ExtractionResponse;
+  let json: T;
   try {
-    json = (await res.json()) as ExtractionResponse;
+    json = (await res.json()) as T;
   } catch {
     throw new ParseRequestError(`Parse returned a non-JSON response (HTTP ${res.status}).`, ExitCode.ApiError, retryable);
   }
@@ -351,7 +373,7 @@ async function parseFetch(
       json.error || "Authentication failed.",
       ExitCode.AuthError,
       false,
-      "Check your Parse API key (--parse-token / CT_PARSE_TOKEN).",
+      "Check the Parse API key, or save a new one with `ctio auth login --parse`.",
     );
   }
   if (res.status === 404) {

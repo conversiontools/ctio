@@ -1,5 +1,6 @@
 import type { CAC } from "cac";
 
+import { checkParseKey, type ParseUsage } from "@/commands/parse";
 import { createClient } from "@/lib/client";
 import { AuthInvalidError, UsageError } from "@/lib/errors";
 import { info, maskToken } from "@/lib/logger";
@@ -10,10 +11,12 @@ import {
   loadProfiles,
   profilesPath,
   saveProfiles,
+  selectedProfileName,
   type Profile,
   type ProfilesFile,
 } from "@/lib/profile";
 import { isRegion, regionToBaseUrl, type Region } from "@/lib/region";
+import { PARSE_BASE_URL, PARSE_KEYS_URL } from "@/lib/token";
 
 interface AuthCommandOptions {
   profile?: string;
@@ -24,6 +27,7 @@ interface AuthCommandOptions {
   format?: string;
   yes?: boolean;
   all?: boolean;
+  parse?: boolean;
 }
 
 const AUTH_ACTIONS = [
@@ -48,7 +52,9 @@ export function registerAuth(cli: CAC): void {
     )
     .option("--all", "logout: remove every profile (requires --yes)")
     .option("--yes", "Confirm destructive actions")
+    .option("--parse", "login: save a Parse API key to the profile; logout: remove only the Parse key")
     .example("  ctio auth login")
+    .example("  ctio auth login --parse")
     .example("  ctio auth status")
     .example("  ctio auth list")
     .example("  ctio auth add-profile prod --region us")
@@ -63,7 +69,11 @@ export function registerAuth(cli: CAC): void {
       }
       switch (action) {
         case "login":
-          await loginInteractive(opts);
+          if (opts.parse) {
+            await loginParse(opts);
+          } else {
+            await loginInteractive(opts);
+          }
           return;
         case "status":
           await authStatus(opts);
@@ -215,7 +225,9 @@ async function loginInteractive(opts: AuthCommandOptions): Promise<void> {
   info(`✓ Authenticated as ${email}`);
 
   const file = await loadProfiles();
+  // Keep a Parse API key saved earlier in this profile.
   file.profiles[profileName] = {
+    ...file.profiles[profileName],
     token: tokenInput,
     region,
     email,
@@ -225,6 +237,37 @@ async function loginInteractive(opts: AuthCommandOptions): Promise<void> {
 
   info(`Saved profile "${profileName}" to ${profilesPath()}`);
   info(`Active profile: ${profileName}`);
+}
+
+async function loginParse(opts: AuthCommandOptions): Promise<void> {
+  info("To get a Parse API key:");
+  info(`  1. Open ${PARSE_KEYS_URL}`);
+  info("  2. Create a key and copy it.");
+  info("");
+
+  const key = (await readSecret("Paste your Parse API key: ")).trim();
+  if (!key) throw new UsageError("The Parse API key cannot be empty.");
+
+  info("Validating the key...");
+  const usage = await checkParseKey(key, opts.baseUrl ?? PARSE_BASE_URL);
+  info(`✓ Parse key works${describeParseUsage(usage)}`);
+
+  const file = await loadProfiles();
+  const profileName = selectedProfileName(file, opts.profile);
+  const existing = file.profiles[profileName];
+  file.profiles[profileName] = existing
+    ? { ...existing, parseToken: key }
+    : { region: "auto", parseToken: key };
+  await saveProfiles(file);
+
+  info(`Saved the Parse API key to profile "${profileName}" in ${profilesPath()}`);
+}
+
+function describeParseUsage(usage: ParseUsage): string {
+  if (typeof usage.pages_remaining !== "number" || typeof usage.pages_limit !== "number") return "";
+  const left = usage.pages_remaining.toLocaleString("en-US");
+  const limit = usage.pages_limit.toLocaleString("en-US");
+  return ` (${usage.plan ?? "free"} plan, ${left} of ${limit} pages left this month)`;
 }
 
 async function addProfile(name: string, opts: AuthCommandOptions): Promise<void> {
@@ -271,9 +314,21 @@ async function logout(opts: AuthCommandOptions): Promise<void> {
     return;
   }
 
-  const target = opts.profile ?? file.active;
-  if (!file.profiles[target]) {
+  const target = opts.parse ? selectedProfileName(file, opts.profile) : (opts.profile ?? file.active);
+  const profile = file.profiles[target];
+  if (!profile) {
     throw new UsageError(`Profile "${target}" not found.`);
+  }
+  if (opts.parse) {
+    if (!profile.parseToken) {
+      throw new UsageError(`Profile "${target}" has no saved Parse API key.`);
+    }
+    if (profile.token) {
+      delete profile.parseToken;
+      await saveProfiles(file);
+      info(`Removed the Parse API key from profile "${target}".`);
+      return;
+    }
   }
   delete file.profiles[target];
   if (file.active === target) {
@@ -288,6 +343,7 @@ interface StatusPayload {
   active: string;
   email?: string;
   token: string;
+  parseToken: string;
   region: Region;
   endpoint: string;
   source: "profile" | "none";
@@ -312,6 +368,7 @@ async function authStatus(opts: AuthCommandOptions): Promise<void> {
     active: activeName,
     ...(profile.email ? { email: profile.email } : {}),
     token: maskToken(profile.token),
+    parseToken: maskToken(profile.parseToken),
     region: profile.region,
     endpoint: regionToBaseUrl(profile.region),
     source: "profile",
@@ -321,6 +378,7 @@ async function authStatus(opts: AuthCommandOptions): Promise<void> {
     process.stdout.write(`Active profile: ${payload.active}\n`);
     if (payload.email) process.stdout.write(`Email:          ${payload.email}\n`);
     process.stdout.write(`Token:          ${payload.token}\n`);
+    process.stdout.write(`Parse key:      ${payload.parseToken}\n`);
     process.stdout.write(`Region:         ${payload.region} (→ ${payload.endpoint})\n`);
     return;
   }
@@ -335,6 +393,7 @@ async function authList(opts: AuthCommandOptions): Promise<void> {
     active: name === file.active,
     ...(p.email ? { email: p.email } : {}),
     token: maskToken(p.token),
+    parseToken: maskToken(p.parseToken),
     region: p.region,
   }));
 
@@ -345,8 +404,9 @@ async function authList(opts: AuthCommandOptions): Promise<void> {
     }
     for (const e of entries) {
       const marker = e.active ? "*" : " ";
+      const parsePart = e.parseToken === "(none)" ? "" : `  parse ${e.parseToken}`;
       const emailPart = "email" in e && e.email ? `  ${e.email}` : "";
-      process.stdout.write(`${marker} ${e.name.padEnd(16)} ${e.region.padEnd(6)} ${e.token}${emailPart}\n`);
+      process.stdout.write(`${marker} ${e.name.padEnd(16)} ${e.region.padEnd(6)} ${e.token}${parsePart}${emailPart}\n`);
     }
     return;
   }

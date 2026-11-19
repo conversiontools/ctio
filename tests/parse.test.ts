@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test } from "bun:test";
+import { afterAll, beforeAll, beforeEach, describe, expect, test } from "bun:test";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
@@ -6,6 +6,8 @@ import { join } from "node:path";
 import { __testables } from "@/commands/parse";
 import { CtioError, UsageError } from "@/lib/errors";
 import { resolveParseToken } from "@/lib/token";
+
+import { useTempConfig } from "./helpers/config";
 
 const { inlineWaitSeconds, loadFields, planParse, readOutcome, resolveTimeout } = __testables;
 
@@ -25,30 +27,44 @@ describe("loadFields", () => {
 });
 
 describe("resolveParseToken", () => {
-  afterEach(() => {
-    delete process.env["CT_PARSE_TOKEN"];
-  });
+  const config = useTempConfig();
+  const saved =
+    'active = "default"\n' +
+    '[profiles.default]\ntoken = "ct-token"\nparse_token = "pk-default"\nregion = "auto"\n' +
+    '[profiles.work]\nparse_token = "pk-work"\nregion = "auto"\n';
 
-  test("prefers the --parse-token flag over the env", () => {
+  test("prefers the --parse-token flag over the env and the saved key", async () => {
+    config.writeProfiles(saved);
     process.env["CT_PARSE_TOKEN"] = "env-key";
-    const r = resolveParseToken({ parseTokenFlag: "flag-key" });
+    const r = await resolveParseToken({ parseTokenFlag: "flag-key" });
     expect(r.parseToken).toBe("flag-key");
     expect(r.source).toBe("flag");
   });
-  test("falls back to CT_PARSE_TOKEN", () => {
+  test("then CT_PARSE_TOKEN, before the saved key", async () => {
+    config.writeProfiles(saved);
     process.env["CT_PARSE_TOKEN"] = "env-key";
-    const r = resolveParseToken({});
+    const r = await resolveParseToken({});
     expect(r.parseToken).toBe("env-key");
     expect(r.source).toBe("env");
   });
-  test("throws a helpful error when no key is set", () => {
-    delete process.env["CT_PARSE_TOKEN"];
-    expect(() => resolveParseToken({})).toThrow(/No Parse API key/);
+  test("then the key saved in the profile: --profile, then CT_PROFILE, then the active one", async () => {
+    config.writeProfiles(saved);
+    expect(await resolveParseToken({})).toMatchObject({ parseToken: "pk-default", source: "profile", profileName: "default" });
+    process.env["CT_PROFILE"] = "work";
+    expect((await resolveParseToken({})).parseToken).toBe("pk-work");
+    expect((await resolveParseToken({ profileFlag: "default" })).parseToken).toBe("pk-default");
   });
-  test("defaults to the geo base URL and honors --base-url", () => {
+  test("without any key, the error says how to save one", async () => {
+    config.writeProfiles('active = "default"\n[profiles.default]\ntoken = "ct-token"\nregion = "auto"\n');
+    const err = await resolveParseToken({}).catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(UsageError);
+    expect((err as UsageError).message).toBe("No Parse API key found.");
+    expect((err as UsageError).hint).toContain("ctio auth login --parse");
+  });
+  test("defaults to the Parse host and honors --base-url", async () => {
     process.env["CT_PARSE_TOKEN"] = "k";
-    expect(resolveParseToken({}).baseUrl).toBe("https://api-parse.conversiontools.io/v1");
-    expect(resolveParseToken({ baseUrlFlag: "http://localhost:6082/v1" }).baseUrl).toBe(
+    expect((await resolveParseToken({})).baseUrl).toBe("https://api-parse.conversiontools.io/v1");
+    expect((await resolveParseToken({ baseUrlFlag: "http://localhost:6082/v1" })).baseUrl).toBe(
       "http://localhost:6082/v1",
     );
   });
@@ -352,12 +368,12 @@ describe("ctio parse against an API", () => {
     expect(JSON.parse(readFileSync(out, "utf8"))).toEqual(DATA);
   });
 
-  test("a rejected key exits 3 and names the key flags", async () => {
+  test("a rejected key exits 3 and says how to save a new one", async () => {
     postAnswer = { status: 401, body: { error: "Invalid API key" } };
     const { exitCode, stderr } = await ctio([docPath]);
     expect(exitCode).toBe(3);
     expect(stderr).toContain("Invalid API key");
-    expect(stderr).toContain("--parse-token / CT_PARSE_TOKEN");
+    expect(stderr).toContain("ctio auth login --parse");
   });
 
   test("a plan limit shows the API's user-facing sentence", async () => {

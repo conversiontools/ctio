@@ -60,8 +60,9 @@ bun run dev -- convert -t json_to_excel data.json out.xlsx
 Get your API token at <https://conversiontools.io/profile> → "API tokens".
 
 ```bash
-ctio auth login        # paste token, validates against the API
-ctio auth status       # shows active profile + masked token
+ctio auth login          # paste token, validates against the API
+ctio auth login --parse  # paste a Parse API key (for ctio parse), saved in the same profile
+ctio auth status         # shows active profile + masked token and Parse key
 ```
 
 Token resolution order: `--token` flag > `CT_API_TOKEN` env > `--profile <name>` > active profile.
@@ -77,10 +78,12 @@ ctio describe xml_to_csv --format pretty   # options, allowed values, defaults
 ## Extract data from documents
 
 Pull structured data out of a PDF, scan or photo with [Parse](https://parse.conversiontools.io).
-Parse uses its own API key: create one at parse.conversiontools.io and pass it as
-`CT_PARSE_TOKEN` (or `--parse-token`).
+Parse uses its own API key: create one at <https://parse.conversiontools.io/dashboard/api-keys>
+and save it once with `ctio auth login --parse` (it checks the key and shows your plan's pages left).
+For scripts and CI, `--parse-token` or `CT_PARSE_TOKEN` override the saved key, in that order.
 
 ```bash
+ctio auth login --parse                                  # once: paste your Parse API key
 ctio parse invoice.pdf                                   # schema-less: Parse picks the fields
 ctio parse contract.pdf --schema fields.json -o out.json # just the fields you list
 ctio parse --id <extraction_id>                          # fetch an earlier extraction
