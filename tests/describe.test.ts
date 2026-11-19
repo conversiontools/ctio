@@ -34,10 +34,10 @@ describe("text-to-speech option metadata", () => {
   const specs = findConverter("ai_text_to_mp3")?.optionSpecs ?? [];
   const spec = (name: string) => specs.find((o) => o.name === name);
 
-  test("lists the voices, formats and languages", () => {
+  test("lists the voices and formats; the voice sets the language, so there is no language option", () => {
     expect(spec("voice_tts")?.values).toEqual(expect.arrayContaining(["default", "gb_oliver_neutral", "en_paul_neutral", "gb_jane_neutral", "fr_marie_neutral"]));
     expect(spec("output_tts")?.values).toEqual(["mp3", "wav"]);
-    expect(spec("language_tts")?.values).toContain("fr");
+    expect(spec("language_tts")).toBeUndefined();
   });
 
   test("says voice_tts also takes your cloned voices' ids", () => {

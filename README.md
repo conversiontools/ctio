@@ -115,9 +115,9 @@ ctio convert -t ai_pdf_to_mp3 handbook.pdf handbook.wav --option voice_tts=gb_ja
   Haruto, ...) and the voices you cloned (see [Clone your voice](#clone-your-voice)). A cloned
   voice works from the account that cloned it. An unknown voice is an error, never a silent
   fallback.
-- **Language.** Each built-in voice lists the `language_tts` code it speaks (`ja` for
-  Haruto). Set `--option language_tts=<code>` to the language your text is written in, and
-  pick a voice that speaks it. `ctio describe ai_text_to_mp3` lists all 38 codes.
+- **Language.** The voice sets the spoken language. Each built-in voice lists the language it
+  speaks (`ja` for Haruto), so pick one that matches your text. For a language without a
+  built-in voice, clone a voice that speaks it.
 - **Format.** MP3 or WAV, taken from the output file name (`narration.wav`), or set with
   `--option output_tts=wav`. Writing to stdout (`-`) gives MP3 unless `output_tts`
   says otherwise.

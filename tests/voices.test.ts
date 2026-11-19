@@ -16,7 +16,7 @@ describe("voices table", () => {
     expect(lines[0]).toMatch(/^ID\s+NAME\s+LANGUAGE\s+TYPE$/);
   });
 
-  test("shows the language_tts code of each built-in voice", () => {
+  test("shows the language each built-in voice speaks", () => {
     expect(lines.find((l) => l.startsWith("voice_3133"))).toMatch(/^voice_3133\s+Haruto \(Japanese\)\s+ja\s+builtin$/);
   });
 

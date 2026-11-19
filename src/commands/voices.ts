@@ -25,7 +25,7 @@ export interface Voice {
   id: string;
   name: string;
   type: "builtin" | "clone";
-  // Built-in voices: the language_tts code the voice speaks.
+  // Built-in voices: the language the voice speaks (e.g. "pl"); the voice sets the spoken language.
   language?: string;
   // Clones: the tone label given when it was cloned.
   tone?: string;
